@@ -1,0 +1,10 @@
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\Bukutachi\Bukutachi\bin\Debug\Bukutachi.exe.config
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\Bukutachi\Bukutachi\bin\Debug\Bukutachi.exe
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\Bukutachi\Bukutachi\bin\Debug\Bukutachi.pdb
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\Bukutachi\Bukutachi\obj\Debug\Bukutachi.Login.resources
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\Bukutachi\Bukutachi\obj\Debug\Bukutachi.Properties.Resources.resources
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\Bukutachi\Bukutachi\obj\Debug\Bukutachi.csproj.GenerateResource.cache
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\Bukutachi\Bukutachi\obj\Debug\Bukutachi.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\Bukutachi\Bukutachi\obj\Debug\Bukutachi.exe
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\Bukutachi\Bukutachi\obj\Debug\Bukutachi.pdb
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\Bukutachi\Bukutachi\bin\Debug\Library1.dll
