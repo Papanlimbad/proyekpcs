@@ -10,16 +10,21 @@ using System.Windows.Forms;
 
 namespace Bukutachi
 {
-    public partial class Register : Form
+    public partial class Form1 : Form
     {
-        public Register()
+        public Form1()
         {
             InitializeComponent();
         }
 
-        private void titleBar_MouseDown(object sender, MouseEventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
