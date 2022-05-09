@@ -19,6 +19,7 @@ namespace Bukutachi {
 
         private void Login_Load(object sender, EventArgs e) {
             titleBar.BackColor = Color.FromArgb(28, 28, 28);
+            this.BackColor = Color.FromArgb(130, 127, 142);
         }
 
         private void titleBar_MouseMove(object sender, MouseEventArgs e) {
@@ -37,6 +38,14 @@ namespace Bukutachi {
 
         private void btnClose_Click(object sender, EventArgs e) {
             this.Close();
+        }
+
+        private void btRegister_Click(object sender, EventArgs e)
+        {
+            Register rg = new Register();
+            this.Visible = false;
+            rg.ShowDialog();
+            this.Visible = true;
         }
     }
 }

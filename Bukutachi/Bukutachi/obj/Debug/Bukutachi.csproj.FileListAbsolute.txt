@@ -8,3 +8,14 @@ C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\Bukutachi\Bukutachi\
 C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\Bukutachi\Bukutachi\obj\Debug\Bukutachi.exe
 C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\Bukutachi\Bukutachi\obj\Debug\Bukutachi.pdb
 C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\Bukutachi\Bukutachi\bin\Debug\Library1.dll
+D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\bin\Debug\Bukutachi.exe.config
+D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\bin\Debug\Bukutachi.exe
+D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\bin\Debug\Bukutachi.pdb
+D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.csproj.AssemblyReference.cache
+D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.Login.resources
+D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.Properties.Resources.resources
+D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.csproj.GenerateResource.cache
+D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.csproj.CoreCompileInputs.cache
+D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.exe
+D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.pdb
+D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.Register.resources
