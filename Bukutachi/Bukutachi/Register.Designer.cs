@@ -29,7 +29,8 @@ namespace Bukutachi
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
+            this.pnTitleBar = new System.Windows.Forms.Panel();
             this.btMinimize = new Guna.UI2.WinForms.Guna2Button();
             this.btClose = new Guna.UI2.WinForms.Guna2Button();
             this.lbRegister = new System.Windows.Forms.Label();
@@ -47,18 +48,25 @@ namespace Bukutachi
             this.tbConfirmPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.btLogin = new Guna.UI2.WinForms.Guna2Button();
             this.btRegister = new Guna.UI2.WinForms.Guna2Button();
-            this.panel1.SuspendLayout();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pnTitleBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnTitleBar
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.panel1.Controls.Add(this.btMinimize);
-            this.panel1.Controls.Add(this.btClose);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(740, 33);
-            this.panel1.TabIndex = 2;
+            this.pnTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.pnTitleBar.Controls.Add(this.label1);
+            this.pnTitleBar.Controls.Add(this.guna2PictureBox1);
+            this.pnTitleBar.Controls.Add(this.btMinimize);
+            this.pnTitleBar.Controls.Add(this.btClose);
+            this.pnTitleBar.Location = new System.Drawing.Point(0, 0);
+            this.pnTitleBar.Name = "pnTitleBar";
+            this.pnTitleBar.Size = new System.Drawing.Size(740, 33);
+            this.pnTitleBar.TabIndex = 2;
+            this.pnTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnTitleBar_MouseDown);
+            this.pnTitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnTitleBar_MouseMove);
             // 
             // btMinimize
             // 
@@ -319,10 +327,10 @@ namespace Bukutachi
             this.btLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btLogin.FillColor = System.Drawing.Color.WhiteSmoke;
             this.btLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btLogin.ForeColor = System.Drawing.Color.White;
-            this.btLogin.Location = new System.Drawing.Point(273, 383);
+            this.btLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btLogin.Location = new System.Drawing.Point(273, 388);
             this.btLogin.Name = "btLogin";
             this.btLogin.Size = new System.Drawing.Size(100, 35);
             this.btLogin.TabIndex = 16;
@@ -339,11 +347,34 @@ namespace Bukutachi
             this.btRegister.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
             this.btRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btRegister.ForeColor = System.Drawing.Color.White;
-            this.btRegister.Location = new System.Drawing.Point(415, 383);
+            this.btRegister.Location = new System.Drawing.Point(415, 388);
             this.btRegister.Name = "btRegister";
             this.btRegister.Size = new System.Drawing.Size(100, 35);
             this.btRegister.TabIndex = 17;
             this.btRegister.Text = "Register";
+            this.btRegister.Click += new System.EventHandler(this.btRegister_Click);
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(5, 3);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 18;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(35, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(147, 16);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Bukutachi - Register";
             // 
             // Register
             // 
@@ -366,12 +397,14 @@ namespace Bukutachi
             this.Controls.Add(this.tbFullName);
             this.Controls.Add(this.lbFullName);
             this.Controls.Add(this.lbRegister);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnTitleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";
-            this.panel1.ResumeLayout(false);
+            this.pnTitleBar.ResumeLayout(false);
+            this.pnTitleBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,7 +412,7 @@ namespace Bukutachi
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnTitleBar;
         private Guna.UI2.WinForms.Guna2Button btMinimize;
         private Guna.UI2.WinForms.Guna2Button btClose;
         private System.Windows.Forms.Label lbRegister;
@@ -397,5 +430,7 @@ namespace Bukutachi
         private Guna.UI2.WinForms.Guna2TextBox tbConfirmPassword;
         private Guna.UI2.WinForms.Guna2Button btLogin;
         private Guna.UI2.WinForms.Guna2Button btRegister;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
