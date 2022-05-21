@@ -60,7 +60,7 @@ namespace Bukutachi
             lbHello.Location = new Point(this.Size.Width - lbHello.Size.Width - 20, 41);
 
             btHome.FillColor = Color.FromArgb(86, 100, 194);
-            loadForm(new pbPopular2(conn, user));
+            loadForm(new FormHomeUser(conn, user));
         }
 
         private void loadForm(object form)
@@ -75,6 +75,9 @@ namespace Bukutachi
             this.pnMain.Controls.Add(f);
             this.pnMain.Tag = f;
             f.Show();
+
+            lbHello.Text = "Hello, " + user[1];
+            lbHello.Location = new Point(this.Size.Width - lbHello.Size.Width - 20, 41);
         }
 
         private void clearButtonFill()
@@ -90,14 +93,14 @@ namespace Bukutachi
         {
             clearButtonFill();
             btHome.FillColor = Color.FromArgb(86, 100, 194);
-            loadForm(new pbPopular2(conn,user));
+            loadForm(new FormHomeUser(conn,user));
         }
 
         private void btBooks_Click(object sender, EventArgs e)
         {
             clearButtonFill();
             btBooks.FillColor = Color.FromArgb(86, 100, 194);
-            loadForm(new FormBooksUser());
+            loadForm(new FormBooksUser(conn,user));
         }
 
         private void btHistory_Click(object sender, EventArgs e)
@@ -118,7 +121,7 @@ namespace Bukutachi
         {
             clearButtonFill();
             btProfile.FillColor = Color.FromArgb(86, 100, 194);
-            loadForm(new FormProfileUser());
+            loadForm(new FormProfileUser(conn,user));
         }
 
         private void btLogout_Click(object sender, EventArgs e)

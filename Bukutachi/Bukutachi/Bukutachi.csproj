@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditPasswordUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPasswordUser.Designer.cs">
+      <DependentUpon>EditPasswordUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBooksUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EditPasswordUser.resx">
+      <DependentUpon>EditPasswordUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBooksUser.resx">
       <DependentUpon>FormBooksUser.cs</DependentUpon>
     </EmbeddedResource>

@@ -77,7 +77,7 @@ namespace Bukutachi
                     }
                     else
                     {
-                        Regex re = new Regex(@"(?=.*[0-9])");
+                        Regex re = new Regex("^[0-9]+$");
                         if (!re.IsMatch(tbTelephone.Text))
                         {
                             MessageBox.Show("Telephone Hanya Boleh Diisi Angka!");

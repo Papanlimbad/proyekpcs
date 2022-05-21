@@ -12,11 +12,11 @@ using MySql.Data.MySqlClient;
 
 namespace Bukutachi
 {
-    public partial class pbPopular2 : Form
+    public partial class FormHomeUser : Form
     {
         MySqlConnection conn;
         String[] user = new string[8];
-        public pbPopular2(MySqlConnection conn, String[] user)
+        public FormHomeUser(MySqlConnection conn, String[] user)
         {
             InitializeComponent();
             this.conn = conn;

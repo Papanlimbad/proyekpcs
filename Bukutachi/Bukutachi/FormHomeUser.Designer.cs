@@ -1,7 +1,7 @@
 ﻿
 namespace Bukutachi
 {
-    partial class pbPopular2
+    partial class FormHomeUser
     {
         /// <summary>
         /// Required designer variable.
@@ -47,7 +47,7 @@ namespace Bukutachi
             this.pbPopular5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pbPopular4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pbPopular3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox12 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pbPopular2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pbRecommend7 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pbRecommend6 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pbRecommend5 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -71,7 +71,7 @@ namespace Bukutachi
             ((System.ComponentModel.ISupportInitialize)(this.pbPopular5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPopular4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPopular3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPopular2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRecommend7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRecommend6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRecommend5)).BeginInit();
@@ -250,14 +250,14 @@ namespace Bukutachi
             this.pbPopular3.TabIndex = 17;
             this.pbPopular3.TabStop = false;
             // 
-            // guna2PictureBox12
+            // pbPopular2
             // 
-            this.guna2PictureBox12.ImageRotate = 0F;
-            this.guna2PictureBox12.Location = new System.Drawing.Point(135, 260);
-            this.guna2PictureBox12.Name = "guna2PictureBox12";
-            this.guna2PictureBox12.Size = new System.Drawing.Size(81, 107);
-            this.guna2PictureBox12.TabIndex = 16;
-            this.guna2PictureBox12.TabStop = false;
+            this.pbPopular2.ImageRotate = 0F;
+            this.pbPopular2.Location = new System.Drawing.Point(135, 260);
+            this.pbPopular2.Name = "pbPopular2";
+            this.pbPopular2.Size = new System.Drawing.Size(81, 107);
+            this.pbPopular2.TabIndex = 16;
+            this.pbPopular2.TabStop = false;
             // 
             // pbRecommend7
             // 
@@ -346,7 +346,7 @@ namespace Bukutachi
             this.lbRecommendedSeeMore.TabIndex = 30;
             this.lbRecommendedSeeMore.Text = "See More...";
             // 
-            // pbPopular2
+            // FormHomeUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -366,7 +366,7 @@ namespace Bukutachi
             this.Controls.Add(this.pbPopular5);
             this.Controls.Add(this.pbPopular4);
             this.Controls.Add(this.pbPopular3);
-            this.Controls.Add(this.guna2PictureBox12);
+            this.Controls.Add(this.pbPopular2);
             this.Controls.Add(this.pbNew7);
             this.Controls.Add(this.pbNew6);
             this.Controls.Add(this.pbNew5);
@@ -381,7 +381,7 @@ namespace Bukutachi
             this.Controls.Add(this.lbNewBooks);
             this.Controls.Add(this.lbWelcome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "pbPopular2";
+            this.Name = "FormHomeUser";
             this.Text = "pnHomeUser";
             this.Load += new System.EventHandler(this.FormHomeUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbNew1)).EndInit();
@@ -398,7 +398,7 @@ namespace Bukutachi
             ((System.ComponentModel.ISupportInitialize)(this.pbPopular5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPopular4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPopular3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPopular2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRecommend7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRecommend6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRecommend5)).EndInit();
@@ -430,7 +430,7 @@ namespace Bukutachi
         private Guna.UI2.WinForms.Guna2PictureBox pbPopular5;
         private Guna.UI2.WinForms.Guna2PictureBox pbPopular4;
         private Guna.UI2.WinForms.Guna2PictureBox pbPopular3;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox12;
+        private Guna.UI2.WinForms.Guna2PictureBox pbPopular2;
         private Guna.UI2.WinForms.Guna2PictureBox pbRecommend7;
         private Guna.UI2.WinForms.Guna2PictureBox pbRecommend6;
         private Guna.UI2.WinForms.Guna2PictureBox pbRecommend5;
