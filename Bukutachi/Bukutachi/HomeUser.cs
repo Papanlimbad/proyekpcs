@@ -58,5 +58,55 @@ namespace Bukutachi
         {
             lbHello.Text = "Hello, " + user[1];
         }
+
+        private void panelBook_MouseClick(object sender, MouseEventArgs e)
+        {
+            panelHome.BackColor = Color.FromArgb(42, 33, 33);
+            panelBook.BackColor = Color.FromArgb(37, 38, 62);
+            panelHistory.BackColor = Color.FromArgb(42, 33, 33);
+            panelBorrow.BackColor = Color.FromArgb(42, 33, 33);
+            panelProfile.BackColor = Color.FromArgb(42, 33, 33);
+        }
+
+        private void panelHome_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelHome_MouseClick(object sender, MouseEventArgs e)
+        {
+            panelHome.BackColor = Color.FromArgb(37, 38, 62);
+            panelBook.BackColor = Color.FromArgb(42, 33, 33);
+            panelHistory.BackColor = Color.FromArgb(42, 33, 33);
+            panelBorrow.BackColor = Color.FromArgb(42, 33, 33);
+            panelProfile.BackColor = Color.FromArgb(42, 33, 33);
+        }
+
+        private void panelHistory_MouseClick(object sender, MouseEventArgs e)
+        {
+            panelHome.BackColor = Color.FromArgb(42, 33, 33);
+            panelBook.BackColor = Color.FromArgb(42, 33, 3);
+            panelHistory.BackColor = Color.FromArgb(37, 38, 62);
+            panelBorrow.BackColor = Color.FromArgb(42, 33, 33);
+            panelProfile.BackColor = Color.FromArgb(42, 33, 33);
+        }
+
+        private void panelBorrow_MouseClick(object sender, MouseEventArgs e)
+        {
+            panelHome.BackColor = Color.FromArgb(42, 33, 33);
+            panelBook.BackColor = Color.FromArgb(42, 33, 33);
+            panelHistory.BackColor = Color.FromArgb(42, 33, 33);
+            panelBorrow.BackColor = Color.FromArgb(37, 38, 62);
+            panelProfile.BackColor = Color.FromArgb(42, 33, 33);
+        }
+
+        private void panelProfile_MouseClick(object sender, MouseEventArgs e)
+        {
+            panelHome.BackColor = Color.FromArgb(42, 33, 33);
+            panelBook.BackColor = Color.FromArgb(42, 33, 33);
+            panelHistory.BackColor = Color.FromArgb(42, 33, 33);
+            panelBorrow.BackColor = Color.FromArgb(42, 33, 33);
+            panelProfile.BackColor = Color.FromArgb(37, 38, 62);
+        }
     }
 }
