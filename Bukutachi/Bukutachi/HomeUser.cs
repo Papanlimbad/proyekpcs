@@ -58,6 +58,9 @@ namespace Bukutachi
         {
             lbHello.Text = "Hello, " + user[1];
             lbHello.Location = new Point(this.Size.Width - lbHello.Size.Width - 20, 41);
+
+            btHome.FillColor = Color.FromArgb(86, 100, 194);
+            loadForm(new pbPopular2(conn, user));
         }
 
         private void loadForm(object form)
@@ -87,7 +90,7 @@ namespace Bukutachi
         {
             clearButtonFill();
             btHome.FillColor = Color.FromArgb(86, 100, 194);
-            loadForm(new FormHomeUser());
+            loadForm(new pbPopular2(conn,user));
         }
 
         private void btBooks_Click(object sender, EventArgs e)

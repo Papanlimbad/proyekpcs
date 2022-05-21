@@ -7,14 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using MySql.Data.MySqlClient;
 
 namespace Bukutachi
 {
-    public partial class FormHomeUser : Form
+    public partial class pbPopular2 : Form
     {
-        public FormHomeUser()
+        MySqlConnection conn;
+        String[] user = new string[8];
+        public pbPopular2(MySqlConnection conn, String[] user)
         {
             InitializeComponent();
+            this.conn = conn;
+            this.user = user;
+        }
+
+        private void FormHomeUser_Load(object sender, EventArgs e)
+        {
+            lbWelcome.Text = "Welcome, " + user[1];
         }
     }
 }

@@ -16,5 +16,12 @@ namespace Bukutachi
         {
             InitializeComponent();
         }
+
+        private void FormBooksUser_Load(object sender, EventArgs e)
+        {
+            cbFilter.SelectedIndex = 0;
+            cbSortBy1.SelectedIndex = 0;
+            cbSortBy2.SelectedIndex = 0;
+        }
     }
 }
