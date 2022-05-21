@@ -56,6 +56,42 @@
     <Compile Include="EditPasswordUser.Designer.cs">
       <DependentUpon>EditPasswordUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEditUsersAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditUsersAdmin.Designer.cs">
+      <DependentUpon>FormEditUsersAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddBookAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddBookAdmin.Designer.cs">
+      <DependentUpon>FormAddBookAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBorrowedAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBorrowedAdmin.Designer.cs">
+      <DependentUpon>FormBorrowedAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBooksAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBooksAdmin.Designer.cs">
+      <DependentUpon>FormBooksAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHomeAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHomeAdmin.Designer.cs">
+      <DependentUpon>FormHomeAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeAdmin.Designer.cs">
+      <DependentUpon>HomeAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBooksUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,17 +145,35 @@
     <EmbeddedResource Include="EditPasswordUser.resx">
       <DependentUpon>EditPasswordUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAddBookAdmin.resx">
+      <DependentUpon>FormAddBookAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBooksAdmin.resx">
+      <DependentUpon>FormBooksAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBooksUser.resx">
       <DependentUpon>FormBooksUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBorrowedAdmin.resx">
+      <DependentUpon>FormBorrowedAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBorrowedUser.resx">
       <DependentUpon>FormBorrowedUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormEditUsersAdmin.resx">
+      <DependentUpon>FormEditUsersAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormHistoryUser.resx">
       <DependentUpon>FormHistoryUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormHomeAdmin.resx">
+      <DependentUpon>FormHomeAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormProfileUser.resx">
       <DependentUpon>FormProfileUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeAdmin.resx">
+      <DependentUpon>HomeAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeUser.resx">
       <DependentUpon>HomeUser.cs</DependentUpon>
