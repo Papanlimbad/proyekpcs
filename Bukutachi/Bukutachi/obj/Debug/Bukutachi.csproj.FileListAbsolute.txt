@@ -47,7 +47,6 @@ C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukut
 C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.Register.resources
 C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.csproj.GenerateResource.cache
 C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.csproj.CoreCompileInputs.cache
-C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.csproj.CopyComplete
 C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.exe
 C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.pdb
 D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormBooksUser.resources
@@ -55,3 +54,8 @@ D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutach
 D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormHistoryUser.resources
 D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormProfileUser.resources
 D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.pbPopular2.resources
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormBooksUser.resources
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormBorrowedUser.resources
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormHistoryUser.resources
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormProfileUser.resources
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.pbPopular2.resources
