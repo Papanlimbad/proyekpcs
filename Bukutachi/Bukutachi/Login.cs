@@ -77,41 +77,83 @@ namespace Bukutachi
                 int adaUser = Convert.ToInt32(cmd.ExecuteScalar().ToString());
                 conn.Close();
 
-                if (adaUser == 0)
+                MySqlCommand cmd4 = new MySqlCommand("select count(*) from pegawai where pe_username=?username", conn);
+                cmd4.Parameters.Add(new MySqlParameter("username", tbUsername.Text));
+                conn.Open();
+                int adaAdmin = Convert.ToInt32(cmd4.ExecuteScalar().ToString());
+                conn.Close();
+
+                if (adaUser == 0 && adaAdmin==0)
                 {
                     MessageBox.Show("Username Belum Terdaftar!");
                 }
                 else
                 {
-                    MySqlCommand cmd2 = new MySqlCommand("select count(*) from member where me_username=?username and me_password=md5(?password)", conn);
-                    cmd2.Parameters.Add(new MySqlParameter("username", tbUsername.Text));
-                    cmd2.Parameters.Add(new MySqlParameter("password", tbPassword.Text));
-                    conn.Open();
-                    int passwordBenar = Convert.ToInt32(cmd2.ExecuteScalar().ToString());
-                    conn.Close();
-
-                    if (passwordBenar == 0)
+                    if (adaUser>=1)
                     {
-                        MessageBox.Show("Password Salah!");
+                        MySqlCommand cmd2 = new MySqlCommand("select count(*) from member where me_username=?username and me_password=md5(?password)", conn);
+                        cmd2.Parameters.Add(new MySqlParameter("username", tbUsername.Text));
+                        cmd2.Parameters.Add(new MySqlParameter("password", tbPassword.Text));
+                        conn.Open();
+                        int passwordBenar = Convert.ToInt32(cmd2.ExecuteScalar().ToString());
+                        conn.Close();
+
+                        if (passwordBenar == 0)
+                        {
+                            MessageBox.Show("Password Salah!");
+                        }
+                        else
+                        {
+                            MySqlCommand cmd3 = new MySqlCommand("select * from member where me_username=?username and me_password=md5(?password)", conn);
+                            cmd3.Parameters.Add(new MySqlParameter("username", tbUsername.Text));
+                            cmd3.Parameters.Add(new MySqlParameter("password", tbPassword.Text));
+                            clearAll();
+                            conn.Open();
+                            cmd3.ExecuteReader();
+                            conn.Close();
+                            DataSet ds;
+                            MySqlDataAdapter da = new MySqlDataAdapter(cmd3);
+                            ds = new DataSet();
+                            da.Fill(ds);
+                            HomeUser homeUser = new HomeUser(conn, ds);
+                            this.Visible = false;
+                            homeUser.ShowDialog();
+                            homeUser.Dispose();
+                            this.Visible = true;
+                        }
                     }
                     else
                     {
-                        MySqlCommand cmd3 = new MySqlCommand("select * from member where me_username=?username and me_password=md5(?password)", conn);
-                        cmd3.Parameters.Add(new MySqlParameter("username", tbUsername.Text));
-                        cmd3.Parameters.Add(new MySqlParameter("password", tbPassword.Text));
-                        clearAll();
+                        MySqlCommand cmd2 = new MySqlCommand("select count(*) from pegawai where pe_username=?username and pe_password=md5(?password)", conn);
+                        cmd2.Parameters.Add(new MySqlParameter("username", tbUsername.Text));
+                        cmd2.Parameters.Add(new MySqlParameter("password", tbPassword.Text));
                         conn.Open();
-                        cmd3.ExecuteReader();
+                        int passwordBenar = Convert.ToInt32(cmd2.ExecuteScalar().ToString());
                         conn.Close();
-                        DataSet ds;
-                        MySqlDataAdapter da = new MySqlDataAdapter(cmd3);
-                        ds = new DataSet();
-                        da.Fill(ds);
-                        HomeUser homeUser = new HomeUser(conn, ds);
-                        this.Visible = false;
-                        homeUser.ShowDialog();
-                        homeUser.Dispose();
-                        this.Visible = true;
+
+                        if (passwordBenar == 0)
+                        {
+                            MessageBox.Show("Password Salah!");
+                        }
+                        else
+                        {
+                            MySqlCommand cmd3 = new MySqlCommand("select * from pegawai where pe_username=?username and pe_password=md5(?password)", conn);
+                            cmd3.Parameters.Add(new MySqlParameter("username", tbUsername.Text));
+                            cmd3.Parameters.Add(new MySqlParameter("password", tbPassword.Text));
+                            clearAll();
+                            conn.Open();
+                            cmd3.ExecuteReader();
+                            conn.Close();
+                            DataSet ds;
+                            MySqlDataAdapter da = new MySqlDataAdapter(cmd3);
+                            ds = new DataSet();
+                            da.Fill(ds);
+                            HomeAdmin homeAdmin = new HomeAdmin(conn, ds);
+                            this.Visible = false;
+                            homeAdmin.ShowDialog();
+                            homeAdmin.Dispose();
+                            this.Visible = true;
+                        }
                     }
                 }
             }

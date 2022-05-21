@@ -29,20 +29,22 @@ namespace Bukutachi
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeAdmin));
             this.pnTitleBar = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btMinimize = new Guna.UI2.WinForms.Guna2Button();
             this.btClose = new Guna.UI2.WinForms.Guna2Button();
-            this.lbHelloAdmin = new System.Windows.Forms.Label();
+            this.lbHello = new System.Windows.Forms.Label();
             this.pnMain = new System.Windows.Forms.Panel();
-            this.btEditUsers = new Guna.UI2.WinForms.Guna2Button();
-            this.btBorrowedAdmin = new Guna.UI2.WinForms.Guna2Button();
-            this.btAddBook = new Guna.UI2.WinForms.Guna2Button();
-            this.btBooksAdmin = new Guna.UI2.WinForms.Guna2Button();
-            this.btHomeAdmin = new Guna.UI2.WinForms.Guna2Button();
             this.btLogout = new Guna.UI2.WinForms.Guna2Button();
+            this.btUsers = new Guna.UI2.WinForms.Guna2Button();
+            this.btAddBuku = new Guna.UI2.WinForms.Guna2Button();
+            this.btBorrowed = new Guna.UI2.WinForms.Guna2Button();
+            this.btBooks = new Guna.UI2.WinForms.Guna2Button();
+            this.btHome = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -118,16 +120,16 @@ namespace Bukutachi
             this.btClose.Text = "X";
             this.btClose.Click += new System.EventHandler(this.btClose_Click);
             // 
-            // lbHelloAdmin
+            // lbHello
             // 
-            this.lbHelloAdmin.AutoSize = true;
-            this.lbHelloAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHelloAdmin.ForeColor = System.Drawing.Color.White;
-            this.lbHelloAdmin.Location = new System.Drawing.Point(754, 41);
-            this.lbHelloAdmin.Name = "lbHelloAdmin";
-            this.lbHelloAdmin.Size = new System.Drawing.Size(55, 20);
-            this.lbHelloAdmin.TabIndex = 5;
-            this.lbHelloAdmin.Text = "Hello,";
+            this.lbHello.AutoSize = true;
+            this.lbHello.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHello.ForeColor = System.Drawing.Color.White;
+            this.lbHello.Location = new System.Drawing.Point(754, 41);
+            this.lbHello.Name = "lbHello";
+            this.lbHello.Size = new System.Drawing.Size(55, 20);
+            this.lbHello.TabIndex = 5;
+            this.lbHello.Text = "Hello,";
             // 
             // pnMain
             // 
@@ -136,121 +138,6 @@ namespace Bukutachi
             this.pnMain.Name = "pnMain";
             this.pnMain.Size = new System.Drawing.Size(765, 560);
             this.pnMain.TabIndex = 6;
-            // 
-            // btEditUsers
-            // 
-            this.btEditUsers.BorderRadius = 10;
-            this.btEditUsers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btEditUsers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btEditUsers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btEditUsers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btEditUsers.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.btEditUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEditUsers.ForeColor = System.Drawing.Color.White;
-            this.btEditUsers.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.btEditUsers.Image = ((System.Drawing.Image)(resources.GetObject("btEditUsers.Image")));
-            this.btEditUsers.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btEditUsers.ImageOffset = new System.Drawing.Point(0, -1);
-            this.btEditUsers.ImageSize = new System.Drawing.Size(28, 28);
-            this.btEditUsers.Location = new System.Drawing.Point(15, 320);
-            this.btEditUsers.Name = "btEditUsers";
-            this.btEditUsers.Size = new System.Drawing.Size(180, 67);
-            this.btEditUsers.TabIndex = 15;
-            this.btEditUsers.Text = "Edit Users";
-            this.btEditUsers.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btEditUsers.Click += new System.EventHandler(this.btEditUsers_Click);
-            // 
-            // btBorrowedAdmin
-            // 
-            this.btBorrowedAdmin.BorderRadius = 10;
-            this.btBorrowedAdmin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btBorrowedAdmin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btBorrowedAdmin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btBorrowedAdmin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btBorrowedAdmin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.btBorrowedAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBorrowedAdmin.ForeColor = System.Drawing.Color.White;
-            this.btBorrowedAdmin.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.btBorrowedAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btBorrowedAdmin.Image")));
-            this.btBorrowedAdmin.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btBorrowedAdmin.ImageOffset = new System.Drawing.Point(0, -1);
-            this.btBorrowedAdmin.ImageSize = new System.Drawing.Size(28, 28);
-            this.btBorrowedAdmin.Location = new System.Drawing.Point(15, 200);
-            this.btBorrowedAdmin.Name = "btBorrowedAdmin";
-            this.btBorrowedAdmin.Size = new System.Drawing.Size(180, 67);
-            this.btBorrowedAdmin.TabIndex = 14;
-            this.btBorrowedAdmin.Text = "Borrowed";
-            this.btBorrowedAdmin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btBorrowedAdmin.Click += new System.EventHandler(this.btBorrowedAdmin_Click);
-            // 
-            // btAddBook
-            // 
-            this.btAddBook.BorderRadius = 10;
-            this.btAddBook.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btAddBook.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btAddBook.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btAddBook.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btAddBook.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.btAddBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAddBook.ForeColor = System.Drawing.Color.White;
-            this.btAddBook.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.btAddBook.Image = ((System.Drawing.Image)(resources.GetObject("btAddBook.Image")));
-            this.btAddBook.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btAddBook.ImageOffset = new System.Drawing.Point(0, -1);
-            this.btAddBook.ImageSize = new System.Drawing.Size(28, 28);
-            this.btAddBook.Location = new System.Drawing.Point(15, 260);
-            this.btAddBook.Name = "btAddBook";
-            this.btAddBook.Size = new System.Drawing.Size(180, 67);
-            this.btAddBook.TabIndex = 13;
-            this.btAddBook.Text = "Add Book";
-            this.btAddBook.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btAddBook.Click += new System.EventHandler(this.btAddBook_Click);
-            // 
-            // btBooksAdmin
-            // 
-            this.btBooksAdmin.BorderRadius = 10;
-            this.btBooksAdmin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btBooksAdmin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btBooksAdmin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btBooksAdmin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btBooksAdmin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.btBooksAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBooksAdmin.ForeColor = System.Drawing.Color.White;
-            this.btBooksAdmin.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.btBooksAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btBooksAdmin.Image")));
-            this.btBooksAdmin.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btBooksAdmin.ImageOffset = new System.Drawing.Point(0, -1);
-            this.btBooksAdmin.ImageSize = new System.Drawing.Size(28, 28);
-            this.btBooksAdmin.Location = new System.Drawing.Point(15, 140);
-            this.btBooksAdmin.Name = "btBooksAdmin";
-            this.btBooksAdmin.Size = new System.Drawing.Size(180, 67);
-            this.btBooksAdmin.TabIndex = 12;
-            this.btBooksAdmin.Text = "Books";
-            this.btBooksAdmin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btBooksAdmin.Click += new System.EventHandler(this.btBooksAdmin_Click);
-            // 
-            // btHomeAdmin
-            // 
-            this.btHomeAdmin.BorderRadius = 10;
-            this.btHomeAdmin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btHomeAdmin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btHomeAdmin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btHomeAdmin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btHomeAdmin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.btHomeAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btHomeAdmin.ForeColor = System.Drawing.Color.White;
-            this.btHomeAdmin.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.btHomeAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btHomeAdmin.Image")));
-            this.btHomeAdmin.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btHomeAdmin.ImageOffset = new System.Drawing.Point(0, -1);
-            this.btHomeAdmin.ImageSize = new System.Drawing.Size(28, 28);
-            this.btHomeAdmin.Location = new System.Drawing.Point(15, 80);
-            this.btHomeAdmin.Name = "btHomeAdmin";
-            this.btHomeAdmin.Size = new System.Drawing.Size(180, 67);
-            this.btHomeAdmin.TabIndex = 11;
-            this.btHomeAdmin.Text = "Home";
-            this.btHomeAdmin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btHomeAdmin.Click += new System.EventHandler(this.btHomeAdmin_Click);
             // 
             // btLogout
             // 
@@ -270,9 +157,129 @@ namespace Bukutachi
             this.btLogout.Location = new System.Drawing.Point(15, 578);
             this.btLogout.Name = "btLogout";
             this.btLogout.Size = new System.Drawing.Size(180, 50);
-            this.btLogout.TabIndex = 12;
+            this.btLogout.TabIndex = 17;
             this.btLogout.Text = "Logout";
             this.btLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // btUsers
+            // 
+            this.btUsers.BorderRadius = 10;
+            this.btUsers.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btUsers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btUsers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btUsers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btUsers.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btUsers.ForeColor = System.Drawing.Color.White;
+            this.btUsers.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.btUsers.Image = ((System.Drawing.Image)(resources.GetObject("btUsers.Image")));
+            this.btUsers.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btUsers.ImageOffset = new System.Drawing.Point(0, -1);
+            this.btUsers.ImageSize = new System.Drawing.Size(28, 28);
+            this.btUsers.Location = new System.Drawing.Point(15, 320);
+            this.btUsers.Name = "btUsers";
+            this.btUsers.Size = new System.Drawing.Size(180, 50);
+            this.btUsers.TabIndex = 16;
+            this.btUsers.Text = "Users";
+            this.btUsers.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btUsers.Click += new System.EventHandler(this.btUsers_Click);
+            // 
+            // btAddBuku
+            // 
+            this.btAddBuku.BorderRadius = 10;
+            this.btAddBuku.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btAddBuku.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btAddBuku.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btAddBuku.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btAddBuku.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btAddBuku.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAddBuku.ForeColor = System.Drawing.Color.White;
+            this.btAddBuku.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.btAddBuku.Image = ((System.Drawing.Image)(resources.GetObject("btAddBuku.Image")));
+            this.btAddBuku.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btAddBuku.ImageOffset = new System.Drawing.Point(0, -1);
+            this.btAddBuku.ImageSize = new System.Drawing.Size(28, 28);
+            this.btAddBuku.Location = new System.Drawing.Point(15, 260);
+            this.btAddBuku.Name = "btAddBuku";
+            this.btAddBuku.Size = new System.Drawing.Size(180, 50);
+            this.btAddBuku.TabIndex = 15;
+            this.btAddBuku.Text = "Add Buku";
+            this.btAddBuku.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btAddBuku.Click += new System.EventHandler(this.btAddBuku_Click);
+            // 
+            // btBorrowed
+            // 
+            this.btBorrowed.BorderRadius = 10;
+            this.btBorrowed.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btBorrowed.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btBorrowed.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btBorrowed.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btBorrowed.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btBorrowed.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBorrowed.ForeColor = System.Drawing.Color.White;
+            this.btBorrowed.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.btBorrowed.Image = ((System.Drawing.Image)(resources.GetObject("btBorrowed.Image")));
+            this.btBorrowed.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btBorrowed.ImageOffset = new System.Drawing.Point(0, -1);
+            this.btBorrowed.ImageSize = new System.Drawing.Size(28, 28);
+            this.btBorrowed.Location = new System.Drawing.Point(15, 200);
+            this.btBorrowed.Name = "btBorrowed";
+            this.btBorrowed.Size = new System.Drawing.Size(180, 50);
+            this.btBorrowed.TabIndex = 14;
+            this.btBorrowed.Text = "Borrowed";
+            this.btBorrowed.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btBorrowed.Click += new System.EventHandler(this.btBorrowed_Click);
+            // 
+            // btBooks
+            // 
+            this.btBooks.BorderRadius = 10;
+            this.btBooks.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btBooks.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btBooks.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btBooks.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btBooks.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBooks.ForeColor = System.Drawing.Color.White;
+            this.btBooks.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.btBooks.Image = ((System.Drawing.Image)(resources.GetObject("btBooks.Image")));
+            this.btBooks.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btBooks.ImageOffset = new System.Drawing.Point(0, -1);
+            this.btBooks.ImageSize = new System.Drawing.Size(28, 28);
+            this.btBooks.Location = new System.Drawing.Point(15, 140);
+            this.btBooks.Name = "btBooks";
+            this.btBooks.Size = new System.Drawing.Size(180, 50);
+            this.btBooks.TabIndex = 13;
+            this.btBooks.Text = "Books";
+            this.btBooks.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btBooks.Click += new System.EventHandler(this.btBooks_Click);
+            // 
+            // btHome
+            // 
+            this.btHome.BorderRadius = 10;
+            this.btHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btHome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btHome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btHome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btHome.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btHome.ForeColor = System.Drawing.Color.White;
+            this.btHome.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.btHome.Image = ((System.Drawing.Image)(resources.GetObject("btHome.Image")));
+            this.btHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btHome.ImageOffset = new System.Drawing.Point(0, -1);
+            this.btHome.ImageSize = new System.Drawing.Size(28, 28);
+            this.btHome.Location = new System.Drawing.Point(15, 80);
+            this.btHome.Name = "btHome";
+            this.btHome.Size = new System.Drawing.Size(180, 50);
+            this.btHome.TabIndex = 12;
+            this.btHome.Text = "Home";
+            this.btHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btHome.Click += new System.EventHandler(this.btHome_Click);
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 20;
+            this.guna2Elipse1.TargetControl = this.pnMain;
             // 
             // HomeAdmin
             // 
@@ -281,13 +288,13 @@ namespace Bukutachi
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.ClientSize = new System.Drawing.Size(1000, 650);
             this.Controls.Add(this.btLogout);
-            this.Controls.Add(this.btEditUsers);
-            this.Controls.Add(this.btBorrowedAdmin);
-            this.Controls.Add(this.btAddBook);
-            this.Controls.Add(this.btBooksAdmin);
-            this.Controls.Add(this.btHomeAdmin);
+            this.Controls.Add(this.btUsers);
+            this.Controls.Add(this.btAddBuku);
+            this.Controls.Add(this.btBorrowed);
+            this.Controls.Add(this.btBooks);
+            this.Controls.Add(this.btHome);
             this.Controls.Add(this.pnMain);
-            this.Controls.Add(this.lbHelloAdmin);
+            this.Controls.Add(this.lbHello);
             this.Controls.Add(this.pnTitleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HomeAdmin";
@@ -309,13 +316,14 @@ namespace Bukutachi
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Button btMinimize;
         private Guna.UI2.WinForms.Guna2Button btClose;
-        private System.Windows.Forms.Label lbHelloAdmin;
+        private System.Windows.Forms.Label lbHello;
         private System.Windows.Forms.Panel pnMain;
-        private Guna.UI2.WinForms.Guna2Button btEditUsers;
-        private Guna.UI2.WinForms.Guna2Button btBorrowedAdmin;
-        private Guna.UI2.WinForms.Guna2Button btAddBook;
-        private Guna.UI2.WinForms.Guna2Button btBooksAdmin;
-        private Guna.UI2.WinForms.Guna2Button btHomeAdmin;
         private Guna.UI2.WinForms.Guna2Button btLogout;
+        private Guna.UI2.WinForms.Guna2Button btUsers;
+        private Guna.UI2.WinForms.Guna2Button btAddBuku;
+        private Guna.UI2.WinForms.Guna2Button btBorrowed;
+        private Guna.UI2.WinForms.Guna2Button btBooks;
+        private Guna.UI2.WinForms.Guna2Button btHome;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }

@@ -16,11 +16,19 @@ namespace Bukutachi
     {
         Point posDrag;
         MySqlConnection conn;
-        public HomeAdmin()
+        String[] user = new String[8];
+        public HomeAdmin(MySqlConnection conn, DataSet user)
         {
             InitializeComponent();
             this.conn = conn;
-
+            this.user[0] = user.Tables[0].Rows[0][0].ToString();
+            this.user[1] = user.Tables[0].Rows[0][1].ToString();
+            this.user[2] = user.Tables[0].Rows[0][2].ToString();
+            this.user[3] = user.Tables[0].Rows[0][3].ToString();
+            this.user[4] = user.Tables[0].Rows[0][4].ToString();
+            this.user[5] = user.Tables[0].Rows[0][5].ToString();
+            this.user[6] = user.Tables[0].Rows[0][6].ToString();
+            this.user[7] = user.Tables[0].Rows[0][7].ToString();
         }
 
         private void btClose_Click(object sender, EventArgs e)
@@ -48,16 +56,20 @@ namespace Bukutachi
 
         private void HomeAdmin_Load(object sender, EventArgs e)
         {
-            
+            lbHello.Text = "Hello, " + user[1];
+            lbHello.Location = new Point(this.Size.Width - lbHello.Size.Width - 20, 41);
+
+            btHome.FillColor = Color.FromArgb(86, 100, 194);
+            loadadmin(new FormHomeAdmin());
         }
 
         private void clearbuttonadmin()
         {
-            btHomeAdmin.BackColor= Color.FromArgb(42, 33, 33);
-            btBooksAdmin.BackColor=Color.FromArgb(42, 33, 33);
-            btBorrowedAdmin.BackColor= Color.FromArgb(42, 33, 33);
-            btAddBook.BackColor= Color.FromArgb(42, 33, 33);
-            btEditUsers.BackColor= Color.FromArgb(42, 33, 33);
+            btHome.FillColor= Color.FromArgb(42, 33, 33);
+            btBooks.FillColor=Color.FromArgb(42, 33, 33);
+            btBorrowed.BackColor = Color.FromArgb(42, 33, 33);
+            btAddBuku.BackColor = Color.FromArgb(42, 33, 33);
+            btUsers.BackColor = Color.FromArgb(42, 33, 33);
         }
 
         private void loadadmin(object form)
@@ -73,37 +85,42 @@ namespace Bukutachi
             this.pnMain.Tag = f;
             f.Show();
 
-            lbHelloAdmin.Location = new Point(this.Size.Width - lbHelloAdmin.Size.Width - 20, 41);
-        }
-        private void btHomeAdmin_Click(object sender, EventArgs e)
-        {
-            clearbuttonadmin();
-            btHomeAdmin.BackColor = Color.FromArgb(86, 100, 194);
+            lbHello.Location = new Point(this.Size.Width - lbHello.Size.Width - 20, 41);
         }
 
-        private void btBooksAdmin_Click(object sender, EventArgs e)
+        private void btHome_Click(object sender, EventArgs e)
         {
             clearbuttonadmin();
-            btBooksAdmin.BackColor = Color.FromArgb(86, 100, 194);
+            btHome.FillColor = Color.FromArgb(86, 100, 194);
+            loadadmin(new FormHomeAdmin());
         }
 
-        private void btBorrowedAdmin_Click(object sender, EventArgs e)
+        private void btBooks_Click(object sender, EventArgs e)
         {
             clearbuttonadmin();
-            btBorrowedAdmin.BackColor = Color.FromArgb(86, 100, 194);
-
+            btBooks.FillColor = Color.FromArgb(86, 100, 194);
+            loadadmin(new FormBooksAdmin());
         }
 
-        private void btAddBook_Click(object sender, EventArgs e)
+        private void btBorrowed_Click(object sender, EventArgs e)
         {
             clearbuttonadmin();
-            btAddBook.BackColor = Color.FromArgb(86, 100, 194);
+            btBorrowed.FillColor = Color.FromArgb(86, 100, 194);
+            loadadmin(new FormBorrowedAdmin());
         }
 
-        private void btEditUsers_Click(object sender, EventArgs e)
+        private void btAddBuku_Click(object sender, EventArgs e)
         {
             clearbuttonadmin();
-            btEditUsers.BackColor = Color.FromArgb(86, 100, 194);
+            btAddBuku.FillColor = Color.FromArgb(86, 100, 194);
+            loadadmin(new FormAddBookAdmin());
+        }
+
+        private void btUsers_Click(object sender, EventArgs e)
+        {
+            clearbuttonadmin();
+            btUsers.FillColor = Color.FromArgb(86, 100, 194);
+            loadadmin(new FormHomeAdmin());
         }
     }
 }
