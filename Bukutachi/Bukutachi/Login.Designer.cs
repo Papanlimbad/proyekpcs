@@ -32,6 +32,8 @@ namespace Bukutachi
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.btClose = new Guna.UI2.WinForms.Guna2Button();
             this.pnTitleBar = new System.Windows.Forms.Panel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btMinimize = new Guna.UI2.WinForms.Guna2Button();
             this.lbLogin = new System.Windows.Forms.Label();
             this.lbUsername = new System.Windows.Forms.Label();
@@ -40,8 +42,6 @@ namespace Bukutachi
             this.lbPassword = new System.Windows.Forms.Label();
             this.btLogin = new Guna.UI2.WinForms.Guna2Button();
             this.btRegister = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -77,6 +77,28 @@ namespace Bukutachi
             this.pnTitleBar.TabIndex = 1;
             this.pnTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnTitleBar_MouseDown);
             this.pnTitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnTitleBar_MouseMove);
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(5, 3);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 9;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(35, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 16);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Bukutachi - Login";
             // 
             // btMinimize
             // 
@@ -163,6 +185,7 @@ namespace Bukutachi
             this.tbPassword.Size = new System.Drawing.Size(306, 26);
             this.tbPassword.TabIndex = 6;
             this.tbPassword.UseSystemPasswordChar = true;
+            this.tbPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbPassword_KeyDown);
             // 
             // lbPassword
             // 
@@ -185,7 +208,7 @@ namespace Bukutachi
             this.btLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
             this.btLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btLogin.ForeColor = System.Drawing.Color.White;
-            this.btLogin.Location = new System.Drawing.Point(322, 247);
+            this.btLogin.Location = new System.Drawing.Point(322, 233);
             this.btLogin.Name = "btLogin";
             this.btLogin.Size = new System.Drawing.Size(120, 35);
             this.btLogin.TabIndex = 7;
@@ -202,41 +225,19 @@ namespace Bukutachi
             this.btRegister.FillColor = System.Drawing.Color.WhiteSmoke;
             this.btRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
-            this.btRegister.Location = new System.Drawing.Point(170, 247);
+            this.btRegister.Location = new System.Drawing.Point(170, 233);
             this.btRegister.Name = "btRegister";
             this.btRegister.Size = new System.Drawing.Size(120, 35);
             this.btRegister.TabIndex = 8;
             this.btRegister.Text = "Register";
             this.btRegister.Click += new System.EventHandler(this.btRegister_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(35, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 16);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Bukutachi - Login";
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(5, 3);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 9;
-            this.guna2PictureBox1.TabStop = false;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
-            this.ClientSize = new System.Drawing.Size(530, 320);
+            this.ClientSize = new System.Drawing.Size(530, 297);
             this.Controls.Add(this.btRegister);
             this.Controls.Add(this.btLogin);
             this.Controls.Add(this.tbPassword);
@@ -249,6 +250,7 @@ namespace Bukutachi
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.pnTitleBar.ResumeLayout(false);
             this.pnTitleBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();

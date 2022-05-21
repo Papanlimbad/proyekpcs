@@ -31,6 +31,8 @@ namespace Bukutachi
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             this.pnTitleBar = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btMinimize = new Guna.UI2.WinForms.Guna2Button();
             this.btClose = new Guna.UI2.WinForms.Guna2Button();
             this.lbRegister = new System.Windows.Forms.Label();
@@ -48,8 +50,6 @@ namespace Bukutachi
             this.tbConfirmPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.btLogin = new Guna.UI2.WinForms.Guna2Button();
             this.btRegister = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +67,28 @@ namespace Bukutachi
             this.pnTitleBar.TabIndex = 2;
             this.pnTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnTitleBar_MouseDown);
             this.pnTitleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnTitleBar_MouseMove);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(35, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(147, 16);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Bukutachi - Register";
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(5, 3);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 18;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // btMinimize
             // 
@@ -319,6 +341,7 @@ namespace Bukutachi
             this.tbConfirmPassword.Size = new System.Drawing.Size(382, 26);
             this.tbConfirmPassword.TabIndex = 15;
             this.tbConfirmPassword.UseSystemPasswordChar = true;
+            this.tbConfirmPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbConfirmPassword_KeyDown);
             // 
             // btLogin
             // 
@@ -353,28 +376,6 @@ namespace Bukutachi
             this.btRegister.TabIndex = 17;
             this.btRegister.Text = "Register";
             this.btRegister.Click += new System.EventHandler(this.btRegister_Click);
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(5, 3);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 18;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(35, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 16);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Bukutachi - Register";
             // 
             // Register
             // 

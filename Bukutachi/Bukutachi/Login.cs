@@ -65,47 +65,54 @@ namespace Bukutachi
 
         private void btLogin_Click(object sender, EventArgs e)
         {
-            MySqlCommand cmd = new MySqlCommand("select count(*) from member where me_username=?username", conn);
-            cmd.Parameters.Add(new MySqlParameter("username", tbUsername.Text));
-            conn.Open();
-            int adaUser = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-            conn.Close();
-
-            if (adaUser == 0)
+            if (tbUsername.Text.Equals("") || tbPassword.Text.Equals(""))
             {
-                MessageBox.Show("Username Belum Terdaftar!");
+                MessageBox.Show("Field Harus Diisi Semua");
             }
             else
             {
-                MySqlCommand cmd2 = new MySqlCommand("select count(*) from member where me_username=?username and me_password=md5(?password)", conn);
-                cmd2.Parameters.Add(new MySqlParameter("username", tbUsername.Text));
-                cmd2.Parameters.Add(new MySqlParameter("password", tbPassword.Text));
+                MySqlCommand cmd = new MySqlCommand("select count(*) from member where me_username=?username", conn);
+                cmd.Parameters.Add(new MySqlParameter("username", tbUsername.Text));
                 conn.Open();
-                int passwordBenar = Convert.ToInt32(cmd2.ExecuteScalar().ToString());
+                int adaUser = Convert.ToInt32(cmd.ExecuteScalar().ToString());
                 conn.Close();
 
-                if (passwordBenar == 0)
+                if (adaUser == 0)
                 {
-                    MessageBox.Show("Password Salah!");
+                    MessageBox.Show("Username Belum Terdaftar!");
                 }
                 else
                 {
-                    MySqlCommand cmd3 = new MySqlCommand("select * from member where me_username=?username and me_password=md5(?password)", conn);
-                    cmd3.Parameters.Add(new MySqlParameter("username", tbUsername.Text));
-                    cmd3.Parameters.Add(new MySqlParameter("password", tbPassword.Text));
-                    clearAll();
+                    MySqlCommand cmd2 = new MySqlCommand("select count(*) from member where me_username=?username and me_password=md5(?password)", conn);
+                    cmd2.Parameters.Add(new MySqlParameter("username", tbUsername.Text));
+                    cmd2.Parameters.Add(new MySqlParameter("password", tbPassword.Text));
                     conn.Open();
-                    cmd3.ExecuteReader();
+                    int passwordBenar = Convert.ToInt32(cmd2.ExecuteScalar().ToString());
                     conn.Close();
-                    DataSet ds;
-                    MySqlDataAdapter da = new MySqlDataAdapter(cmd3);
-                    ds = new DataSet();
-                    da.Fill(ds);
-                    HomeUser homeUser = new HomeUser(conn,ds);
-                    this.Visible = false;
-                    homeUser.ShowDialog();
-                    homeUser.Dispose();
-                    this.Visible = true;
+
+                    if (passwordBenar == 0)
+                    {
+                        MessageBox.Show("Password Salah!");
+                    }
+                    else
+                    {
+                        MySqlCommand cmd3 = new MySqlCommand("select * from member where me_username=?username and me_password=md5(?password)", conn);
+                        cmd3.Parameters.Add(new MySqlParameter("username", tbUsername.Text));
+                        cmd3.Parameters.Add(new MySqlParameter("password", tbPassword.Text));
+                        clearAll();
+                        conn.Open();
+                        cmd3.ExecuteReader();
+                        conn.Close();
+                        DataSet ds;
+                        MySqlDataAdapter da = new MySqlDataAdapter(cmd3);
+                        ds = new DataSet();
+                        da.Fill(ds);
+                        HomeUser homeUser = new HomeUser(conn, ds);
+                        this.Visible = false;
+                        homeUser.ShowDialog();
+                        homeUser.Dispose();
+                        this.Visible = true;
+                    }
                 }
             }
         }
@@ -114,6 +121,19 @@ namespace Bukutachi
         {
             tbUsername.Text = "";
             tbPassword.Text = "";
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = tbUsername;
+        }
+
+        private void tbPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btLogin_Click(sender, e);
+            }
         }
     }
 }

@@ -120,5 +120,13 @@ namespace Bukutachi
             tbPassword.Text = "";
             tbConfirmPassword.Text = "";
         }
+
+        private void tbConfirmPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btRegister_Click(sender, e);
+            }
+        }
     }
 }

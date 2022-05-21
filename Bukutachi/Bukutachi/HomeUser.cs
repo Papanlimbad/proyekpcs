@@ -57,56 +57,70 @@ namespace Bukutachi
         private void HomeUser_Load(object sender, EventArgs e)
         {
             lbHello.Text = "Hello, " + user[1];
+            lbHello.Location = new Point(this.Size.Width - lbHello.Size.Width - 20, 41);
         }
 
-        private void panelBook_MouseClick(object sender, MouseEventArgs e)
+        private void loadForm(object form)
         {
-            panelHome.BackColor = Color.FromArgb(42, 33, 33);
-            panelBook.BackColor = Color.FromArgb(37, 38, 62);
-            panelHistory.BackColor = Color.FromArgb(42, 33, 33);
-            panelBorrow.BackColor = Color.FromArgb(42, 33, 33);
-            panelProfile.BackColor = Color.FromArgb(42, 33, 33);
+            if (this.pnMain.Controls.Count > 0)
+            {
+                this.pnMain.Controls.RemoveAt(0);
+            }
+            Form f = form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.pnMain.Controls.Add(f);
+            this.pnMain.Tag = f;
+            f.Show();
         }
 
-        private void panelHome_Paint(object sender, PaintEventArgs e)
+        private void clearButtonFill()
         {
-
+            btHome.FillColor = Color.FromArgb(42, 33, 33);
+            btBooks.FillColor = Color.FromArgb(42, 33, 33);
+            btHistory.FillColor = Color.FromArgb(42, 33, 33);
+            btBorrowed.FillColor = Color.FromArgb(42, 33, 33);
+            btProfile.FillColor = Color.FromArgb(42, 33, 33);
         }
 
-        private void panelHome_MouseClick(object sender, MouseEventArgs e)
+        private void btHome_Click(object sender, EventArgs e)
         {
-            panelHome.BackColor = Color.FromArgb(37, 38, 62);
-            panelBook.BackColor = Color.FromArgb(42, 33, 33);
-            panelHistory.BackColor = Color.FromArgb(42, 33, 33);
-            panelBorrow.BackColor = Color.FromArgb(42, 33, 33);
-            panelProfile.BackColor = Color.FromArgb(42, 33, 33);
+            clearButtonFill();
+            btHome.FillColor = Color.FromArgb(86, 100, 194);
+            loadForm(new FormHomeUser());
         }
 
-        private void panelHistory_MouseClick(object sender, MouseEventArgs e)
+        private void btBooks_Click(object sender, EventArgs e)
         {
-            panelHome.BackColor = Color.FromArgb(42, 33, 33);
-            panelBook.BackColor = Color.FromArgb(42, 33, 3);
-            panelHistory.BackColor = Color.FromArgb(37, 38, 62);
-            panelBorrow.BackColor = Color.FromArgb(42, 33, 33);
-            panelProfile.BackColor = Color.FromArgb(42, 33, 33);
+            clearButtonFill();
+            btBooks.FillColor = Color.FromArgb(86, 100, 194);
+            loadForm(new FormBooksUser());
         }
 
-        private void panelBorrow_MouseClick(object sender, MouseEventArgs e)
+        private void btHistory_Click(object sender, EventArgs e)
         {
-            panelHome.BackColor = Color.FromArgb(42, 33, 33);
-            panelBook.BackColor = Color.FromArgb(42, 33, 33);
-            panelHistory.BackColor = Color.FromArgb(42, 33, 33);
-            panelBorrow.BackColor = Color.FromArgb(37, 38, 62);
-            panelProfile.BackColor = Color.FromArgb(42, 33, 33);
+            clearButtonFill();
+            btHistory.FillColor = Color.FromArgb(86, 100, 194);
+            loadForm(new FormHistoryUser());
         }
 
-        private void panelProfile_MouseClick(object sender, MouseEventArgs e)
+        private void btBorrowed_Click(object sender, EventArgs e)
         {
-            panelHome.BackColor = Color.FromArgb(42, 33, 33);
-            panelBook.BackColor = Color.FromArgb(42, 33, 33);
-            panelHistory.BackColor = Color.FromArgb(42, 33, 33);
-            panelBorrow.BackColor = Color.FromArgb(42, 33, 33);
-            panelProfile.BackColor = Color.FromArgb(37, 38, 62);
+            clearButtonFill();
+            btBorrowed.FillColor = Color.FromArgb(86, 100, 194);
+            loadForm(new FormBorrowedUser());
+        }
+
+        private void btProfile_Click(object sender, EventArgs e)
+        {
+            clearButtonFill();
+            btProfile.FillColor = Color.FromArgb(86, 100, 194);
+            loadForm(new FormProfileUser());
+        }
+
+        private void btLogout_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
