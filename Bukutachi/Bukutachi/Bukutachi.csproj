@@ -56,6 +56,18 @@
     <Compile Include="EditPasswordUser.Designer.cs">
       <DependentUpon>EditPasswordUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBooksAdminClicked.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBooksAdminClicked.Designer.cs">
+      <DependentUpon>FormBooksAdminClicked.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBooksUserClicked.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBooksUserClicked.Designer.cs">
+      <DependentUpon>FormBooksUserClicked.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditUsersAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,8 +163,14 @@
     <EmbeddedResource Include="FormBooksAdmin.resx">
       <DependentUpon>FormBooksAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormBooksAdminClicked.resx">
+      <DependentUpon>FormBooksAdminClicked.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBooksUser.resx">
       <DependentUpon>FormBooksUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBooksUserClicked.resx">
+      <DependentUpon>FormBooksUserClicked.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBorrowedAdmin.resx">
       <DependentUpon>FormBorrowedAdmin.cs</DependentUpon>

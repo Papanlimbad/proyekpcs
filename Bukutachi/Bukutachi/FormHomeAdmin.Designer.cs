@@ -34,11 +34,11 @@ namespace Bukutachi
             this.lbSchedule = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.lbSeeMore1 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnAdded = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbSeeMore1 = new System.Windows.Forms.Label();
+            this.lbSeeMore2 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbSeeMore3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pnHistory = new System.Windows.Forms.Panel();
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -73,6 +73,14 @@ namespace Bukutachi
             this.guna2Elipse2.BorderRadius = 20;
             this.guna2Elipse2.TargetControl = this.pnAdded;
             // 
+            // pnAdded
+            // 
+            this.pnAdded.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.pnAdded.Location = new System.Drawing.Point(42, 258);
+            this.pnAdded.Name = "pnAdded";
+            this.pnAdded.Size = new System.Drawing.Size(670, 105);
+            this.pnAdded.TabIndex = 33;
+            // 
             // lbSeeMore1
             // 
             this.lbSeeMore1.AutoSize = true;
@@ -84,16 +92,16 @@ namespace Bukutachi
             this.lbSeeMore1.TabIndex = 31;
             this.lbSeeMore1.Text = "See More...";
             // 
-            // label1
+            // lbSeeMore2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(203)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(636, 239);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 16);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "See More...";
+            this.lbSeeMore2.AutoSize = true;
+            this.lbSeeMore2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSeeMore2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(203)))), ((int)(((byte)(192)))));
+            this.lbSeeMore2.Location = new System.Drawing.Point(636, 239);
+            this.lbSeeMore2.Name = "lbSeeMore2";
+            this.lbSeeMore2.Size = new System.Drawing.Size(76, 16);
+            this.lbSeeMore2.TabIndex = 34;
+            this.lbSeeMore2.Text = "See More...";
             // 
             // label2
             // 
@@ -106,24 +114,16 @@ namespace Bukutachi
             this.label2.TabIndex = 32;
             this.label2.Text = "Recently Added Book";
             // 
-            // pnAdded
+            // lbSeeMore3
             // 
-            this.pnAdded.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.pnAdded.Location = new System.Drawing.Point(42, 258);
-            this.pnAdded.Name = "pnAdded";
-            this.pnAdded.Size = new System.Drawing.Size(670, 105);
-            this.pnAdded.TabIndex = 33;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(203)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(636, 413);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 16);
-            this.label3.TabIndex = 34;
-            this.label3.Text = "See More...";
+            this.lbSeeMore3.AutoSize = true;
+            this.lbSeeMore3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSeeMore3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(203)))), ((int)(((byte)(192)))));
+            this.lbSeeMore3.Location = new System.Drawing.Point(636, 413);
+            this.lbSeeMore3.Name = "lbSeeMore3";
+            this.lbSeeMore3.Size = new System.Drawing.Size(76, 16);
+            this.lbSeeMore3.TabIndex = 34;
+            this.lbSeeMore3.Text = "See More...";
             // 
             // label4
             // 
@@ -154,8 +154,8 @@ namespace Bukutachi
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
             this.ClientSize = new System.Drawing.Size(765, 560);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbSeeMore3);
+            this.Controls.Add(this.lbSeeMore2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pnHistory);
@@ -180,9 +180,9 @@ namespace Bukutachi
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private System.Windows.Forms.Panel pnAdded;
         private System.Windows.Forms.Label lbSeeMore1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbSeeMore2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbSeeMore3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel pnHistory;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Bukutachi
 {
-    public partial class FormEditUsersAdmin : Form
+    public partial class FormBooksAdminClicked : Form
     {
-        public FormEditUsersAdmin()
+        public FormBooksAdminClicked()
         {
             InitializeComponent();
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

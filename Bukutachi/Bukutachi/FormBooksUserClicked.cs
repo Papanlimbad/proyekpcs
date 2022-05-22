@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Bukutachi
 {
-    public partial class FormEditUsersAdmin : Form
+    public partial class FormBooksUserClicked : Form
     {
-        public FormEditUsersAdmin()
+        public FormBooksUserClicked()
         {
             InitializeComponent();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void btAddBook_Click(object sender, EventArgs e)
         {
 
         }
