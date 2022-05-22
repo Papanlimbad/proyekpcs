@@ -33,12 +33,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Guna.UI2, Version=2.0.3.2, Culture=neutral, PublicKeyToken=4015e4865bda28a4, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.3.2\lib\net40\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=8.0.29.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,6 +62,12 @@
     </Compile>
     <Compile Include="EditPasswordUser.Designer.cs">
       <DependentUpon>EditPasswordUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCrystalReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCrystalReport.Designer.cs">
+      <DependentUpon>FormCrystalReport.cs</DependentUpon>
     </Compile>
     <Compile Include="FormBooksAdminClicked.cs">
       <SubType>Form</SubType>
@@ -178,6 +191,9 @@
     <EmbeddedResource Include="FormBorrowedUser.resx">
       <DependentUpon>FormBorrowedUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCrystalReport.resx">
+      <DependentUpon>FormCrystalReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEditUsersAdmin.resx">
       <DependentUpon>FormEditUsersAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,6 +247,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Res\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Logo\crystalreport-removebg-preview %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

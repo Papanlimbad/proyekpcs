@@ -33,18 +33,19 @@ namespace Bukutachi
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeAdmin));
             this.pnTitleBar = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btMinimize = new Guna.UI2.WinForms.Guna2Button();
             this.btClose = new Guna.UI2.WinForms.Guna2Button();
             this.lbHello = new System.Windows.Forms.Label();
             this.pnMain = new System.Windows.Forms.Panel();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.btCrystalReport = new Guna.UI2.WinForms.Guna2Button();
             this.btLogout = new Guna.UI2.WinForms.Guna2Button();
             this.btUsers = new Guna.UI2.WinForms.Guna2Button();
             this.btAddBuku = new Guna.UI2.WinForms.Guna2Button();
             this.btBorrowed = new Guna.UI2.WinForms.Guna2Button();
             this.btBooks = new Guna.UI2.WinForms.Guna2Button();
             this.btHome = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,17 +74,6 @@ namespace Bukutachi
             this.label1.Size = new System.Drawing.Size(131, 16);
             this.label1.TabIndex = 19;
             this.label1.Text = "Bukutachi - Admin";
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(5, 3);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 18;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // btMinimize
             // 
@@ -139,6 +129,34 @@ namespace Bukutachi
             this.pnMain.Size = new System.Drawing.Size(765, 560);
             this.pnMain.TabIndex = 6;
             // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 20;
+            this.guna2Elipse1.TargetControl = this.pnMain;
+            // 
+            // btCrystalReport
+            // 
+            this.btCrystalReport.BorderRadius = 10;
+            this.btCrystalReport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btCrystalReport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btCrystalReport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btCrystalReport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btCrystalReport.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btCrystalReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCrystalReport.ForeColor = System.Drawing.Color.White;
+            this.btCrystalReport.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.btCrystalReport.Image = global::Bukutachi.Properties.Resources.crystalreport_removebg_preview__1_;
+            this.btCrystalReport.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btCrystalReport.ImageOffset = new System.Drawing.Point(0, -1);
+            this.btCrystalReport.ImageSize = new System.Drawing.Size(28, 28);
+            this.btCrystalReport.Location = new System.Drawing.Point(15, 380);
+            this.btCrystalReport.Name = "btCrystalReport";
+            this.btCrystalReport.Size = new System.Drawing.Size(180, 50);
+            this.btCrystalReport.TabIndex = 18;
+            this.btCrystalReport.Text = "Report";
+            this.btCrystalReport.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btCrystalReport.Click += new System.EventHandler(this.btCrystalReport_Click);
+            // 
             // btLogout
             // 
             this.btLogout.BorderRadius = 10;
@@ -160,6 +178,7 @@ namespace Bukutachi
             this.btLogout.TabIndex = 17;
             this.btLogout.Text = "Logout";
             this.btLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btLogout.Click += new System.EventHandler(this.btLogout_Click);
             // 
             // btUsers
             // 
@@ -276,10 +295,16 @@ namespace Bukutachi
             this.btHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btHome.Click += new System.EventHandler(this.btHome_Click);
             // 
-            // guna2Elipse1
+            // guna2PictureBox1
             // 
-            this.guna2Elipse1.BorderRadius = 20;
-            this.guna2Elipse1.TargetControl = this.pnMain;
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(5, 3);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 18;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // HomeAdmin
             // 
@@ -287,6 +312,7 @@ namespace Bukutachi
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.ClientSize = new System.Drawing.Size(1000, 650);
+            this.Controls.Add(this.btCrystalReport);
             this.Controls.Add(this.btLogout);
             this.Controls.Add(this.btUsers);
             this.Controls.Add(this.btAddBuku);
@@ -325,5 +351,6 @@ namespace Bukutachi
         private Guna.UI2.WinForms.Guna2Button btBooks;
         private Guna.UI2.WinForms.Guna2Button btHome;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2Button btCrystalReport;
     }
 }

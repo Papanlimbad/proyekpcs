@@ -57,7 +57,6 @@ C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukut
 C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormBorrowedUser.resources
 C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormHistoryUser.resources
 C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormProfileUser.resources
-C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.pbPopular2.resources
 D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormHomeUser.resources
 D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.EditPasswordUser.resources
 D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormAddBookAdmin.resources
@@ -66,3 +65,33 @@ D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutach
 D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormEditUsersAdmin.resources
 D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormHomeAdmin.resources
 D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.HomeAdmin.resources
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\bin\Debug\AxShockwaveFlashObjects.dll
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\bin\Debug\stdole.dll
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.EditPasswordUser.resources
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormAddBookAdmin.resources
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormBooksAdmin.resources
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormBooksAdminClicked.resources
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormBooksUserClicked.resources
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormBorrowedAdmin.resources
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormCrystalReport.resources
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormEditUsersAdmin.resources
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormHomeAdmin.resources
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.HomeAdmin.resources
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormHomeUser.resources

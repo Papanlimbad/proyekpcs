@@ -67,9 +67,10 @@ namespace Bukutachi
         {
             btHome.FillColor= Color.FromArgb(42, 33, 33);
             btBooks.FillColor=Color.FromArgb(42, 33, 33);
-            btBorrowed.BackColor = Color.FromArgb(42, 33, 33);
-            btAddBuku.BackColor = Color.FromArgb(42, 33, 33);
-            btUsers.BackColor = Color.FromArgb(42, 33, 33);
+            btBorrowed.FillColor = Color.FromArgb(42, 33, 33);
+            btAddBuku.FillColor = Color.FromArgb(42, 33, 33);
+            btUsers.FillColor = Color.FromArgb(42, 33, 33);
+            btCrystalReport.FillColor = Color.FromArgb(42, 33, 33);
         }
 
         private void loadadmin(object form)
@@ -121,6 +122,18 @@ namespace Bukutachi
             clearbuttonadmin();
             btUsers.FillColor = Color.FromArgb(86, 100, 194);
             loadadmin(new FormHomeAdmin());
+        }
+
+        private void btCrystalReport_Click(object sender, EventArgs e)
+        {
+            clearbuttonadmin();
+            btCrystalReport.FillColor = Color.FromArgb(86, 100, 194);
+            loadadmin(new FormCrystalReport());
+        }
+
+        private void btLogout_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
