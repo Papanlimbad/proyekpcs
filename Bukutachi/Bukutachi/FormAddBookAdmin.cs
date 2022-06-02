@@ -23,6 +23,17 @@ namespace Bukutachi
 
         }
 
+        private void clearAll()
+        {
+            tbBookTitle.Text = "";
+            tbAuthor.Text = "";
+            tbGenre.Text = "";
+            tbPublisher.Text = "";
+            tbPublishDate.Text = "";
+            tbSynopsis.Text = "";
+            tbLocation.Text = "";
+        }
+
         private void btAddBook_Click(object sender, EventArgs e)
         {
             if (tbBookTitle.Text.Equals("") || tbAuthor.Text.Equals("") || tbGenre.Text.Equals("") || tbPublisher.Text.Equals("") || tbPublishDate.Text.Equals("") || tbLocation.Text.Equals(""))
@@ -31,7 +42,19 @@ namespace Bukutachi
             }
             else
             {
-                MySqlCommand cmd = new MySqlCommand("insert into buku(bu_title, bu_synopsis, bu_publishedat, bu_status, bu_pt_id)");
+                MySqlCommand cmd = new MySqlCommand("insert into buku(bu_title, bu_synopsis, bu_publishedat, bu_pt_id, bu_rb_id) values(?title, ?synopsis, ?publishedate, ?penerbit , ?rakbuku)", conn);
+                cmd.Parameters.Add(new MySqlParameter("title", tbBookTitle.Text));
+                cmd.Parameters.Add(new MySqlParameter("synopsis", tbSynopsis.Text));
+                cmd.Parameters.Add(new MySqlParameter("publishedate", tbPublishDate.Text));
+                cmd.Parameters.Add(new MySqlParameter("penerbit", tbPublisher.Text));
+                cmd.Parameters.Add(new MySqlParameter("rakbuku", tbLocation.Text));
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+                clearAll();
+
+                MessageBox.Show("Berhasil Tambah Buku");
             }
         }
     }
