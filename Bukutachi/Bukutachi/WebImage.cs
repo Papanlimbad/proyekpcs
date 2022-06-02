@@ -20,7 +20,7 @@ namespace Bukutachi {
             }
         }
 
-        private Image resizeImage(Image i, int nh) {
+        public static Image resizeImage(Image i, int nh) {
             int h = nh;
             int w = (int)Math.Round(i.Width * 1.0 * nh / i.Height);
             Bitmap b = new Bitmap(w, h);
