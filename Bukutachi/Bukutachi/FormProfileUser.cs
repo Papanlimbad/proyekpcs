@@ -30,6 +30,26 @@ namespace Bukutachi
             tbUsername.Text = user[2];
             tbAdress.Text = user[5];
             tbTelephone.Text = user[4];
+
+            MySqlCommand cmd = new MySqlCommand("SELECT bu_title AS 'Book Title', DATE_FORMAT(hp_returnat,'%d-%b-%Y') AS 'Return Date' FROM buku, hpinjam, dpinjam, MEMBER WHERE bu_id = dp_bu_id AND hp_id = dp_hp_id AND hp_status=0 AND me_id = ?id;", conn);
+            cmd.Parameters.Add(new MySqlParameter("id", user[0]));
+            conn.Open();
+            cmd.ExecuteReader();
+            conn.Close();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataSet dsBorrowed = new DataSet();
+            da.Fill(dsBorrowed);
+            dgvBorrowedBooks.DataSource = dsBorrowed.Tables[0].DefaultView;
+
+            MySqlCommand cmd2 = new MySqlCommand("SELECT bu_title AS 'Book Title', DATE_FORMAT(hp_borrowedat,'%d-%b-%Y') AS 'Borrowed Date' FROM buku, hpinjam, dpinjam, MEMBER WHERE bu_id = dp_bu_id AND hp_id = dp_hp_id AND hp_status=1 AND me_id = ?id;", conn);
+            cmd2.Parameters.Add(new MySqlParameter("id", user[0]));
+            conn.Open();
+            cmd.ExecuteReader();
+            conn.Close();
+            MySqlDataAdapter da1 = new MySqlDataAdapter(cmd);
+            DataSet dsHistory = new DataSet();
+            da.Fill(dsHistory);
+            dgvHistory.DataSource = dsHistory.Tables[0].DefaultView;
         }
 
         private void btEditProfile_Click(object sender, EventArgs e)
