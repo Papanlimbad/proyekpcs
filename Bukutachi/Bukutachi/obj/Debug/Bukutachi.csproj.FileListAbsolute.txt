@@ -117,3 +117,28 @@ D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\bin\Debug\CrystalD
 D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormBooksAdminClicked.resources
 D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormBooksUserClicked.resources
 D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormCrystalReport.resources
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.exe.config
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.EditPasswordUser.resources
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormAddBookAdmin.resources
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormBooksAdmin.resources
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormBooksAdminClicked.resources
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormBooksUser.resources
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormBooksUserClicked.resources
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormBorrowedAdmin.resources
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormBorrowedUser.resources
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormCrystalReport.resources
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormEditUsersAdmin.resources
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormHistoryUser.resources
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormHomeAdmin.resources
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormProfileUser.resources
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.HomeAdmin.resources
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.HomeUser.resources
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.Login.resources
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormHomeUser.resources
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.Properties.Resources.resources
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.Register.resources
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.csproj.GenerateResource.cache
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.exe
+C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.pdb
