@@ -167,6 +167,7 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="WebImage.cs" />
     <EmbeddedResource Include="EditPasswordUser.resx">
       <DependentUpon>EditPasswordUser.cs</DependentUpon>
     </EmbeddedResource>
