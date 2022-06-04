@@ -17,18 +17,22 @@ namespace Bukutachi
         Point posDrag;
         MySqlConnection conn;
         String[] user = new string[8];
+        DataSet homeImage;
+
         public HomeUser(MySqlConnection conn, DataSet user)
         {
             InitializeComponent();
             this.conn = conn;
-            this.user[0] = user.Tables[0].Rows[0][0].ToString();
-            this.user[1] = user.Tables[0].Rows[0][1].ToString();
-            this.user[2] = user.Tables[0].Rows[0][2].ToString();
-            this.user[3] = user.Tables[0].Rows[0][3].ToString();
-            this.user[4] = user.Tables[0].Rows[0][4].ToString();
-            this.user[5] = user.Tables[0].Rows[0][5].ToString();
-            this.user[6] = user.Tables[0].Rows[0][6].ToString();
-            this.user[7] = user.Tables[0].Rows[0][7].ToString();
+            this.user[0] = user.Tables[0].Rows[0][0].ToString(); // me_id
+            this.user[1] = user.Tables[0].Rows[0][1].ToString(); // me_name
+            this.user[2] = user.Tables[0].Rows[0][2].ToString(); // me_username
+            this.user[3] = user.Tables[0].Rows[0][3].ToString(); // me_password
+            this.user[4] = user.Tables[0].Rows[0][4].ToString(); // me_telephone
+            this.user[5] = user.Tables[0].Rows[0][5].ToString(); // me_address
+            this.user[6] = user.Tables[0].Rows[0][6].ToString(); // me_registeredat
+            this.user[7] = user.Tables[0].Rows[0][7].ToString(); //me_status
+
+            homeImage = new DataSet();
         }
 
         private void btClose_Click(object sender, EventArgs e)
@@ -60,10 +64,10 @@ namespace Bukutachi
             lbHello.Location = new Point(this.Size.Width - lbHello.Size.Width - 20, 41);
 
             btHome.FillColor = Color.FromArgb(86, 100, 194);
-            loadForm(new FormHomeUser(conn, user));
+            loadForm(new FormHomeUser(conn, user, homeImage));
         }
 
-        private void loadForm(object form)
+        public void loadForm(object form)
         {
             if (this.pnMain.Controls.Count > 0)
             {
@@ -93,7 +97,7 @@ namespace Bukutachi
         {
             clearButtonFill();
             btHome.FillColor = Color.FromArgb(86, 100, 194);
-            loadForm(new FormHomeUser(conn,user));
+            loadForm(new FormHomeUser(conn,user, homeImage));
         }
 
         private void btBooks_Click(object sender, EventArgs e)
@@ -127,6 +131,10 @@ namespace Bukutachi
         private void btLogout_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        public void updateHomeImage(DataSet homeImage) {
+            this.homeImage = homeImage;
         }
     }
 }

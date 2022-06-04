@@ -34,8 +34,8 @@ namespace Bukutachi
             using (var graphic = Graphics.FromImage(b))
             {
                 graphic.InterpolationMode = InterpolationMode.Default;
-                graphic.SmoothingMode = SmoothingMode.Default;
-                graphic.PixelOffsetMode = PixelOffsetMode.Default;
+                graphic.SmoothingMode = SmoothingMode.None;
+                graphic.PixelOffsetMode = PixelOffsetMode.None;
                 graphic.CompositingQuality = CompositingQuality.HighSpeed;
                 graphic.DrawImage(i, 0, 0, w, h);
             }
