@@ -63,6 +63,18 @@
     <Compile Include="EditPasswordUser.Designer.cs">
       <DependentUpon>EditPasswordUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddPenerbit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddPenerbit.Designer.cs">
+      <DependentUpon>FormAddPenerbit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddAuthor.Designer.cs">
+      <DependentUpon>FormAddAuthor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCrystalReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +182,12 @@
     <Compile Include="WebImage.cs" />
     <EmbeddedResource Include="EditPasswordUser.resx">
       <DependentUpon>EditPasswordUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddPenerbit.resx">
+      <DependentUpon>FormAddPenerbit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddAuthor.resx">
+      <DependentUpon>FormAddAuthor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAddBookAdmin.resx">
       <DependentUpon>FormAddBookAdmin.cs</DependentUpon>
