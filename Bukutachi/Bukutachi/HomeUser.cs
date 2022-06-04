@@ -18,6 +18,8 @@ namespace Bukutachi
         MySqlConnection conn;
         String[] user = new string[8];
         DataSet homeImage;
+        List<Int32> cart;
+
 
         public HomeUser(MySqlConnection conn, DataSet user)
         {
@@ -33,6 +35,7 @@ namespace Bukutachi
             this.user[7] = user.Tables[0].Rows[0][7].ToString(); //me_status
 
             homeImage = new DataSet();
+            cart = new List<int>();
         }
 
         private void btClose_Click(object sender, EventArgs e)
@@ -135,6 +138,18 @@ namespace Bukutachi
 
         public void updateHomeImage(DataSet homeImage) {
             this.homeImage = homeImage;
+        }
+
+        public void addBookToCart(int id) {
+            cart.Add(id);
+        }
+
+        public void removeBookFromCart(int id) {
+            cart.Remove(id);
+        }
+
+        public bool isInCart(int id) {
+            return cart.Contains(id);
         }
     }
 }

@@ -32,7 +32,6 @@ namespace Bukutachi
             this.components = new System.ComponentModel.Container();
             this.lbBack = new System.Windows.Forms.Label();
             this.pnSynopsis = new Guna.UI2.WinForms.Guna2Panel();
-            this.lbDesc = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btPinjam = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -59,6 +58,8 @@ namespace Bukutachi
             this.lbBT = new System.Windows.Forms.Label();
             this.pbCover = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.tbDescription = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btCancel = new Guna.UI2.WinForms.Guna2Button();
             this.pnSynopsis.SuspendLayout();
             this.pnBuku.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCover)).BeginInit();
@@ -67,6 +68,7 @@ namespace Bukutachi
             // lbBack
             // 
             this.lbBack.AutoSize = true;
+            this.lbBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBack.ForeColor = System.Drawing.Color.White;
             this.lbBack.Location = new System.Drawing.Point(17, 16);
@@ -75,28 +77,18 @@ namespace Bukutachi
             this.lbBack.Size = new System.Drawing.Size(168, 24);
             this.lbBack.TabIndex = 7;
             this.lbBack.Text = "< Back to Search";
+            this.lbBack.Click += new System.EventHandler(this.lbBack_Click);
             // 
             // pnSynopsis
             // 
             this.pnSynopsis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.pnSynopsis.Controls.Add(this.lbDesc);
+            this.pnSynopsis.Controls.Add(this.tbDescription);
             this.pnSynopsis.Controls.Add(this.label2);
             this.pnSynopsis.Location = new System.Drawing.Point(21, 343);
             this.pnSynopsis.Margin = new System.Windows.Forms.Padding(4);
             this.pnSynopsis.Name = "pnSynopsis";
             this.pnSynopsis.Size = new System.Drawing.Size(983, 257);
             this.pnSynopsis.TabIndex = 8;
-            // 
-            // lbDesc
-            // 
-            this.lbDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDesc.ForeColor = System.Drawing.Color.White;
-            this.lbDesc.Location = new System.Drawing.Point(23, 63);
-            this.lbDesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbDesc.Name = "lbDesc";
-            this.lbDesc.Size = new System.Drawing.Size(935, 164);
-            this.lbDesc.TabIndex = 59;
-            this.lbDesc.Text = "No Description";
             // 
             // label2
             // 
@@ -113,6 +105,7 @@ namespace Bukutachi
             // btPinjam
             // 
             this.btPinjam.BorderRadius = 5;
+            this.btPinjam.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btPinjam.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btPinjam.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
             this.btPinjam.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
@@ -187,73 +180,73 @@ namespace Bukutachi
             // 
             // lbLocation
             // 
-            this.lbLocation.AutoSize = true;
+            this.lbLocation.AutoEllipsis = true;
             this.lbLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLocation.ForeColor = System.Drawing.Color.White;
             this.lbLocation.Location = new System.Drawing.Point(196, 222);
             this.lbLocation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbLocation.Name = "lbLocation";
-            this.lbLocation.Size = new System.Drawing.Size(17, 24);
+            this.lbLocation.Size = new System.Drawing.Size(423, 24);
             this.lbLocation.TabIndex = 58;
             this.lbLocation.Text = "-";
             // 
             // lbPublishDate
             // 
-            this.lbPublishDate.AutoSize = true;
+            this.lbPublishDate.AutoEllipsis = true;
             this.lbPublishDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPublishDate.ForeColor = System.Drawing.Color.White;
             this.lbPublishDate.Location = new System.Drawing.Point(196, 182);
             this.lbPublishDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPublishDate.Name = "lbPublishDate";
-            this.lbPublishDate.Size = new System.Drawing.Size(17, 24);
+            this.lbPublishDate.Size = new System.Drawing.Size(423, 24);
             this.lbPublishDate.TabIndex = 57;
             this.lbPublishDate.Text = "-";
             // 
             // lbPublisher
             // 
-            this.lbPublisher.AutoSize = true;
+            this.lbPublisher.AutoEllipsis = true;
             this.lbPublisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPublisher.ForeColor = System.Drawing.Color.White;
             this.lbPublisher.Location = new System.Drawing.Point(196, 137);
             this.lbPublisher.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPublisher.Name = "lbPublisher";
-            this.lbPublisher.Size = new System.Drawing.Size(17, 24);
+            this.lbPublisher.Size = new System.Drawing.Size(423, 24);
             this.lbPublisher.TabIndex = 56;
             this.lbPublisher.Text = "-";
             // 
             // lbGenre
             // 
-            this.lbGenre.AutoSize = true;
+            this.lbGenre.AutoEllipsis = true;
             this.lbGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGenre.ForeColor = System.Drawing.Color.White;
             this.lbGenre.Location = new System.Drawing.Point(196, 94);
             this.lbGenre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbGenre.Name = "lbGenre";
-            this.lbGenre.Size = new System.Drawing.Size(17, 24);
+            this.lbGenre.Size = new System.Drawing.Size(423, 24);
             this.lbGenre.TabIndex = 55;
             this.lbGenre.Text = "-";
             // 
             // lbAuthor
             // 
-            this.lbAuthor.AutoSize = true;
+            this.lbAuthor.AutoEllipsis = true;
             this.lbAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAuthor.ForeColor = System.Drawing.Color.White;
             this.lbAuthor.Location = new System.Drawing.Point(196, 50);
             this.lbAuthor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAuthor.Name = "lbAuthor";
-            this.lbAuthor.Size = new System.Drawing.Size(17, 24);
+            this.lbAuthor.Size = new System.Drawing.Size(423, 24);
             this.lbAuthor.TabIndex = 54;
             this.lbAuthor.Text = "-";
             // 
             // lbBookTitle
             // 
-            this.lbBookTitle.AutoSize = true;
+            this.lbBookTitle.AutoEllipsis = true;
             this.lbBookTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBookTitle.ForeColor = System.Drawing.Color.White;
             this.lbBookTitle.Location = new System.Drawing.Point(196, 9);
             this.lbBookTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbBookTitle.Name = "lbBookTitle";
-            this.lbBookTitle.Size = new System.Drawing.Size(17, 24);
+            this.lbBookTitle.Size = new System.Drawing.Size(423, 24);
             this.lbBookTitle.TabIndex = 53;
             this.lbBookTitle.Text = "-";
             // 
@@ -416,6 +409,53 @@ namespace Bukutachi
             this.guna2Elipse2.BorderRadius = 20;
             this.guna2Elipse2.TargetControl = this.pnBuku;
             // 
+            // tbDescription
+            // 
+            this.tbDescription.AutoScroll = true;
+            this.tbDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbDescription.DefaultText = "No Description";
+            this.tbDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbDescription.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbDescription.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbDescription.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbDescription.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.tbDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbDescription.ForeColor = System.Drawing.Color.White;
+            this.tbDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbDescription.Location = new System.Drawing.Point(26, 48);
+            this.tbDescription.Multiline = true;
+            this.tbDescription.Name = "tbDescription";
+            this.tbDescription.PasswordChar = '\0';
+            this.tbDescription.PlaceholderForeColor = System.Drawing.Color.Transparent;
+            this.tbDescription.PlaceholderText = "";
+            this.tbDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbDescription.SelectedText = "";
+            this.tbDescription.Size = new System.Drawing.Size(936, 182);
+            this.tbDescription.TabIndex = 48;
+            // 
+            // btCancel
+            // 
+            this.btCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btCancel.BorderRadius = 5;
+            this.btCancel.BorderThickness = 3;
+            this.btCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btCancel.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btCancel.FillColor = System.Drawing.Color.White;
+            this.btCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btCancel.Location = new System.Drawing.Point(839, 630);
+            this.btCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btCancel.Name = "btCancel";
+            this.btCancel.Size = new System.Drawing.Size(165, 38);
+            this.btCancel.TabIndex = 19;
+            this.btCancel.Tag = "0";
+            this.btCancel.Text = "Cancel";
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
+            // 
             // FormBooksUserClicked
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -426,6 +466,7 @@ namespace Bukutachi
             this.Controls.Add(this.pnBuku);
             this.Controls.Add(this.lbAvailable);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.btCancel);
             this.Controls.Add(this.btPinjam);
             this.Controls.Add(this.pnSynopsis);
             this.Controls.Add(this.lbBack);
@@ -473,7 +514,8 @@ namespace Bukutachi
         private System.Windows.Forms.Label lbG;
         private System.Windows.Forms.Label lbA;
         private System.Windows.Forms.Label lbBT;
-        private System.Windows.Forms.Label lbDesc;
         private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2TextBox tbDescription;
+        private Guna.UI2.WinForms.Guna2Button btCancel;
     }
 }

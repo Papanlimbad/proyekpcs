@@ -68,7 +68,7 @@ namespace Bukutachi
 
         private void FormHomeUser_Click(object sender, EventArgs e) {
             Console.WriteLine($"Opening Book {((PictureBox)sender).Tag.ToString()}");
-            ((HomeUser)(this.Parent.Parent)).loadForm(new FormBooksUserClicked(conn, Convert.ToInt32(((PictureBox)sender).Tag.ToString())));
+            ((HomeUser)(this.Parent.Parent)).loadForm(new FormBooksUserClicked(conn, Convert.ToInt32(((PictureBox)sender).Tag.ToString()), this));
         }
 
         private void getPopularBook() {
@@ -104,7 +104,7 @@ namespace Bukutachi
                 r["id"] = books.Rows[i]["id"];
                 r["image"] = WebImage.fromUrl(books.Rows[i]["image"].ToString());
                 homeBooks.Tables["Newest"].Rows.Add(r);
-                Console.WriteLine($"Loading from {books.Rows[i]["image"].ToString()}");
+                Console.WriteLine($"Loading from {books.Rows[i]["image"]}");
             }
         }
 
