@@ -114,7 +114,7 @@ namespace Bukutachi
         {
             clearbuttonadmin();
             btAddBuku.FillColor = Color.FromArgb(86, 100, 194);
-            loadadmin(new FormAddBookAdmin());
+            loadadmin(new FormAddBookAdmin(conn));
         }
 
         private void btUsers_Click(object sender, EventArgs e)

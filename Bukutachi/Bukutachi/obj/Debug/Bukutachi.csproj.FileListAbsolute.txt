@@ -182,3 +182,6 @@ D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutach
 C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.EditAccountAdmin.resources
 C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormAddPenerbit.resources
 C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormAddAuthor.resources
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.EditAccountAdmin.resources
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormAddPenerbit.resources
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormAddAuthor.resources

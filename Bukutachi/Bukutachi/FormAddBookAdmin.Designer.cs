@@ -31,6 +31,9 @@ namespace Bukutachi
         {
             this.components = new System.ComponentModel.Container();
             this.lbSynopsis = new Guna.UI2.WinForms.Guna2Panel();
+            this.PublishDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.cbPublisher = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbGenre = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbAuthor = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btAddPublisher = new Guna.UI2.WinForms.Guna2Button();
             this.btAddAuthor = new Guna.UI2.WinForms.Guna2Button();
@@ -53,11 +56,8 @@ namespace Bukutachi
             this.lbAuthor = new System.Windows.Forms.Label();
             this.lbBookTItle = new System.Windows.Forms.Label();
             this.btAddImage = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.cbGenre = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbPublisher = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.PublishDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.lbSynopsis.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -95,6 +95,62 @@ namespace Bukutachi
             this.lbSynopsis.Name = "lbSynopsis";
             this.lbSynopsis.Size = new System.Drawing.Size(740, 535);
             this.lbSynopsis.TabIndex = 0;
+            // 
+            // PublishDate
+            // 
+            this.PublishDate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.PublishDate.BorderRadius = 7;
+            this.PublishDate.BorderThickness = 1;
+            this.PublishDate.Checked = true;
+            this.PublishDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.PublishDate.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.PublishDate.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.PublishDate.ForeColor = System.Drawing.Color.White;
+            this.PublishDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.PublishDate.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.PublishDate.Location = new System.Drawing.Point(153, 227);
+            this.PublishDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.PublishDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.PublishDate.Name = "PublishDate";
+            this.PublishDate.Size = new System.Drawing.Size(374, 31);
+            this.PublishDate.TabIndex = 46;
+            this.PublishDate.Value = new System.DateTime(2022, 6, 4, 19, 40, 49, 536);
+            // 
+            // cbPublisher
+            // 
+            this.cbPublisher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.cbPublisher.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.cbPublisher.BorderRadius = 7;
+            this.cbPublisher.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbPublisher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPublisher.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.cbPublisher.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbPublisher.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbPublisher.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbPublisher.ForeColor = System.Drawing.Color.White;
+            this.cbPublisher.ItemHeight = 30;
+            this.cbPublisher.Location = new System.Drawing.Point(153, 183);
+            this.cbPublisher.Name = "cbPublisher";
+            this.cbPublisher.Size = new System.Drawing.Size(374, 36);
+            this.cbPublisher.TabIndex = 45;
+            // 
+            // cbGenre
+            // 
+            this.cbGenre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.cbGenre.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.cbGenre.BorderRadius = 7;
+            this.cbGenre.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGenre.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.cbGenre.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbGenre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbGenre.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbGenre.ForeColor = System.Drawing.Color.White;
+            this.cbGenre.ItemHeight = 30;
+            this.cbGenre.Location = new System.Drawing.Point(153, 141);
+            this.cbGenre.Name = "cbGenre";
+            this.cbGenre.Size = new System.Drawing.Size(374, 36);
+            this.cbGenre.TabIndex = 44;
             // 
             // cbAuthor
             // 
@@ -416,67 +472,7 @@ namespace Bukutachi
             this.btAddImage.TabIndex = 18;
             this.btAddImage.Tag = "0";
             this.btAddImage.Text = "Add Image";
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 20;
-            this.guna2Elipse1.TargetControl = this.lbSynopsis;
-            // 
-            // cbGenre
-            // 
-            this.cbGenre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.cbGenre.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.cbGenre.BorderRadius = 7;
-            this.cbGenre.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbGenre.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.cbGenre.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbGenre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbGenre.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cbGenre.ForeColor = System.Drawing.Color.White;
-            this.cbGenre.ItemHeight = 30;
-            this.cbGenre.Location = new System.Drawing.Point(153, 141);
-            this.cbGenre.Name = "cbGenre";
-            this.cbGenre.Size = new System.Drawing.Size(374, 36);
-            this.cbGenre.TabIndex = 44;
-            // 
-            // cbPublisher
-            // 
-            this.cbPublisher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.cbPublisher.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.cbPublisher.BorderRadius = 7;
-            this.cbPublisher.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbPublisher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPublisher.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.cbPublisher.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbPublisher.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbPublisher.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cbPublisher.ForeColor = System.Drawing.Color.White;
-            this.cbPublisher.ItemHeight = 30;
-            this.cbPublisher.Location = new System.Drawing.Point(153, 183);
-            this.cbPublisher.Name = "cbPublisher";
-            this.cbPublisher.Size = new System.Drawing.Size(374, 36);
-            this.cbPublisher.TabIndex = 45;
-            // 
-            // PublishDate
-            // 
-            this.PublishDate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.PublishDate.BorderRadius = 7;
-            this.PublishDate.BorderThickness = 1;
-            this.PublishDate.Checked = true;
-            this.PublishDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.PublishDate.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.PublishDate.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.PublishDate.ForeColor = System.Drawing.Color.White;
-            this.PublishDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.PublishDate.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.PublishDate.Location = new System.Drawing.Point(153, 227);
-            this.PublishDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.PublishDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.PublishDate.Name = "PublishDate";
-            this.PublishDate.Size = new System.Drawing.Size(374, 31);
-            this.PublishDate.TabIndex = 46;
-            this.PublishDate.Value = new System.DateTime(2022, 6, 4, 19, 40, 49, 536);
+            this.btAddImage.Click += new System.EventHandler(this.btAddImage_Click);
             // 
             // guna2PictureBox1
             // 
@@ -486,6 +482,11 @@ namespace Bukutachi
             this.guna2PictureBox1.Size = new System.Drawing.Size(124, 187);
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 20;
+            this.guna2Elipse1.TargetControl = this.lbSynopsis;
             // 
             // FormAddBookAdmin
             // 
@@ -497,6 +498,7 @@ namespace Bukutachi
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAddBookAdmin";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FormAddBookAdmin_Load);
             this.lbSynopsis.ResumeLayout(false);
             this.lbSynopsis.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();

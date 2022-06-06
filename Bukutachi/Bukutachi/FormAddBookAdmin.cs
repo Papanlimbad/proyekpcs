@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
+
 
 
 
@@ -17,12 +19,22 @@ namespace Bukutachi
     public partial class FormAddBookAdmin : Form
     {
         MySqlConnection conn;
+        MySqlCommand cmd;
+        MySqlDataAdapter da;
+        DataTable dt;
+        string sqlpenulis;
+        string sqlgenre;
+        string sqlpublisher;
 
-        public FormAddBookAdmin()
+        public FormAddBookAdmin(MySqlConnection conn)
         {
             InitializeComponent();
             this.conn = conn;
 
+            
+            LoadComboPenulis(sqlpenulis, "ps_name", "ps_id");
+            LoadComboGenre(sqlgenre, "ge_name", "ge_id");
+            LoadComboPublisher(sqlpublisher, "pt_name", "pt_id");
         }
 
         private void clearAll()
@@ -87,6 +99,115 @@ namespace Bukutachi
             FormAddPenerbit penerbit = new FormAddPenerbit();
             penerbit.ShowDialog();
             penerbit.Dispose();
+        }
+
+        private void FormAddBookAdmin_Load(object sender, EventArgs e)
+        {
+ 
+        }
+
+        private void LoadComboPenulis(string sqlpenulis, string DisplayMember, string ValueMember)
+        {
+            sqlpenulis = "SELECT * FROM penulis";
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = sqlpenulis;
+                da = new MySqlDataAdapter();
+                da.SelectCommand = cmd;
+                dt = new DataTable();
+                da.Fill(dt);
+
+                cbAuthor.DataSource = dt;
+                cbAuthor.DisplayMember = DisplayMember;
+                cbAuthor.ValueMember = ValueMember;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void LoadComboGenre(string sqlpengarang, string DisplayMember, string ValueMember)
+        {
+            sqlgenre = "SELECT * FROM genre";
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = sqlgenre;
+                da = new MySqlDataAdapter();
+                da.SelectCommand = cmd;
+                dt = new DataTable();
+                da.Fill(dt);
+
+                cbGenre.DataSource = dt;
+                cbGenre.DisplayMember = DisplayMember;
+                cbGenre.ValueMember = ValueMember;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void LoadComboPublisher(string sqlpublisher, string DisplayMember, string ValueMember)
+        {
+            sqlpublisher = "SELECT * FROM penerbit";
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = sqlpublisher;
+                da = new MySqlDataAdapter();
+                da.SelectCommand = cmd;
+                dt = new DataTable();
+                da.Fill(dt);
+
+                cbPublisher.DataSource = dt;
+                cbPublisher.DisplayMember = DisplayMember;
+                cbPublisher.ValueMember = ValueMember;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void btAddImage_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

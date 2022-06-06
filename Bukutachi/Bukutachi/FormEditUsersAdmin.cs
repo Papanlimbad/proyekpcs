@@ -71,5 +71,10 @@ namespace Bukutachi
             da.Fill(dsBorrowed);
             dgvUser.DataSource = dsBorrowed.Tables[0].DefaultView;
         }
+
+        private void btSearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
