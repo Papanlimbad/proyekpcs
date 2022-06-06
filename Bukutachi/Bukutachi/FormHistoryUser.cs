@@ -35,5 +35,10 @@ namespace Bukutachi
             da.Fill(dsBorrowed);
             dgvHistory.DataSource = dsBorrowed.Tables[0].DefaultView;
         }
+
+        private void dgvHistory_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+        }
     }
 }

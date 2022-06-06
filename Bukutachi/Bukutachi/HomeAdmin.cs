@@ -121,7 +121,7 @@ namespace Bukutachi
         {
             clearbuttonadmin();
             btUsers.FillColor = Color.FromArgb(86, 100, 194);
-            loadadmin(new FormHomeAdmin());
+            loadadmin(new FormEditUsersAdmin(conn));
         }
 
         private void btCrystalReport_Click(object sender, EventArgs e)

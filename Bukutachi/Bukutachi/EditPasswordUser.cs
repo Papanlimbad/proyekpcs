@@ -22,6 +22,8 @@ namespace Bukutachi
             InitializeComponent();
             this.conn = conn;
             this.user = user;
+
+
         }
 
         private void btClose_Click(object sender, EventArgs e)

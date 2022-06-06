@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditAccountAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditAccountAdmin.Designer.cs">
+      <DependentUpon>EditAccountAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditPasswordUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="WebImage.cs" />
+    <EmbeddedResource Include="EditAccountAdmin.resx">
+      <DependentUpon>EditAccountAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditPasswordUser.resx">
       <DependentUpon>EditPasswordUser.cs</DependentUpon>
     </EmbeddedResource>
