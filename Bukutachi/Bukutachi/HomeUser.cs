@@ -114,21 +114,24 @@ namespace Bukutachi
         {
             clearButtonFill();
             btHistory.FillColor = Color.FromArgb(86, 100, 194);
-            loadForm(new FormHistoryUser());
+            loadForm(new FormHistoryUser(conn,user));
         }
 
         private void btBorrowed_Click(object sender, EventArgs e)
         {
             clearButtonFill();
             btBorrowed.FillColor = Color.FromArgb(86, 100, 194);
-            loadForm(new FormBorrowedUser());
+            loadForm(new FormBorrowedUser(conn, user));
         }
 
         private void btProfile_Click(object sender, EventArgs e)
         {
             clearButtonFill();
             btProfile.FillColor = Color.FromArgb(86, 100, 194);
-            loadForm(new FormProfileUser(conn,user));
+            FormProfileUser fpu = new FormProfileUser(conn, user);
+            fpu.lbSeeMore1.Click += new EventHandler(lbClick);
+            fpu.lbSeeMore2.Click += new EventHandler(lbClick);
+            loadForm(fpu);
         }
 
         private void btLogout_Click(object sender, EventArgs e)
@@ -150,6 +153,19 @@ namespace Bukutachi
 
         public bool isInCart(int id) {
             return cart.Contains(id);
+        }
+
+        private void lbClick(object sender, EventArgs e)
+        {
+            Label temp = (Label)sender;
+            if (temp.Tag.Equals("3"))
+            {
+                btBorrowed_Click(sender, e);
+            }
+            else if (temp.Tag.Equals("4"))
+            {
+                btHistory_Click(sender, e);
+            }
         }
     }
 }

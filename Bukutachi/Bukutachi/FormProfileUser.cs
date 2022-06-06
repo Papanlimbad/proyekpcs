@@ -31,7 +31,7 @@ namespace Bukutachi
             tbAdress.Text = user[5];
             tbTelephone.Text = user[4];
 
-            MySqlCommand cmd = new MySqlCommand("SELECT bu_title AS 'Book Title', DATE_FORMAT(hp_returnat,'%d-%b-%Y') AS 'Return Date' FROM buku, hpinjam, dpinjam, MEMBER WHERE bu_id = dp_bu_id AND hp_id = dp_hp_id AND hp_status=0 AND me_id = ?id;", conn);
+            MySqlCommand cmd = new MySqlCommand("SELECT bu_title AS 'Book Title', DATE_FORMAT(DATE_ADD(hp_borrowedat,INTERVAL 7 DAY),'%d-%b-%Y') AS 'Expected Return Date' FROM buku, hpinjam, dpinjam, MEMBER WHERE bu_id = dp_bu_id AND hp_id = dp_hp_id AND hp_status=0 AND me_id = ?id;", conn);
             cmd.Parameters.Add(new MySqlParameter("id", user[0]));
             conn.Open();
             cmd.ExecuteReader();
@@ -44,11 +44,11 @@ namespace Bukutachi
             MySqlCommand cmd2 = new MySqlCommand("SELECT bu_title AS 'Book Title', DATE_FORMAT(hp_borrowedat,'%d-%b-%Y') AS 'Borrowed Date' FROM buku, hpinjam, dpinjam, MEMBER WHERE bu_id = dp_bu_id AND hp_id = dp_hp_id AND hp_status=1 AND me_id = ?id;", conn);
             cmd2.Parameters.Add(new MySqlParameter("id", user[0]));
             conn.Open();
-            cmd.ExecuteReader();
+            cmd2.ExecuteReader();
             conn.Close();
-            MySqlDataAdapter da1 = new MySqlDataAdapter(cmd);
+            MySqlDataAdapter da1 = new MySqlDataAdapter(cmd2);
             DataSet dsHistory = new DataSet();
-            da.Fill(dsHistory);
+            da1.Fill(dsHistory);
             dgvHistory.DataSource = dsHistory.Tables[0].DefaultView;
         }
 

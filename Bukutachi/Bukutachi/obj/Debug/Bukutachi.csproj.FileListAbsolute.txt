@@ -142,7 +142,6 @@ C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\
 C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.exe
 C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.pdb
-D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.csproj.CopyComplete
 C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\bin\Debug\Bukutachi.exe.config
 C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\bin\Debug\Bukutachi.exe
 C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\bin\Debug\Bukutachi.pdb
@@ -177,3 +176,5 @@ C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\
 C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\bin\Debug\K4os.Hash.xxHash.dll
 C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\ASUS\Desktop\iSTTS\SEMESTER 4\Proyek PCS\bukutachi\proyekpcs\Bukutachi\Bukutachi\bin\Debug\MySql.Data.xml
+D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormAddPenerbit.resources
+D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormAddAuthor.resources
