@@ -25,14 +25,28 @@ namespace Bukutachi
             }
         }
 
-        public static Image resizeImage(Image i, int nh)
+        public static Image resizeImage(Image i, int nw, int nh)
         {
-            int h = nh;
-            int w = (int)Math.Round(i.Width * 1.0 * nh / i.Height);
-            Bitmap b = new Bitmap(w, h);
+            Bitmap b = new Bitmap(nw, nh);
 
             using (var graphic = Graphics.FromImage(b))
             {
+                graphic.InterpolationMode = InterpolationMode.Default;
+                graphic.SmoothingMode = SmoothingMode.None;
+                graphic.PixelOffsetMode = PixelOffsetMode.None;
+                graphic.CompositingQuality = CompositingQuality.HighSpeed;
+                graphic.DrawImage(i, 0, 0, nw, nh);
+            }
+            return b;
+        }
+
+        public static Image resizeHeightImage(Image i, int nw) {
+            int w = nw;
+            int h = (int)Math.Round(nw * i.Height * 1.0 / i.Width);
+            Console.WriteLine($"{w} - {h}");
+            Bitmap b = new Bitmap(w, h);
+
+            using (var graphic = Graphics.FromImage(b)) {
                 graphic.InterpolationMode = InterpolationMode.Default;
                 graphic.SmoothingMode = SmoothingMode.None;
                 graphic.PixelOffsetMode = PixelOffsetMode.None;
@@ -42,9 +56,10 @@ namespace Bukutachi
             return b;
         }
 
-        public static Image resizeHeightImage(Image i, int nw) {
-            int w = nw;
-            int h = (int)Math.Floor(nw / i.Width * i.Height * 1.0);
+        public static Image resizeWidthImage(Image i, int nh) {
+            int h = nh;
+            int w = (int)Math.Round(nh * i.Width * 1.0 / i.Height);
+            Console.WriteLine($"{w} - {h}");
             Bitmap b = new Bitmap(w, h);
 
             using (var graphic = Graphics.FromImage(b)) {

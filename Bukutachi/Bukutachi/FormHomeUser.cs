@@ -110,7 +110,7 @@ namespace Bukutachi
 
         private void loadImageToPictureBox() {
             for (int i = 0; i < 7; i++) {
-                news[i].Image = WebImage.resizeImage((Image)homeBooks.Tables["Newest"].Rows[i]["image"], 132);
+                news[i].Image = WebImage.resizeImage((Image)homeBooks.Tables["Newest"].Rows[i]["image"], news[i].Width, news[i].Height);
                 news[i].Tag = homeBooks.Tables["Newest"].Rows[i]["id"];
             }
         }

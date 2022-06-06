@@ -56,7 +56,7 @@ namespace Bukutachi
             lbPublishDate.Text = dt.Rows[0]["Publish Date"].ToString();
             lbLocation.Text = $"Shelf {dt.Rows[0]["Location"]}";
             tbDescription.Text = dt.Rows[0]["Description"].ToString();
-            pbCover.Image = WebImage.resizeImage(WebImage.fromUrl(dt.Rows[0]["Image"].ToString()), 257);
+            pbCover.Image = WebImage.resizeImage(WebImage.fromUrl(dt.Rows[0]["Image"].ToString()), pbCover.Width, pbCover.Height);
 
             if(Convert.ToInt32(dt.Rows[0]["Status"]) == 0) {
                 //Dipinjam
