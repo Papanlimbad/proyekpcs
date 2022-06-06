@@ -41,5 +41,20 @@ namespace Bukutachi
             }
             return b;
         }
+
+        public static Image resizeHeightImage(Image i, int nw) {
+            int w = nw;
+            int h = (int)Math.Floor(nw / i.Width * i.Height * 1.0);
+            Bitmap b = new Bitmap(w, h);
+
+            using (var graphic = Graphics.FromImage(b)) {
+                graphic.InterpolationMode = InterpolationMode.Default;
+                graphic.SmoothingMode = SmoothingMode.None;
+                graphic.PixelOffsetMode = PixelOffsetMode.None;
+                graphic.CompositingQuality = CompositingQuality.HighSpeed;
+                graphic.DrawImage(i, 0, 0, w, h);
+            }
+            return b;
+        }
     }
 }

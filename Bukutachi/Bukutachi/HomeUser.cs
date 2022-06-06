@@ -121,7 +121,7 @@ namespace Bukutachi
         {
             clearButtonFill();
             btBorrowed.FillColor = Color.FromArgb(86, 100, 194);
-            loadForm(new FormBorrowedUser(conn, user));
+            loadForm(new FormBorrowedUser(conn, cart));
         }
 
         private void btProfile_Click(object sender, EventArgs e)
