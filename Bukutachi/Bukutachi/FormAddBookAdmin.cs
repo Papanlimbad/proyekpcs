@@ -77,14 +77,16 @@ namespace Bukutachi
 
         private void btAddAuthor_Click(object sender, EventArgs e)
         {
-
+            FormAddAuthor author = new FormAddAuthor();
+            author.ShowDialog();
+            author.Dispose();
         }
 
         private void btAddPublisher_Click(object sender, EventArgs e)
         {
-            FormAddAuthor author = new FormAddAuthor();
-            author.ShowDialog();
-            author.Dispose();
+            FormAddPenerbit penerbit = new FormAddPenerbit();
+            penerbit.ShowDialog();
+            penerbit.Dispose();
         }
     }
 }
