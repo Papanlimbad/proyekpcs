@@ -326,6 +326,7 @@ namespace Bukutachi
             this.dgvBorrowedBooks.ThemeStyle.RowsStyle.Height = 22;
             this.dgvBorrowedBooks.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
             this.dgvBorrowedBooks.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvBorrowedBooks.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBorrowedBooks_CellDoubleClick);
             // 
             // FormBooksUser
             // 

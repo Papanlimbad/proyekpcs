@@ -31,105 +31,179 @@ namespace Bukutachi
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBooksAdmin));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnSearch = new System.Windows.Forms.Panel();
-            this.btSearch = new Guna.UI2.WinForms.Guna2Button();
-            this.cbSortBy2 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbSortBy1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.rbDesc = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rbAsc = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.cbSortBy = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.cbSearchBy = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lbSort = new System.Windows.Forms.Label();
             this.cbFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lbGenre = new System.Windows.Forms.Label();
             this.tbUsername = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pnResult = new System.Windows.Forms.Panel();
-            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.dgvBorrowedBooks = new Guna.UI2.WinForms.Guna2DataGridView();
             this.pnSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBorrowedBooks)).BeginInit();
             this.SuspendLayout();
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.BorderRadius = 20;
+            this.guna2Elipse2.TargetControl = this.dgvBorrowedBooks;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 20;
+            this.guna2Elipse1.TargetControl = this.pnSearch;
             // 
             // pnSearch
             // 
             this.pnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.pnSearch.Controls.Add(this.btSearch);
-            this.pnSearch.Controls.Add(this.cbSortBy2);
-            this.pnSearch.Controls.Add(this.cbSortBy1);
+            this.pnSearch.Controls.Add(this.rbDesc);
+            this.pnSearch.Controls.Add(this.rbAsc);
+            this.pnSearch.Controls.Add(this.cbSortBy);
+            this.pnSearch.Controls.Add(this.label1);
+            this.pnSearch.Controls.Add(this.guna2Button1);
+            this.pnSearch.Controls.Add(this.cbSearchBy);
             this.pnSearch.Controls.Add(this.lbSort);
             this.pnSearch.Controls.Add(this.cbFilter);
             this.pnSearch.Controls.Add(this.lbGenre);
             this.pnSearch.Controls.Add(this.tbUsername);
             this.pnSearch.Location = new System.Drawing.Point(13, 13);
             this.pnSearch.Name = "pnSearch";
-            this.pnSearch.Size = new System.Drawing.Size(740, 89);
-            this.pnSearch.TabIndex = 1;
+            this.pnSearch.Size = new System.Drawing.Size(740, 130);
+            this.pnSearch.TabIndex = 3;
             // 
-            // btSearch
+            // rbDesc
             // 
-            this.btSearch.BorderRadius = 10;
-            this.btSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.btSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btSearch.ForeColor = System.Drawing.Color.White;
-            this.btSearch.Image = ((System.Drawing.Image)(resources.GetObject("btSearch.Image")));
-            this.btSearch.ImageSize = new System.Drawing.Size(40, 40);
-            this.btSearch.Location = new System.Drawing.Point(660, 14);
-            this.btSearch.Name = "btSearch";
-            this.btSearch.Size = new System.Drawing.Size(65, 65);
-            this.btSearch.TabIndex = 11;
+            this.rbDesc.AutoSize = true;
+            this.rbDesc.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbDesc.CheckedState.BorderThickness = 0;
+            this.rbDesc.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbDesc.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rbDesc.CheckedState.InnerOffset = -4;
+            this.rbDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbDesc.ForeColor = System.Drawing.Color.White;
+            this.rbDesc.Location = new System.Drawing.Point(484, 97);
+            this.rbDesc.Name = "rbDesc";
+            this.rbDesc.Size = new System.Drawing.Size(114, 22);
+            this.rbDesc.TabIndex = 15;
+            this.rbDesc.Text = "Descending";
+            this.rbDesc.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rbDesc.UncheckedState.BorderThickness = 2;
+            this.rbDesc.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rbDesc.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             // 
-            // cbSortBy2
+            // rbAsc
             // 
-            this.cbSortBy2.BackColor = System.Drawing.Color.Transparent;
-            this.cbSortBy2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.cbSortBy2.BorderRadius = 7;
-            this.cbSortBy2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbSortBy2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSortBy2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.cbSortBy2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbSortBy2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbSortBy2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cbSortBy2.ForeColor = System.Drawing.Color.White;
-            this.cbSortBy2.ItemHeight = 25;
-            this.cbSortBy2.Items.AddRange(new object[] {
-            "Ascending",
-            "Descending"});
-            this.cbSortBy2.Location = new System.Drawing.Point(486, 50);
-            this.cbSortBy2.Name = "cbSortBy2";
-            this.cbSortBy2.Size = new System.Drawing.Size(166, 31);
-            this.cbSortBy2.TabIndex = 10;
+            this.rbAsc.AutoSize = true;
+            this.rbAsc.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbAsc.CheckedState.BorderThickness = 0;
+            this.rbAsc.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbAsc.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rbAsc.CheckedState.InnerOffset = -4;
+            this.rbAsc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbAsc.ForeColor = System.Drawing.Color.White;
+            this.rbAsc.Location = new System.Drawing.Point(327, 97);
+            this.rbAsc.Name = "rbAsc";
+            this.rbAsc.Size = new System.Drawing.Size(103, 22);
+            this.rbAsc.TabIndex = 14;
+            this.rbAsc.Text = "Ascending";
+            this.rbAsc.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rbAsc.UncheckedState.BorderThickness = 2;
+            this.rbAsc.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rbAsc.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             // 
-            // cbSortBy1
+            // cbSortBy
             // 
-            this.cbSortBy1.BackColor = System.Drawing.Color.Transparent;
-            this.cbSortBy1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.cbSortBy1.BorderRadius = 7;
-            this.cbSortBy1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbSortBy1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSortBy1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.cbSortBy1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbSortBy1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbSortBy1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cbSortBy1.ForeColor = System.Drawing.Color.White;
-            this.cbSortBy1.ItemHeight = 25;
-            this.cbSortBy1.Items.AddRange(new object[] {
+            this.cbSortBy.BackColor = System.Drawing.Color.Transparent;
+            this.cbSortBy.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.cbSortBy.BorderRadius = 7;
+            this.cbSortBy.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbSortBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSortBy.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.cbSortBy.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbSortBy.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbSortBy.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbSortBy.ForeColor = System.Drawing.Color.White;
+            this.cbSortBy.ItemHeight = 25;
+            this.cbSortBy.Items.AddRange(new object[] {
             "Title",
-            "Author\'s Name",
+            "Author",
             "Published Date"});
-            this.cbSortBy1.Location = new System.Drawing.Point(314, 50);
-            this.cbSortBy1.Name = "cbSortBy1";
-            this.cbSortBy1.Size = new System.Drawing.Size(166, 31);
-            this.cbSortBy1.TabIndex = 9;
+            this.cbSortBy.Location = new System.Drawing.Point(90, 90);
+            this.cbSortBy.Name = "cbSortBy";
+            this.cbSortBy.Size = new System.Drawing.Size(219, 31);
+            this.cbSortBy.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(20, 96);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 18);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Sort By";
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderRadius = 10;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
+            this.guna2Button1.ImageSize = new System.Drawing.Size(40, 40);
+            this.guna2Button1.Location = new System.Drawing.Point(660, 14);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(65, 105);
+            this.guna2Button1.TabIndex = 11;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // cbSearchBy
+            // 
+            this.cbSearchBy.BackColor = System.Drawing.Color.Transparent;
+            this.cbSearchBy.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.cbSearchBy.BorderRadius = 7;
+            this.cbSearchBy.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbSearchBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSearchBy.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.cbSearchBy.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbSearchBy.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbSearchBy.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbSearchBy.ForeColor = System.Drawing.Color.White;
+            this.cbSearchBy.ItemHeight = 25;
+            this.cbSearchBy.Items.AddRange(new object[] {
+            "Title",
+            "Author",
+            "Publisher",
+            "-"});
+            this.cbSearchBy.Location = new System.Drawing.Point(425, 52);
+            this.cbSearchBy.Name = "cbSearchBy";
+            this.cbSearchBy.Size = new System.Drawing.Size(227, 31);
+            this.cbSearchBy.TabIndex = 9;
             // 
             // lbSort
             // 
             this.lbSort.AutoSize = true;
             this.lbSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSort.ForeColor = System.Drawing.Color.White;
-            this.lbSort.Location = new System.Drawing.Point(244, 56);
+            this.lbSort.Location = new System.Drawing.Point(324, 56);
             this.lbSort.Name = "lbSort";
-            this.lbSort.Size = new System.Drawing.Size(64, 18);
+            this.lbSort.Size = new System.Drawing.Size(85, 18);
             this.lbSort.TabIndex = 8;
-            this.lbSort.Text = "Sort By";
+            this.lbSort.Text = "Search By";
             // 
             // cbFilter
             // 
@@ -146,9 +220,9 @@ namespace Bukutachi
             this.cbFilter.ItemHeight = 25;
             this.cbFilter.Items.AddRange(new object[] {
             "All"});
-            this.cbFilter.Location = new System.Drawing.Point(80, 51);
+            this.cbFilter.Location = new System.Drawing.Point(90, 51);
             this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(158, 31);
+            this.cbFilter.Size = new System.Drawing.Size(219, 31);
             this.cbFilter.TabIndex = 7;
             // 
             // lbGenre
@@ -186,23 +260,71 @@ namespace Bukutachi
             this.tbUsername.Size = new System.Drawing.Size(632, 31);
             this.tbUsername.TabIndex = 5;
             // 
-            // pnResult
+            // dgvBorrowedBooks
             // 
-            this.pnResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.pnResult.Location = new System.Drawing.Point(13, 120);
-            this.pnResult.Name = "pnResult";
-            this.pnResult.Size = new System.Drawing.Size(740, 424);
-            this.pnResult.TabIndex = 2;
-            // 
-            // guna2Elipse2
-            // 
-            this.guna2Elipse2.BorderRadius = 20;
-            this.guna2Elipse2.TargetControl = this.pnResult;
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 20;
-            this.guna2Elipse1.TargetControl = this.pnSearch;
+            this.dgvBorrowedBooks.AllowUserToAddRows = false;
+            this.dgvBorrowedBooks.AllowUserToDeleteRows = false;
+            this.dgvBorrowedBooks.AllowUserToResizeColumns = false;
+            this.dgvBorrowedBooks.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvBorrowedBooks.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvBorrowedBooks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBorrowedBooks.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.dgvBorrowedBooks.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvBorrowedBooks.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvBorrowedBooks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBorrowedBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvBorrowedBooks.ColumnHeadersHeight = 21;
+            this.dgvBorrowedBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBorrowedBooks.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvBorrowedBooks.EnableHeadersVisualStyles = false;
+            this.dgvBorrowedBooks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(201)))), ((int)(((byte)(231)))));
+            this.dgvBorrowedBooks.Location = new System.Drawing.Point(12, 160);
+            this.dgvBorrowedBooks.Name = "dgvBorrowedBooks";
+            this.dgvBorrowedBooks.ReadOnly = true;
+            this.dgvBorrowedBooks.RowHeadersVisible = false;
+            this.dgvBorrowedBooks.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvBorrowedBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBorrowedBooks.Size = new System.Drawing.Size(740, 388);
+            this.dgvBorrowedBooks.TabIndex = 16;
+            this.dgvBorrowedBooks.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Indigo;
+            this.dgvBorrowedBooks.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
+            this.dgvBorrowedBooks.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvBorrowedBooks.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvBorrowedBooks.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvBorrowedBooks.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvBorrowedBooks.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.dgvBorrowedBooks.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(201)))), ((int)(((byte)(231)))));
+            this.dgvBorrowedBooks.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.dgvBorrowedBooks.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvBorrowedBooks.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvBorrowedBooks.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvBorrowedBooks.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvBorrowedBooks.ThemeStyle.HeaderStyle.Height = 21;
+            this.dgvBorrowedBooks.ThemeStyle.ReadOnly = true;
+            this.dgvBorrowedBooks.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
+            this.dgvBorrowedBooks.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvBorrowedBooks.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvBorrowedBooks.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvBorrowedBooks.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvBorrowedBooks.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
+            this.dgvBorrowedBooks.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvBorrowedBooks.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBorrowedBooks_CellDoubleClick);
             // 
             // FormBooksAdmin
             // 
@@ -210,28 +332,33 @@ namespace Bukutachi
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
             this.ClientSize = new System.Drawing.Size(765, 560);
-            this.Controls.Add(this.pnResult);
+            this.Controls.Add(this.dgvBorrowedBooks);
             this.Controls.Add(this.pnSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormBooksAdmin";
             this.Text = "Form1";
+            this.DoubleClick += new System.EventHandler(this.FormBooksAdmin_DoubleClick);
             this.pnSearch.ResumeLayout(false);
             this.pnSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBorrowedBooks)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.Panel pnSearch;
-        private Guna.UI2.WinForms.Guna2Button btSearch;
-        private Guna.UI2.WinForms.Guna2ComboBox cbSortBy2;
-        private Guna.UI2.WinForms.Guna2ComboBox cbSortBy1;
+        private Guna.UI2.WinForms.Guna2RadioButton rbDesc;
+        private Guna.UI2.WinForms.Guna2RadioButton rbAsc;
+        private Guna.UI2.WinForms.Guna2ComboBox cbSortBy;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2ComboBox cbSearchBy;
         private System.Windows.Forms.Label lbSort;
         private Guna.UI2.WinForms.Guna2ComboBox cbFilter;
         private System.Windows.Forms.Label lbGenre;
         private Guna.UI2.WinForms.Guna2TextBox tbUsername;
-        private System.Windows.Forms.Panel pnResult;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvBorrowedBooks;
     }
 }

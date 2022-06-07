@@ -116,13 +116,19 @@ namespace Bukutachi
         }
         private void loadDataGrid()
         {
-            String kueri = @"SELECT bu.bu_title AS 'Title',
-            GENRE(bu.bu_title) AS 'Genre',
-            AUTHOR(bu.bu_title) AS 'Author',
+            String kueri = @"SELECT bu.bu_id,
+            bu.bu_title AS 'Title',
+            GROUP_CONCAT(DISTINCT ge.ge_name) AS 'Genre',
+            GROUP_CONCAT(DISTINCT ps.ps_name) AS 'Author',
             pt.pt_name AS 'Publisher',
             bu.bu_publishedat AS 'Published Year'
             FROM buku bu
-            INNER JOIN penerbit pt ON bu.bu_id = pt.pt_id
+            JOIN penerbit pt ON bu.bu_pt_id = pt.pt_id
+            JOIN buku_penulis bp ON bu.bu_id = bp.bp_bu_id
+            JOIN penulis ps ON ps.ps_id = bp.bp_ps_id
+            JOIN genre_buku gb ON gb.gb_bu_id = bu.bu_id
+            JOIN genre ge ON gb.gb_ge_id = ge.ge_id
+
             ";
             //search
             if(!cbSearchBy.Text.Equals("-"))
@@ -142,6 +148,7 @@ namespace Bukutachi
             {
                 kueri += " AND ge.ge_name = '"+cbFilter.Text+"'";
             }
+            kueri += "            GROUP BY bu.bu_title";
 
             //tipe sort
             if (cbSortBy.Text.Equals("Title"))
@@ -161,7 +168,6 @@ namespace Bukutachi
             {
                 kueri += " DESC;";
             }
-            Console.WriteLine(kueri);
 
             MySqlCommand cmd = new MySqlCommand(kueri, conn);
             conn.Open();
@@ -171,6 +177,7 @@ namespace Bukutachi
             DataSet dsBorrowed = new DataSet();
             da.Fill(dsBorrowed);
             dgvBorrowedBooks.DataSource = dsBorrowed.Tables[0].DefaultView;
+            dgvBorrowedBooks.Columns[0].Visible = false;
         }
         private void loadcombobox()
         {
@@ -220,6 +227,11 @@ namespace Bukutachi
         {
             //rbAsc.Checked = false;
             //rbDesc.Checked = true;
+        }
+
+        private void dgvBorrowedBooks_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ((HomeUser)(this.Parent.Parent)).loadForm(new FormBooksUserClicked(conn,Convert.ToInt32( dgvBorrowedBooks.Rows[e.RowIndex].Cells[0].Value ), this));
         }
     }
 }
