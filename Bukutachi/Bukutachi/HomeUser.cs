@@ -68,6 +68,10 @@ namespace Bukutachi
 
             btHome.FillColor = Color.FromArgb(86, 100, 194);
             loadForm(new FormHomeUser(conn, user, homeImage));
+
+            if (!newTransaction()) {
+                loadBorrowed();
+            }
         }
 
         public void loadForm(object form)
@@ -134,11 +138,6 @@ namespace Bukutachi
             loadForm(fpu);
         }
 
-        private void btLogout_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
         public void updateHomeImage(DataSet homeImage) {
             this.homeImage = homeImage;
         }
@@ -167,5 +166,193 @@ namespace Bukutachi
                 btHistory_Click(sender, e);
             }
         }
+
+        private void btLogout_Click(object sender, EventArgs e) {
+            if (newTransaction()){
+                Console.WriteLine("Making new Transaction");
+                makeNewTransaction();
+            }
+            else {
+                Console.WriteLine("Updating Transaction");
+                if (cart.Count == 0) {
+                    cancelTransaction();
+                }
+                else {
+                    updateBorrowed();
+                }
+            }
+            this.Dispose();
+        }
+
+
+        #region Borrowed System
+
+        private bool newTransaction() {
+            int x = getLastTransactionId();
+
+            if(x == 0) {
+                return true;
+            }
+            return false;
+        }
+
+        private void makeNewTransaction() {
+            conn.Open();
+            using(MySqlTransaction tr = conn.BeginTransaction()) {
+                try {
+                    MySqlCommand cmd = new MySqlCommand(@"
+                        INSERT INTO hpinjam(hp_borrowedat, hp_returnat, hp_status, hp_me_id) VALUES(CURRENT_DATE(), CURRENT_DATE() + INTERVAL 7 DAY, 0, ?membid)
+                    ", conn);
+                    cmd.Parameters.Add(new MySqlParameter("membid", user[0]));
+
+                    cmd.ExecuteNonQuery();
+                    Console.WriteLine("Header Added");
+
+                    cmd = new MySqlCommand(@"SELECT hp_id from hpinjam WHERE hp_me_id = ?membid AND hp_status <> 2 ORDER BY hp_id DESC LIMIT 1;", conn);
+                    cmd.Parameters.Add(new MySqlParameter("membid", user[0]));
+
+                    int hpid = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    for (int i = 0; i < cart.Count; i++) {
+                        Console.WriteLine($"Adding Book {cart[i]} to Transaction {hpid}...");
+                        cmd = new MySqlCommand(@"
+                            INSERT INTO dpinjam(dp_bu_id, dp_hp_id) VALUES(?bookid, ?hpid)
+                        ", conn);
+                        cmd.Parameters.Add(new MySqlParameter("bookid", cart[i]));
+                        cmd.Parameters.Add(new MySqlParameter("hpid", hpid));
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    tr.Commit();
+                }
+                catch (MySqlException ex){
+                    MessageBox.Show(ex.Message);
+                    tr.Rollback();
+                }
+            }
+            conn.Close();
+        }
+
+        private void updateBorrowed() {
+            int hpid = getLastTransactionId();
+            conn.Open();
+            MySqlCommand cmd;
+            using (MySqlTransaction tr = conn.BeginTransaction()) {
+                try {
+                    cmd = new MySqlCommand(@"SELECT dp_id as 'transId', dp_bu_id as 'bookId' FROM dpinjam WHERE dp_hp_id=?hpid ORDER BY dp_bu_id", conn);
+                    cmd.Parameters.Add(new MySqlParameter("hpid", hpid));
+
+                    cmd.ExecuteNonQuery();
+
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                    da.Fill(dt);
+
+                    cart.Sort();
+
+                    Dictionary<int, int> detailUpdt= new Dictionary<int, int>();
+                    for (int i = 0; i < dt.Rows.Count; i++) {
+                        detailUpdt.Add(Convert.ToInt32(dt.Rows[i]["bookId"]), -1);
+                    }
+
+                    for (int i = 0; i < cart.Count; i++) {
+                        if (detailUpdt.ContainsKey(cart[i])) {
+                            detailUpdt[cart[i]] = 0;
+                        }
+                        else {
+                            detailUpdt.Add(cart[i], 1);
+                        }
+                    }
+
+                    foreach (int key in detailUpdt.Keys) {
+                        Console.WriteLine($"Book {key} => {detailUpdt[key]}");
+                        if(detailUpdt[key] == -1) {
+                            cmd = new MySqlCommand(@"DELETE FROM dpinjam WHERE dp_bu_id = ?bid AND dp_hp_id=?hpid", conn);
+                            cmd.Parameters.Add(new MySqlParameter("bid", key));
+                            cmd.Parameters.Add(new MySqlParameter("hpid", hpid));
+                        }
+                        else if(detailUpdt[key] == 1) {
+                            cmd = new MySqlCommand(@"INSERT INTO dpinjam (dp_bu_id, dp_hp_id) VALUES (?bid, ?hpid)", conn);
+                            cmd.Parameters.Add(new MySqlParameter("bid", key));
+                            cmd.Parameters.Add(new MySqlParameter("hpid", hpid));
+                        }
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    tr.Commit();
+                }
+                catch (MySqlException ex){
+                    MessageBox.Show(ex.Message);
+                    tr.Rollback();
+                }
+            }
+            conn.Close();
+        }
+
+        private void cancelTransaction() {
+            int hpid = getLastTransactionId();
+            conn.Open();
+            MySqlCommand cmd;
+            using (MySqlTransaction tr = conn.BeginTransaction()) {
+                try {
+                    cmd = new MySqlCommand(@"DELETE FROM dpinjam WHERE dp_hp_id=?hpid", conn);
+                    cmd.Parameters.Add(new MySqlParameter("hpid", hpid));
+                    cmd.ExecuteNonQuery();
+
+                    cmd = new MySqlCommand(@"DELETE FROM hpinjam WHERE hp_id=?hpid", conn);
+                    cmd.Parameters.Add(new MySqlParameter("hpid", hpid));
+                    cmd.ExecuteNonQuery();
+
+                    tr.Commit();
+                }
+                catch (MySqlException ex) {
+                    MessageBox.Show(ex.Message);
+                    tr.Rollback();
+                }
+            }
+            conn.Close();
+        }
+
+        private void loadBorrowed() {
+            MySqlCommand cmd = new MySqlCommand(@"
+                SELECT dp_bu_id as 'id' FROM dpinjam WHERE dp_hp_id=?hpid
+            ", conn);
+
+            cmd.Parameters.Add(new MySqlParameter("hpid", getLastTransactionId()));
+
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+            DataTable dt = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            da.Fill(dt);
+
+            cart = new List<int>();
+            for (int i = 0; i < dt.Rows.Count; i++) {
+                cart.Add(Convert.ToInt32(dt.Rows[i]["id"]));
+            }
+        }
+
+        private int getLastTransactionId() {
+            MySqlCommand cmd = new MySqlCommand(@"SELECT hp_id from hpinjam WHERE hp_me_id = ?membid AND hp_status <> 2 ORDER BY hp_id DESC LIMIT 1;", conn);
+            cmd.Parameters.Add(new MySqlParameter("membid", user[0]));
+            bool connAlreadyOpen = false;
+            if (conn.State == ConnectionState.Open) {
+                connAlreadyOpen = true;
+                conn.Close();
+            }
+            conn.Open();
+            int x = Convert.ToInt32(cmd.ExecuteScalar());
+            if (!connAlreadyOpen) {
+                conn.Close();
+            }
+
+            return x;
+
+        }
+
+        #endregion 
     }
 }

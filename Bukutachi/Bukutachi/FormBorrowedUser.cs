@@ -39,6 +39,7 @@ namespace Bukutachi
             }
             MySqlCommand cmd = new MySqlCommand($@"
                 SELECT 
+                bu.bu_id as 'ID',
                 bu.bu_title as 'Title', 
                 group_concat(DISTINCT ps.ps_name) as 'Author',
                 CURRENT_DATE() + INTERVAL 7 DAY  as 'Return',
@@ -61,11 +62,14 @@ namespace Bukutachi
             da.Fill(dt);
 
             dgvBorrowedBooks.DataSource = dt;
-            DataGridViewButtonColumn btncol = new DataGridViewButtonColumn();
-            btncol.DefaultCellStyle.Padding = new Padding(10);
-            btncol.Text = "Cancel";
-            btncol.UseColumnTextForButtonValue = true;
-            dgvBorrowedBooks.Columns.Add(btncol);
+            if (!dgvBorrowedBooks.Columns.Contains("Action")) {
+                DataGridViewButtonColumn btncol = new DataGridViewButtonColumn();
+                btncol.DefaultCellStyle.Padding = new Padding(10);
+                btncol.Text = "Cancel";
+                btncol.Name = "Action";
+                btncol.UseColumnTextForButtonValue = true;
+                dgvBorrowedBooks.Columns.Add(btncol);
+            }
         }
 
         private void btClear_Click(object sender, EventArgs e) {
@@ -74,7 +78,8 @@ namespace Bukutachi
         }
 
         private void dgvBorrowedBooks_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e) {
-            cart.RemoveAt(e.RowIndex);
+            int bid = Convert.ToInt32(dgvBorrowedBooks.Rows[e.RowIndex].Cells["ID"].Value);
+            cart.Remove(bid);
             loadBorrowed();
         }
     }
