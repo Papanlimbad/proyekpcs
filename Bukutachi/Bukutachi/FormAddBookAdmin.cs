@@ -69,6 +69,7 @@ namespace Bukutachi
                 }
                 else
                 {
+                    string ambiltahun = "yyyy";
                     int tes = 1;
                     int ambilid=-1;
                     MySqlCommand cmd2 = new MySqlCommand("select pt_id from penerbit where pt_name=?publisher",conn);
@@ -79,7 +80,7 @@ namespace Bukutachi
                     MySqlCommand cmd = new MySqlCommand("insert into buku(bu_title, bu_synopsis, bu_publishedat, bu_pt_id, bu_rb_id, bu_status) values(?title, ?synopsis, ?publishedate, ?penerbit , ?rakbuku, 1);", conn);
                     cmd.Parameters.Add(new MySqlParameter("title", tbBookTitle.Text));
                     cmd.Parameters.Add(new MySqlParameter("synopsis", tbSynopsis.Text));
-                    cmd.Parameters.Add(new MySqlParameter("publishedate", PublishDate.Value));
+                    cmd.Parameters.Add(new MySqlParameter("publishedate", PublishDate.Value.ToString(ambiltahun)));
                     cmd.Parameters.Add(new MySqlParameter("penerbit", namapublisher));
                     cmd.Parameters.Add(new MySqlParameter("rakbuku", tbLocation.Text));
                     conn.Open();
@@ -114,7 +115,7 @@ namespace Bukutachi
 
         private void LoadComboPenulis(string sqlpenulis, string DisplayMember, string ValueMember)
         {
-            sqlpenulis = "SELECT * FROM penulis";
+            sqlpenulis = "SELECT * FROM penulis ORDER BY ps_name ASC";
             if (conn.State == ConnectionState.Open)
             {
                 conn.Close();
@@ -147,7 +148,7 @@ namespace Bukutachi
 
         private void LoadComboGenre(string sqlpengarang, string DisplayMember, string ValueMember)
         {
-            sqlgenre = "SELECT * FROM genre";
+            sqlgenre = "SELECT * FROM genre ORDER BY ge_name ASC";
             if (conn.State == ConnectionState.Open)
             {
                 conn.Close();
@@ -180,7 +181,7 @@ namespace Bukutachi
 
         private void LoadComboPublisher(string sqlpublisher, string DisplayMember, string ValueMember)
         {
-            sqlpublisher = "SELECT * FROM penerbit";
+            sqlpublisher = "SELECT * FROM penerbit ORDER BY pt_name ASC";
             if (conn.State == ConnectionState.Open)
             {
                 conn.Close();
@@ -213,7 +214,15 @@ namespace Bukutachi
 
         private void btAddImage_Click(object sender, EventArgs e)
         {
-
+            OpenFileDialog open = new OpenFileDialog();
+            // image filters  
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                // ngambil gambar 
+                guna2PictureBox1.Image = new Bitmap(open.FileName);
+   
+            }
         }
     }
 }
