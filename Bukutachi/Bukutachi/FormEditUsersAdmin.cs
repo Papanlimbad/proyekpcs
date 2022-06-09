@@ -28,7 +28,36 @@ namespace Bukutachi
 
         private void FormEditUsersAdmin_Load(object sender, EventArgs e)
         {
-            MySqlCommand cmd = new MySqlCommand("SELECT me_id AS 'ID Member', me_name AS 'Nama', me_username AS 'Username' FROM MEMBER;", conn);
+            cbFilter.Text = "Name";
+            loadDataGrid();
+        }
+
+        private void loadDataGrid()
+        {
+            String kueri = "SELECT me_id AS 'ID Member', me_name AS 'Nama', me_username AS 'Username', DATE_FORMAT(me_registeredat,'%d-%b-%Y') as 'Register Date' FROM MEMBER";
+            //search
+
+            if (!tbUsername.Text.Equals(""))
+            {
+                if (cbFilter.Text.Equals("Name"))
+                {
+                    kueri += $" WHERE me_name like '%{tbUsername.Text}%'";
+                }
+                else
+                {
+                    kueri += $" WHERE me_username like '%{tbUsername.Text}%'";
+                }
+            }
+
+            if (rbAsc.Checked)
+            {
+                kueri += " ORDER BY me_id ASC";
+            }
+            else
+            {
+                kueri += " ORDER BY me_id DESC";
+            }
+            MySqlCommand cmd = new MySqlCommand(kueri, conn);
             conn.Open();
             cmd.ExecuteReader();
             conn.Close();
@@ -46,14 +75,7 @@ namespace Bukutachi
             ea.ShowDialog();
             ea.Dispose();
 
-            MySqlCommand cmd = new MySqlCommand("SELECT me_id AS 'ID Member', me_name AS 'Nama', me_username AS 'Username' FROM MEMBER;", conn);
-            conn.Open();
-            cmd.ExecuteReader();
-            conn.Close();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            DataSet dsBorrowed = new DataSet();
-            da.Fill(dsBorrowed);
-            dgvUser.DataSource = dsBorrowed.Tables[0].DefaultView;
+            loadDataGrid();
         }
 
         private void btAdd_Click(object sender, EventArgs e)
@@ -62,19 +84,21 @@ namespace Bukutachi
             ea.ShowDialog();
             ea.Dispose();
 
-            MySqlCommand cmd = new MySqlCommand("SELECT me_id AS 'ID Member', me_name AS 'Nama', me_username AS 'Username' FROM MEMBER;", conn);
-            conn.Open();
-            cmd.ExecuteReader();
-            conn.Close();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            DataSet dsBorrowed = new DataSet();
-            da.Fill(dsBorrowed);
-            dgvUser.DataSource = dsBorrowed.Tables[0].DefaultView;
+            loadDataGrid();
         }
 
         private void btSearch_Click(object sender, EventArgs e)
         {
+            loadDataGrid();
+        }
 
+        private void btReset_Click(object sender, EventArgs e)
+        {
+            cbFilter.Text = "Name";
+            rbAsc.Checked = true;
+            tbUsername.Text = "";
+
+            loadDataGrid();
         }
     }
 }

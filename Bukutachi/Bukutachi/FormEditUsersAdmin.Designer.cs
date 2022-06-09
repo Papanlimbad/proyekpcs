@@ -31,21 +31,21 @@ namespace Bukutachi
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditUsersAdmin));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnSearch = new System.Windows.Forms.Panel();
             this.btSearch = new Guna.UI2.WinForms.Guna2Button();
-            this.cbSortBy2 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbSortBy1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.lbSort = new System.Windows.Forms.Label();
             this.cbFilter = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.lbGenre = new System.Windows.Forms.Label();
+            this.lbSearchBy = new System.Windows.Forms.Label();
             this.tbUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.dgvUser = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.rbDesc = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rbAsc = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.btReset = new Guna.UI2.WinForms.Guna2Button();
             this.pnSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.SuspendLayout();
@@ -58,12 +58,11 @@ namespace Bukutachi
             // pnSearch
             // 
             this.pnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.pnSearch.Controls.Add(this.rbDesc);
+            this.pnSearch.Controls.Add(this.rbAsc);
             this.pnSearch.Controls.Add(this.btSearch);
-            this.pnSearch.Controls.Add(this.cbSortBy2);
-            this.pnSearch.Controls.Add(this.cbSortBy1);
-            this.pnSearch.Controls.Add(this.lbSort);
             this.pnSearch.Controls.Add(this.cbFilter);
-            this.pnSearch.Controls.Add(this.lbGenre);
+            this.pnSearch.Controls.Add(this.lbSearchBy);
             this.pnSearch.Controls.Add(this.tbUsername);
             this.pnSearch.Location = new System.Drawing.Point(13, 13);
             this.pnSearch.Name = "pnSearch";
@@ -88,60 +87,6 @@ namespace Bukutachi
             this.btSearch.TabIndex = 11;
             this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 
-            // cbSortBy2
-            // 
-            this.cbSortBy2.BackColor = System.Drawing.Color.Transparent;
-            this.cbSortBy2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.cbSortBy2.BorderRadius = 7;
-            this.cbSortBy2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbSortBy2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSortBy2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.cbSortBy2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbSortBy2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbSortBy2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cbSortBy2.ForeColor = System.Drawing.Color.White;
-            this.cbSortBy2.ItemHeight = 25;
-            this.cbSortBy2.Items.AddRange(new object[] {
-            "Ascending",
-            "Descending"});
-            this.cbSortBy2.Location = new System.Drawing.Point(486, 50);
-            this.cbSortBy2.Name = "cbSortBy2";
-            this.cbSortBy2.Size = new System.Drawing.Size(166, 31);
-            this.cbSortBy2.TabIndex = 10;
-            // 
-            // cbSortBy1
-            // 
-            this.cbSortBy1.BackColor = System.Drawing.Color.Transparent;
-            this.cbSortBy1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.cbSortBy1.BorderRadius = 7;
-            this.cbSortBy1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbSortBy1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSortBy1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.cbSortBy1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbSortBy1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbSortBy1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cbSortBy1.ForeColor = System.Drawing.Color.White;
-            this.cbSortBy1.ItemHeight = 25;
-            this.cbSortBy1.Items.AddRange(new object[] {
-            "Title",
-            "Author\'s Name",
-            "Published Date"});
-            this.cbSortBy1.Location = new System.Drawing.Point(314, 50);
-            this.cbSortBy1.Name = "cbSortBy1";
-            this.cbSortBy1.Size = new System.Drawing.Size(166, 31);
-            this.cbSortBy1.TabIndex = 9;
-            // 
-            // lbSort
-            // 
-            this.lbSort.AutoSize = true;
-            this.lbSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSort.ForeColor = System.Drawing.Color.White;
-            this.lbSort.Location = new System.Drawing.Point(244, 56);
-            this.lbSort.Name = "lbSort";
-            this.lbSort.Size = new System.Drawing.Size(64, 18);
-            this.lbSort.TabIndex = 8;
-            this.lbSort.Text = "Sort By";
-            // 
             // cbFilter
             // 
             this.cbFilter.BackColor = System.Drawing.Color.Transparent;
@@ -156,22 +101,23 @@ namespace Bukutachi
             this.cbFilter.ForeColor = System.Drawing.Color.White;
             this.cbFilter.ItemHeight = 25;
             this.cbFilter.Items.AddRange(new object[] {
-            "All"});
-            this.cbFilter.Location = new System.Drawing.Point(80, 51);
+            "Name",
+            "Username"});
+            this.cbFilter.Location = new System.Drawing.Point(112, 52);
             this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(158, 31);
+            this.cbFilter.Size = new System.Drawing.Size(259, 31);
             this.cbFilter.TabIndex = 7;
             // 
-            // lbGenre
+            // lbSearchBy
             // 
-            this.lbGenre.AutoSize = true;
-            this.lbGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGenre.ForeColor = System.Drawing.Color.White;
-            this.lbGenre.Location = new System.Drawing.Point(20, 56);
-            this.lbGenre.Name = "lbGenre";
-            this.lbGenre.Size = new System.Drawing.Size(54, 18);
-            this.lbGenre.TabIndex = 6;
-            this.lbGenre.Text = "Genre";
+            this.lbSearchBy.AutoSize = true;
+            this.lbSearchBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSearchBy.ForeColor = System.Drawing.Color.White;
+            this.lbSearchBy.Location = new System.Drawing.Point(17, 57);
+            this.lbSearchBy.Name = "lbSearchBy";
+            this.lbSearchBy.Size = new System.Drawing.Size(85, 18);
+            this.lbSearchBy.TabIndex = 6;
+            this.lbSearchBy.Text = "Search By";
             // 
             // tbUsername
             // 
@@ -208,31 +154,31 @@ namespace Bukutachi
             this.dgvUser.AllowUserToDeleteRows = false;
             this.dgvUser.AllowUserToResizeColumns = false;
             this.dgvUser.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvUser.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvUser.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvUser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUser.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
             this.dgvUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvUser.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvUser.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvUser.ColumnHeadersHeight = 21;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvUser.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvUser.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvUser.EnableHeadersVisualStyles = false;
             this.dgvUser.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(201)))), ((int)(((byte)(231)))));
             this.dgvUser.Location = new System.Drawing.Point(12, 114);
@@ -283,12 +229,72 @@ namespace Bukutachi
             this.btAdd.Text = "Add User";
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
+            // rbDesc
+            // 
+            this.rbDesc.AutoSize = true;
+            this.rbDesc.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbDesc.CheckedState.BorderThickness = 0;
+            this.rbDesc.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbDesc.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rbDesc.CheckedState.InnerOffset = -4;
+            this.rbDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbDesc.ForeColor = System.Drawing.Color.White;
+            this.rbDesc.Location = new System.Drawing.Point(513, 57);
+            this.rbDesc.Name = "rbDesc";
+            this.rbDesc.Size = new System.Drawing.Size(114, 22);
+            this.rbDesc.TabIndex = 39;
+            this.rbDesc.Text = "Descending";
+            this.rbDesc.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rbDesc.UncheckedState.BorderThickness = 2;
+            this.rbDesc.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rbDesc.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            // 
+            // rbAsc
+            // 
+            this.rbAsc.AutoSize = true;
+            this.rbAsc.Checked = true;
+            this.rbAsc.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbAsc.CheckedState.BorderThickness = 0;
+            this.rbAsc.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rbAsc.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rbAsc.CheckedState.InnerOffset = -4;
+            this.rbAsc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbAsc.ForeColor = System.Drawing.Color.White;
+            this.rbAsc.Location = new System.Drawing.Point(391, 57);
+            this.rbAsc.Name = "rbAsc";
+            this.rbAsc.Size = new System.Drawing.Size(103, 22);
+            this.rbAsc.TabIndex = 38;
+            this.rbAsc.TabStop = true;
+            this.rbAsc.Text = "Ascending";
+            this.rbAsc.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rbAsc.UncheckedState.BorderThickness = 2;
+            this.rbAsc.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rbAsc.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            // 
+            // btReset
+            // 
+            this.btReset.BorderRadius = 5;
+            this.btReset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btReset.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btReset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btReset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btReset.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.btReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btReset.Location = new System.Drawing.Point(497, 513);
+            this.btReset.Name = "btReset";
+            this.btReset.Size = new System.Drawing.Size(120, 35);
+            this.btReset.TabIndex = 38;
+            this.btReset.Text = "Reset";
+            this.btReset.Click += new System.EventHandler(this.btReset_Click);
+            // 
             // FormEditUsersAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
             this.ClientSize = new System.Drawing.Size(765, 560);
+            this.Controls.Add(this.btReset);
             this.Controls.Add(this.btAdd);
             this.Controls.Add(this.dgvUser);
             this.Controls.Add(this.pnSearch);
@@ -308,13 +314,13 @@ namespace Bukutachi
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private System.Windows.Forms.Panel pnSearch;
         private Guna.UI2.WinForms.Guna2Button btSearch;
-        private Guna.UI2.WinForms.Guna2ComboBox cbSortBy2;
-        private Guna.UI2.WinForms.Guna2ComboBox cbSortBy1;
-        private System.Windows.Forms.Label lbSort;
         private Guna.UI2.WinForms.Guna2ComboBox cbFilter;
-        private System.Windows.Forms.Label lbGenre;
+        private System.Windows.Forms.Label lbSearchBy;
         private Guna.UI2.WinForms.Guna2TextBox tbUsername;
         private Guna.UI2.WinForms.Guna2DataGridView dgvUser;
         private Guna.UI2.WinForms.Guna2Button btAdd;
+        private Guna.UI2.WinForms.Guna2RadioButton rbDesc;
+        private Guna.UI2.WinForms.Guna2RadioButton rbAsc;
+        private Guna.UI2.WinForms.Guna2Button btReset;
     }
 }
