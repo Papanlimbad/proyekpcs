@@ -70,7 +70,7 @@ namespace Bukutachi
                 btncol.UseColumnTextForButtonValue = true;
                 dgvBorrowedBooks.Columns.Add(btncol);
             }
-            //dgvBorrowedBooks.Columns["Status"].Visible = false;
+            dgvBorrowedBooks.Columns["Status"].Visible = false;
         }
 
         private void btClear_Click(object sender, EventArgs e) {
@@ -91,7 +91,6 @@ namespace Bukutachi
                 if(Convert.ToInt32(dgvBorrowedBooks.Rows[e.RowIndex].Cells["Status"].Value) == 2) {
                     ((DataGridViewDisableButtonCell)dgvBorrowedBooks.Rows[e.RowIndex].Cells["Action"]).Hide = true;
 
-                    Console.WriteLine("Formatting");
                     dgvBorrowedBooks.Invalidate();
                 }
             }
