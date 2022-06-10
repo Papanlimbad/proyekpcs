@@ -100,7 +100,7 @@ namespace Bukutachi
         {
             clearbuttonadmin();
             btBooks.FillColor = Color.FromArgb(86, 100, 194);
-            loadadmin(new FormBooksAdmin());
+            loadadmin(new FormBooksAdmin(conn));
         }
 
         private void btBorrowed_Click(object sender, EventArgs e)

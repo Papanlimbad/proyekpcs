@@ -25,6 +25,7 @@ namespace Bukutachi
         string sqlpenulis;
         string sqlgenre;
         string sqlpublisher;
+        string ambilpath;
 
         public FormAddBookAdmin(MySqlConnection conn)
         {
@@ -77,12 +78,13 @@ namespace Bukutachi
                     conn.Open();
                     int namapublisher = Convert.ToInt32(cmd2.ExecuteScalar());
                     conn.Close();
-                    MySqlCommand cmd = new MySqlCommand("insert into buku(bu_title, bu_synopsis, bu_publishedat, bu_pt_id, bu_rb_id, bu_status) values(?title, ?synopsis, ?publishedate, ?penerbit , ?rakbuku, 1);", conn);
+                    MySqlCommand cmd = new MySqlCommand("insert into buku(bu_title, bu_synopsis, bu_publishedat, bu_pt_id, bu_rb_id, bu_status, bu_image, bu_large) values(?title, ?synopsis, ?publishedate, ?penerbit , ?rakbuku, 1, ?gambar, ?gambar);", conn);
                     cmd.Parameters.Add(new MySqlParameter("title", tbBookTitle.Text));
                     cmd.Parameters.Add(new MySqlParameter("synopsis", tbSynopsis.Text));
                     cmd.Parameters.Add(new MySqlParameter("publishedate", PublishDate.Value.ToString(ambiltahun)));
                     cmd.Parameters.Add(new MySqlParameter("penerbit", namapublisher));
                     cmd.Parameters.Add(new MySqlParameter("rakbuku", tbLocation.Text));
+                    cmd.Parameters.Add(new MySqlParameter("gambar",ambilpath));
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     conn.Close();
@@ -221,7 +223,8 @@ namespace Bukutachi
             {
                 // ngambil gambar 
                 guna2PictureBox1.Image = new Bitmap(open.FileName);
-   
+
+                ambilpath = open.FileName;
             }
         }
     }

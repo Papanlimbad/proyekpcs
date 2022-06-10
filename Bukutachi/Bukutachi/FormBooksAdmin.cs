@@ -15,7 +15,7 @@ namespace Bukutachi
     {
         MySqlConnection conn;
         String[] user = new string[8];
-        public FormBooksAdmin()
+        public FormBooksAdmin(MySqlConnection conn)
         {
             InitializeComponent();
             this.conn = conn;
