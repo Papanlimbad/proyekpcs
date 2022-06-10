@@ -43,7 +43,8 @@ namespace Bukutachi
                 bu.bu_title as 'Title', 
                 group_concat(DISTINCT ps.ps_name) as 'Author',
                 CURRENT_DATE() + INTERVAL 7 DAY  as 'Return',
-                CONCAT('Shelf ', bu.bu_rb_id) as 'Book Location'
+                CONCAT('Shelf ', bu.bu_rb_id) as 'Book Location',
+                bu.bu_status as 'Status'
                 FROM
                 buku bu 
                 JOIN buku_penulis bp ON bp.bp_bu_id = bu.bu_id
@@ -52,7 +53,6 @@ namespace Bukutachi
                 GROUP BY bu.bu_title
             ", conn);
 
-            Console.WriteLine(cmd.CommandText);
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -63,13 +63,14 @@ namespace Bukutachi
 
             dgvBorrowedBooks.DataSource = dt;
             if (!dgvBorrowedBooks.Columns.Contains("Action")) {
-                DataGridViewButtonColumn btncol = new DataGridViewButtonColumn();
+                DataGridViewDisableButtonColumn btncol = new DataGridViewDisableButtonColumn();
                 btncol.DefaultCellStyle.Padding = new Padding(10);
                 btncol.Text = "Cancel";
                 btncol.Name = "Action";
                 btncol.UseColumnTextForButtonValue = true;
                 dgvBorrowedBooks.Columns.Add(btncol);
             }
+            //dgvBorrowedBooks.Columns["Status"].Visible = false;
         }
 
         private void btClear_Click(object sender, EventArgs e) {
@@ -78,9 +79,78 @@ namespace Bukutachi
         }
 
         private void dgvBorrowedBooks_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e) {
-            int bid = Convert.ToInt32(dgvBorrowedBooks.Rows[e.RowIndex].Cells["ID"].Value);
-            cart.Remove(bid);
-            loadBorrowed();
+
+                int bid = Convert.ToInt32(dgvBorrowedBooks.Rows[e.RowIndex].Cells["ID"].Value);
+                cart.Remove(bid);
+
+                loadBorrowed();
+        }
+
+        private void dgvBorrowedBooks_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e) {
+            if(dgvBorrowedBooks.Columns[e.ColumnIndex].Name == "Action") {
+                if(Convert.ToInt32(dgvBorrowedBooks.Rows[e.RowIndex].Cells["Status"].Value) == 2) {
+                    ((DataGridViewDisableButtonCell)dgvBorrowedBooks.Rows[e.RowIndex].Cells["Action"]).Hide = true;
+
+                    Console.WriteLine("Formatting");
+                    dgvBorrowedBooks.Invalidate();
+                }
+            }
+        }
+
+        public class DataGridViewDisableButtonColumn : DataGridViewButtonColumn {
+            public DataGridViewDisableButtonColumn() {
+                this.CellTemplate = new DataGridViewDisableButtonCell();
+            }
+        }
+
+        public class DataGridViewDisableButtonCell : DataGridViewButtonCell {
+            private bool hidaValue;
+
+            public bool Hide {
+                get {
+                    return hidaValue;
+                }
+                set {
+                    hidaValue = value;
+                }
+            }
+
+            public DataGridViewDisableButtonCell() {
+                this.hidaValue = false;
+            }
+
+            public override object Clone() {
+                DataGridViewDisableButtonCell c = (DataGridViewDisableButtonCell)base.Clone();
+
+                c.Hide = this.Hide;
+                return c;
+            }
+
+            protected override void Paint(Graphics graphics,
+              Rectangle clipBounds, Rectangle cellBounds, int rowIndex,
+              DataGridViewElementStates elementState, object value,
+              object formattedValue, string errorText,
+              DataGridViewCellStyle cellStyle,
+              DataGridViewAdvancedBorderStyle advancedBorderStyle,
+              DataGridViewPaintParts paintParts) {
+                if (this.hidaValue) {
+                    if ((paintParts & DataGridViewPaintParts.Background) == DataGridViewPaintParts.Background) {
+                        SolidBrush cellBackground = new SolidBrush(cellStyle.BackColor);
+
+                        graphics.FillRectangle(cellBackground, cellBounds);
+
+                        cellBackground.Dispose();
+                    }
+
+                    if ((paintParts & DataGridViewPaintParts.Border) == DataGridViewPaintParts.Border) {
+                        PaintBorder(graphics, clipBounds, cellBounds, cellStyle,advancedBorderStyle);
+                    }
+
+                }
+                else {
+                    base.Paint(graphics, clipBounds, cellBounds, rowIndex,elementState, value, formattedValue, errorText,cellStyle, advancedBorderStyle, paintParts);
+                }
+            }
         }
     }
 }
