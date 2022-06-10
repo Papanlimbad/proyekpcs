@@ -18,6 +18,14 @@ namespace Bukutachi
         public FormBooksAdmin()
         {
             InitializeComponent();
+            this.conn = conn;
+            this.user = user;
+            rbAsc.Checked = Enabled;
+            cbFilter.SelectedIndex = 0;
+            cbSearchBy.SelectedIndex = 0;
+            cbSortBy.SelectedIndex = 0;
+            loadDataGrid();
+            loadcombobox();
         }
 
         private void FormBooksAdmin_DoubleClick(object sender, EventArgs e)
@@ -140,6 +148,14 @@ namespace Bukutachi
         private void dgvBorrowedBooks_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             ((HomeUser)(this.Parent.Parent)).loadForm(new FormBooksUserClicked(conn, Convert.ToInt32(dgvBorrowedBooks.Rows[e.RowIndex].Cells[0].Value), this));
+        }
+
+        private void FormBooksAdmin_Load(object sender, EventArgs e)
+        {
+            foreach (DataGridViewColumn column in dgvBorrowedBooks.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
     }
 }
