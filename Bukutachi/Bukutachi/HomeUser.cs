@@ -188,7 +188,14 @@ namespace Bukutachi
         #region Borrowed System
 
         private bool newTransaction() {
-            int x = getLastTransactionId();
+            MySqlCommand cmd = new MySqlCommand(@"
+                SELECT hp_id from hpinjam WHERE hp_me_id = ?membid AND hp_status = 0
+            ", conn);
+            cmd.Parameters.Add(new MySqlParameter("membid", user[0]));
+
+            conn.Open();
+            int x = Convert.ToInt32(cmd.ExecuteScalar());
+            conn.Close();
 
             if(x == 0) {
                 return true;
@@ -201,14 +208,14 @@ namespace Bukutachi
             using(MySqlTransaction tr = conn.BeginTransaction()) {
                 try {
                     MySqlCommand cmd = new MySqlCommand(@"
-                        INSERT INTO hpinjam(hp_borrowedat, hp_returnat, hp_status, hp_me_id) VALUES(CURRENT_DATE(), CURRENT_DATE() + INTERVAL 7 DAY, 0, ?membid)
+                        INSERT INTO hpinjam VALUES(1, CURRENT_DATE(), CURRENT_DATE() + INTERVAL 7 DAY, 0, ?membid, 0)
                     ", conn);
                     cmd.Parameters.Add(new MySqlParameter("membid", user[0]));
 
                     cmd.ExecuteNonQuery();
                     Console.WriteLine("Header Added");
 
-                    cmd = new MySqlCommand(@"SELECT hp_id from hpinjam WHERE hp_me_id = ?membid AND hp_status <> 2 ORDER BY hp_id DESC LIMIT 1;", conn);
+                    cmd = new MySqlCommand(@"SELECT hp_id from hpinjam WHERE hp_me_id = ?membid AND hp_status = 0 ORDER BY hp_id DESC LIMIT 1;", conn);
                     cmd.Parameters.Add(new MySqlParameter("membid", user[0]));
 
                     int hpid = Convert.ToInt32(cmd.ExecuteScalar());
@@ -216,7 +223,7 @@ namespace Bukutachi
                     for (int i = 0; i < cart.Count; i++) {
                         Console.WriteLine($"Adding Book {cart[i]} to Transaction {hpid}...");
                         cmd = new MySqlCommand(@"
-                            INSERT INTO dpinjam(dp_bu_id, dp_hp_id) VALUES(?bookid, ?hpid)
+                            INSERT INTO dpinjam VALUES(1, ?bookid, ?hpid)
                         ", conn);
                         cmd.Parameters.Add(new MySqlParameter("bookid", cart[i]));
                         cmd.Parameters.Add(new MySqlParameter("hpid", hpid));
@@ -316,10 +323,11 @@ namespace Bukutachi
 
         private void loadBorrowed() {
             MySqlCommand cmd = new MySqlCommand(@"
-                SELECT dp_bu_id as 'id' FROM dpinjam WHERE dp_hp_id=?hpid
+                SELECT dp_bu_id as 'id' from dpinjam WHERE dp_hp_id IN 
+                (SELECT hp_id FROM hpinjam WHERE hp_me_id = ?membid AND hp_status <> 2)
             ", conn);
 
-            cmd.Parameters.Add(new MySqlParameter("hpid", getLastTransactionId()));
+            cmd.Parameters.Add(new MySqlParameter("membid", user[0]));
 
             conn.Open();
             cmd.ExecuteNonQuery();
@@ -350,7 +358,6 @@ namespace Bukutachi
             }
 
             return x;
-
         }
 
         #endregion 
