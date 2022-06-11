@@ -129,6 +129,12 @@
     <Compile Include="FormBooksAdmin.Designer.cs">
       <DependentUpon>FormBooksAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormHistoryUserClicked.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHistoryUserClicked.Designer.cs">
+      <DependentUpon>FormHistoryUserClicked.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormHomeAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +243,9 @@
     <EmbeddedResource Include="FormHistoryUser.resx">
       <DependentUpon>FormHistoryUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormHistoryUserClicked.resx">
+      <DependentUpon>FormHistoryUserClicked.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormHomeAdmin.resx">
       <DependentUpon>FormHomeAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,6 +296,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="res\Logo\crystalreport-removebg-preview %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Logo\star.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

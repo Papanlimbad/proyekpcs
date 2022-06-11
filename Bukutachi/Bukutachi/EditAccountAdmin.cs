@@ -96,8 +96,9 @@ namespace Bukutachi
 
         private void btConfirm_Click(object sender, EventArgs e)
         {
-            MySqlCommand cmd2 = new MySqlCommand("select count(*) from member where me_username=?username", conn);
+            MySqlCommand cmd2 = new MySqlCommand("select count(*) from member where me_username=?username AND me_id!=?id", conn);
             cmd2.Parameters.Add(new MySqlParameter("username", tbUsername.Text));
+            cmd2.Parameters.Add(new MySqlParameter("id", tbId.Text));
             conn.Open();
             int usernameTerpakai = Convert.ToInt32(cmd2.ExecuteScalar().ToString());
             conn.Close();

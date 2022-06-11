@@ -36,6 +36,7 @@ namespace Bukutachi
             this.lbLogin = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.dgvHistory = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.btAddRating = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +94,7 @@ namespace Bukutachi
             this.dgvHistory.ReadOnly = true;
             this.dgvHistory.RowHeadersVisible = false;
             this.dgvHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHistory.Size = new System.Drawing.Size(720, 480);
+            this.dgvHistory.Size = new System.Drawing.Size(720, 451);
             this.dgvHistory.TabIndex = 35;
             this.dgvHistory.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Indigo;
             this.dgvHistory.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
@@ -117,7 +118,25 @@ namespace Bukutachi
             this.dgvHistory.ThemeStyle.RowsStyle.Height = 22;
             this.dgvHistory.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
             this.dgvHistory.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvHistory.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvHistory_CellMouseDoubleClick);
+            this.dgvHistory.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvHistory_CellMouseClick);
+            // 
+            // btAddRating
+            // 
+            this.btAddRating.BorderRadius = 5;
+            this.btAddRating.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btAddRating.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btAddRating.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btAddRating.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btAddRating.Enabled = false;
+            this.btAddRating.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btAddRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAddRating.ForeColor = System.Drawing.Color.White;
+            this.btAddRating.Location = new System.Drawing.Point(604, 513);
+            this.btAddRating.Name = "btAddRating";
+            this.btAddRating.Size = new System.Drawing.Size(135, 35);
+            this.btAddRating.TabIndex = 36;
+            this.btAddRating.Text = "Add Rating";
+            this.btAddRating.Click += new System.EventHandler(this.btAddRating_Click);
             // 
             // FormHistoryUser
             // 
@@ -125,6 +144,7 @@ namespace Bukutachi
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
             this.ClientSize = new System.Drawing.Size(765, 560);
+            this.Controls.Add(this.btAddRating);
             this.Controls.Add(this.dgvHistory);
             this.Controls.Add(this.lbLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -142,5 +162,6 @@ namespace Bukutachi
         private System.Windows.Forms.Label lbLogin;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2DataGridView dgvHistory;
+        private Guna.UI2.WinForms.Guna2Button btAddRating;
     }
 }

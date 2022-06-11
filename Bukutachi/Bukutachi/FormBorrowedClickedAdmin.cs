@@ -224,8 +224,7 @@ namespace Bukutachi
                 }
                 conn.Close();
                 status = "Complete";
-                loadDataGrid();
-
+                FormBorrowedClickedAdmin_Load(sender, e);
             }
         }
     }
