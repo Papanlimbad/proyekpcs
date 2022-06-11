@@ -54,9 +54,6 @@ namespace Bukutachi
             this.pbRecommend4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pbRecommend3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pbRecommend2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lbNewSeeMore = new System.Windows.Forms.Label();
-            this.lbPopularSeeMore = new System.Windows.Forms.Label();
-            this.lbRecommendedSeeMore = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbNew1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPopular1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRecommend1)).BeginInit();
@@ -109,7 +106,7 @@ namespace Bukutachi
             this.pbNew1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbNew1.ImageRotate = 0F;
             this.pbNew1.Location = new System.Drawing.Point(47, 135);
-            this.pbNew1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbNew1.Margin = new System.Windows.Forms.Padding(4);
             this.pbNew1.Name = "pbNew1";
             this.pbNew1.Size = new System.Drawing.Size(108, 132);
             this.pbNew1.TabIndex = 5;
@@ -120,7 +117,7 @@ namespace Bukutachi
             this.pbPopular1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbPopular1.ImageRotate = 0F;
             this.pbPopular1.Location = new System.Drawing.Point(48, 320);
-            this.pbPopular1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbPopular1.Margin = new System.Windows.Forms.Padding(4);
             this.pbPopular1.Name = "pbPopular1";
             this.pbPopular1.Size = new System.Drawing.Size(108, 132);
             this.pbPopular1.TabIndex = 7;
@@ -143,7 +140,7 @@ namespace Bukutachi
             this.pbRecommend1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbRecommend1.ImageRotate = 0F;
             this.pbRecommend1.Location = new System.Drawing.Point(48, 505);
-            this.pbRecommend1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbRecommend1.Margin = new System.Windows.Forms.Padding(4);
             this.pbRecommend1.Name = "pbRecommend1";
             this.pbRecommend1.Size = new System.Drawing.Size(108, 132);
             this.pbRecommend1.TabIndex = 9;
@@ -166,7 +163,7 @@ namespace Bukutachi
             this.pbNew2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbNew2.ImageRotate = 0F;
             this.pbNew2.Location = new System.Drawing.Point(180, 135);
-            this.pbNew2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbNew2.Margin = new System.Windows.Forms.Padding(4);
             this.pbNew2.Name = "pbNew2";
             this.pbNew2.Size = new System.Drawing.Size(108, 132);
             this.pbNew2.TabIndex = 10;
@@ -177,7 +174,7 @@ namespace Bukutachi
             this.pbNew3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbNew3.ImageRotate = 0F;
             this.pbNew3.Location = new System.Drawing.Point(313, 135);
-            this.pbNew3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbNew3.Margin = new System.Windows.Forms.Padding(4);
             this.pbNew3.Name = "pbNew3";
             this.pbNew3.Size = new System.Drawing.Size(108, 132);
             this.pbNew3.TabIndex = 11;
@@ -188,7 +185,7 @@ namespace Bukutachi
             this.pbNew4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbNew4.ImageRotate = 0F;
             this.pbNew4.Location = new System.Drawing.Point(447, 135);
-            this.pbNew4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbNew4.Margin = new System.Windows.Forms.Padding(4);
             this.pbNew4.Name = "pbNew4";
             this.pbNew4.Size = new System.Drawing.Size(108, 132);
             this.pbNew4.TabIndex = 12;
@@ -199,7 +196,7 @@ namespace Bukutachi
             this.pbNew5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbNew5.ImageRotate = 0F;
             this.pbNew5.Location = new System.Drawing.Point(580, 135);
-            this.pbNew5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbNew5.Margin = new System.Windows.Forms.Padding(4);
             this.pbNew5.Name = "pbNew5";
             this.pbNew5.Size = new System.Drawing.Size(108, 132);
             this.pbNew5.TabIndex = 13;
@@ -210,7 +207,7 @@ namespace Bukutachi
             this.pbNew6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbNew6.ImageRotate = 0F;
             this.pbNew6.Location = new System.Drawing.Point(713, 135);
-            this.pbNew6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbNew6.Margin = new System.Windows.Forms.Padding(4);
             this.pbNew6.Name = "pbNew6";
             this.pbNew6.Size = new System.Drawing.Size(108, 132);
             this.pbNew6.TabIndex = 14;
@@ -221,7 +218,7 @@ namespace Bukutachi
             this.pbNew7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbNew7.ImageRotate = 0F;
             this.pbNew7.Location = new System.Drawing.Point(847, 135);
-            this.pbNew7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbNew7.Margin = new System.Windows.Forms.Padding(4);
             this.pbNew7.Name = "pbNew7";
             this.pbNew7.Size = new System.Drawing.Size(108, 132);
             this.pbNew7.TabIndex = 15;
@@ -232,7 +229,7 @@ namespace Bukutachi
             this.pbPopular7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbPopular7.ImageRotate = 0F;
             this.pbPopular7.Location = new System.Drawing.Point(847, 320);
-            this.pbPopular7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbPopular7.Margin = new System.Windows.Forms.Padding(4);
             this.pbPopular7.Name = "pbPopular7";
             this.pbPopular7.Size = new System.Drawing.Size(108, 132);
             this.pbPopular7.TabIndex = 21;
@@ -243,7 +240,7 @@ namespace Bukutachi
             this.pbPopular6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbPopular6.ImageRotate = 0F;
             this.pbPopular6.Location = new System.Drawing.Point(713, 320);
-            this.pbPopular6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbPopular6.Margin = new System.Windows.Forms.Padding(4);
             this.pbPopular6.Name = "pbPopular6";
             this.pbPopular6.Size = new System.Drawing.Size(108, 132);
             this.pbPopular6.TabIndex = 20;
@@ -254,7 +251,7 @@ namespace Bukutachi
             this.pbPopular5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbPopular5.ImageRotate = 0F;
             this.pbPopular5.Location = new System.Drawing.Point(580, 320);
-            this.pbPopular5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbPopular5.Margin = new System.Windows.Forms.Padding(4);
             this.pbPopular5.Name = "pbPopular5";
             this.pbPopular5.Size = new System.Drawing.Size(108, 132);
             this.pbPopular5.TabIndex = 19;
@@ -265,7 +262,7 @@ namespace Bukutachi
             this.pbPopular4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbPopular4.ImageRotate = 0F;
             this.pbPopular4.Location = new System.Drawing.Point(447, 320);
-            this.pbPopular4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbPopular4.Margin = new System.Windows.Forms.Padding(4);
             this.pbPopular4.Name = "pbPopular4";
             this.pbPopular4.Size = new System.Drawing.Size(108, 132);
             this.pbPopular4.TabIndex = 18;
@@ -276,7 +273,7 @@ namespace Bukutachi
             this.pbPopular3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbPopular3.ImageRotate = 0F;
             this.pbPopular3.Location = new System.Drawing.Point(313, 320);
-            this.pbPopular3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbPopular3.Margin = new System.Windows.Forms.Padding(4);
             this.pbPopular3.Name = "pbPopular3";
             this.pbPopular3.Size = new System.Drawing.Size(108, 132);
             this.pbPopular3.TabIndex = 17;
@@ -287,7 +284,7 @@ namespace Bukutachi
             this.pbPopular2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbPopular2.ImageRotate = 0F;
             this.pbPopular2.Location = new System.Drawing.Point(180, 320);
-            this.pbPopular2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbPopular2.Margin = new System.Windows.Forms.Padding(4);
             this.pbPopular2.Name = "pbPopular2";
             this.pbPopular2.Size = new System.Drawing.Size(108, 132);
             this.pbPopular2.TabIndex = 16;
@@ -298,7 +295,7 @@ namespace Bukutachi
             this.pbRecommend7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbRecommend7.ImageRotate = 0F;
             this.pbRecommend7.Location = new System.Drawing.Point(847, 505);
-            this.pbRecommend7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbRecommend7.Margin = new System.Windows.Forms.Padding(4);
             this.pbRecommend7.Name = "pbRecommend7";
             this.pbRecommend7.Size = new System.Drawing.Size(108, 132);
             this.pbRecommend7.TabIndex = 27;
@@ -309,7 +306,7 @@ namespace Bukutachi
             this.pbRecommend6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbRecommend6.ImageRotate = 0F;
             this.pbRecommend6.Location = new System.Drawing.Point(713, 505);
-            this.pbRecommend6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbRecommend6.Margin = new System.Windows.Forms.Padding(4);
             this.pbRecommend6.Name = "pbRecommend6";
             this.pbRecommend6.Size = new System.Drawing.Size(108, 132);
             this.pbRecommend6.TabIndex = 26;
@@ -320,7 +317,7 @@ namespace Bukutachi
             this.pbRecommend5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbRecommend5.ImageRotate = 0F;
             this.pbRecommend5.Location = new System.Drawing.Point(580, 505);
-            this.pbRecommend5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbRecommend5.Margin = new System.Windows.Forms.Padding(4);
             this.pbRecommend5.Name = "pbRecommend5";
             this.pbRecommend5.Size = new System.Drawing.Size(108, 132);
             this.pbRecommend5.TabIndex = 25;
@@ -331,7 +328,7 @@ namespace Bukutachi
             this.pbRecommend4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbRecommend4.ImageRotate = 0F;
             this.pbRecommend4.Location = new System.Drawing.Point(447, 505);
-            this.pbRecommend4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbRecommend4.Margin = new System.Windows.Forms.Padding(4);
             this.pbRecommend4.Name = "pbRecommend4";
             this.pbRecommend4.Size = new System.Drawing.Size(108, 132);
             this.pbRecommend4.TabIndex = 24;
@@ -342,7 +339,7 @@ namespace Bukutachi
             this.pbRecommend3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbRecommend3.ImageRotate = 0F;
             this.pbRecommend3.Location = new System.Drawing.Point(313, 505);
-            this.pbRecommend3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbRecommend3.Margin = new System.Windows.Forms.Padding(4);
             this.pbRecommend3.Name = "pbRecommend3";
             this.pbRecommend3.Size = new System.Drawing.Size(108, 132);
             this.pbRecommend3.TabIndex = 23;
@@ -353,47 +350,11 @@ namespace Bukutachi
             this.pbRecommend2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbRecommend2.ImageRotate = 0F;
             this.pbRecommend2.Location = new System.Drawing.Point(180, 505);
-            this.pbRecommend2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbRecommend2.Margin = new System.Windows.Forms.Padding(4);
             this.pbRecommend2.Name = "pbRecommend2";
             this.pbRecommend2.Size = new System.Drawing.Size(108, 132);
             this.pbRecommend2.TabIndex = 22;
             this.pbRecommend2.TabStop = false;
-            // 
-            // lbNewSeeMore
-            // 
-            this.lbNewSeeMore.AutoSize = true;
-            this.lbNewSeeMore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNewSeeMore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(203)))), ((int)(((byte)(192)))));
-            this.lbNewSeeMore.Location = new System.Drawing.Point(852, 112);
-            this.lbNewSeeMore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbNewSeeMore.Name = "lbNewSeeMore";
-            this.lbNewSeeMore.Size = new System.Drawing.Size(93, 20);
-            this.lbNewSeeMore.TabIndex = 28;
-            this.lbNewSeeMore.Text = "See More...";
-            // 
-            // lbPopularSeeMore
-            // 
-            this.lbPopularSeeMore.AutoSize = true;
-            this.lbPopularSeeMore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPopularSeeMore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(203)))), ((int)(((byte)(192)))));
-            this.lbPopularSeeMore.Location = new System.Drawing.Point(852, 297);
-            this.lbPopularSeeMore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbPopularSeeMore.Name = "lbPopularSeeMore";
-            this.lbPopularSeeMore.Size = new System.Drawing.Size(93, 20);
-            this.lbPopularSeeMore.TabIndex = 29;
-            this.lbPopularSeeMore.Text = "See More...";
-            // 
-            // lbRecommendedSeeMore
-            // 
-            this.lbRecommendedSeeMore.AutoSize = true;
-            this.lbRecommendedSeeMore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRecommendedSeeMore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(203)))), ((int)(((byte)(192)))));
-            this.lbRecommendedSeeMore.Location = new System.Drawing.Point(852, 481);
-            this.lbRecommendedSeeMore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbRecommendedSeeMore.Name = "lbRecommendedSeeMore";
-            this.lbRecommendedSeeMore.Size = new System.Drawing.Size(93, 20);
-            this.lbRecommendedSeeMore.TabIndex = 30;
-            this.lbRecommendedSeeMore.Text = "See More...";
             // 
             // FormHomeUser
             // 
@@ -401,9 +362,6 @@ namespace Bukutachi
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
             this.ClientSize = new System.Drawing.Size(1020, 689);
-            this.Controls.Add(this.lbRecommendedSeeMore);
-            this.Controls.Add(this.lbPopularSeeMore);
-            this.Controls.Add(this.lbNewSeeMore);
             this.Controls.Add(this.pbRecommend7);
             this.Controls.Add(this.pbRecommend6);
             this.Controls.Add(this.pbRecommend5);
@@ -430,7 +388,7 @@ namespace Bukutachi
             this.Controls.Add(this.lbNewBooks);
             this.Controls.Add(this.lbWelcome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormHomeUser";
             this.Text = "pnHomeUser";
             this.Load += new System.EventHandler(this.FormHomeUser_Load);
@@ -487,8 +445,5 @@ namespace Bukutachi
         private Guna.UI2.WinForms.Guna2PictureBox pbRecommend4;
         private Guna.UI2.WinForms.Guna2PictureBox pbRecommend3;
         private Guna.UI2.WinForms.Guna2PictureBox pbRecommend2;
-        private System.Windows.Forms.Label lbNewSeeMore;
-        private System.Windows.Forms.Label lbPopularSeeMore;
-        private System.Windows.Forms.Label lbRecommendedSeeMore;
     }
 }

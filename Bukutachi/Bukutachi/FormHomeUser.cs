@@ -49,9 +49,9 @@ namespace Bukutachi
         private void FormHomeUser_Load(object sender, EventArgs e)
         {
             lbWelcome.Text = "Welcome, " + user[1];
-            news = new PictureBox[7] { pbNew1, pbNew2, pbNew3, pbNew4, pbNew5, pbNew6, pbNew7};
-            populars = new PictureBox[7] { pbNew1, pbNew2, pbNew3, pbNew4, pbNew5, pbNew6, pbNew7 };
-            recommends = new PictureBox[7] { pbNew1, pbNew2, pbNew3, pbNew4, pbNew5, pbNew6, pbNew7 };
+            news = new PictureBox[7] { pbNew1, pbNew2, pbNew3, pbNew4, pbNew5, pbNew6, pbNew7 };
+            populars = new PictureBox[7] { pbPopular1, pbPopular2, pbPopular3, pbPopular4, pbPopular5, pbPopular6, pbPopular7 };
+            recommends = new PictureBox[7] { pbRecommend1, pbRecommend2, pbRecommend3, pbRecommend4, pbRecommend5, pbRecommend6, pbRecommend7 };
             
             for (int i = 0; i < 7; i++) {
                 news[i].Click += FormHomeUser_Click;
@@ -72,11 +72,71 @@ namespace Bukutachi
         }
 
         private void getPopularBook() {
+            MySqlCommand cmd = new MySqlCommand(@"
+                SELECT bu.bu_id as 'id', bu.bu_image as 'image'
+                FROM buku bu 
+                LEFT JOIN rating ra ON bu.bu_id = ra.ra_bu_id 
+                GROUP BY bu.bu_id
+                ORDER BY AVG(ra.ra_value) DESC, RAND()
+                LIMIT 7;
+            ", conn);
 
+            if (conn.State == ConnectionState.Open) {
+                conn.Close();
+            }
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+            DataTable books = new DataTable();
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+            da.Fill(books);
+            for (int i = 0; i < 7; i++) {
+                DataRow r = homeBooks.Tables["Popular"].NewRow();
+                r["id"] = books.Rows[i]["id"];
+                r["image"] = WebImage.fromUrl(books.Rows[i]["image"].ToString());
+                homeBooks.Tables["Popular"].Rows.Add(r);
+                Console.WriteLine($"Loading from {books.Rows[i]["image"]}");
+            }
         }
 
         private void getRecommendedBook() {
+            MySqlCommand cmd = new MySqlCommand(@"
+                SELECT bu_id as 'id', bu_title as 'Title', bu_image as 'image' FROM buku
+                WHERE bu_id IN
+                (SELECT DISTINCT gb_bu_id as 'ID' FROM genre_buku WHERE gb_ge_id IN
+                (select DISTINCT gb_ge_id FROM genre_buku WHERE gb_bu_id IN
+                (select dp_bu_id from dpinjam WHERE dp_hp_id IN 
+                (select hp_id from hpinjam where hp_me_id = ?membid)))
+                EXCEPT
+                select dp_bu_id as 'ID' from dpinjam WHERE dp_hp_id IN 
+                (select hp_id from hpinjam where hp_me_id = ?membid))
+                ORDER BY RAND()
+                LIMIT 7; 
+            ", conn);
+            cmd.Parameters.Add(new MySqlParameter("membid", user[0]));
 
+            if(conn.State == ConnectionState.Open) {
+                conn.Close();
+            }
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+            DataTable books = new DataTable();
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+            da.Fill(books);
+            for (int i = 0; i < 7; i++) {
+                DataRow r = homeBooks.Tables["Recommended"].NewRow();
+                r["id"] = books.Rows[i]["id"];
+                r["image"] = WebImage.fromUrl(books.Rows[i]["image"].ToString());
+                homeBooks.Tables["Recommended"].Rows.Add(r);
+                Console.WriteLine($"Loading from {books.Rows[i]["image"]}");
+            }
         }
 
         private void getNewestBook() {
@@ -112,6 +172,10 @@ namespace Bukutachi
             for (int i = 0; i < 7; i++) {
                 news[i].Image = WebImage.resizeImage((Image)homeBooks.Tables["Newest"].Rows[i]["image"], news[i].Width, news[i].Height);
                 news[i].Tag = homeBooks.Tables["Newest"].Rows[i]["id"];
+                recommends[i].Image = WebImage.resizeImage((Image)homeBooks.Tables["Recommended"].Rows[i]["image"], news[i].Width, news[i].Height);
+                recommends[i].Tag = homeBooks.Tables["Recommended"].Rows[i]["id"];
+                populars[i].Image = WebImage.resizeImage((Image)homeBooks.Tables["Popular"].Rows[i]["image"], news[i].Width, news[i].Height);
+                populars[i].Tag = homeBooks.Tables["Popular"].Rows[i]["id"];
             }
         }
     }
