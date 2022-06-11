@@ -143,11 +143,15 @@ namespace Bukutachi
         }
 
         public void addBookToCart(int id) {
-            cart.Add(id);
+            if(cart.Count < 3) {
+                cart.Add(id);
+            }
         }
 
         public void removeBookFromCart(int id) {
-            cart.Remove(id);
+            if (cart.Contains(id)) {
+                cart.Remove(id);
+            }
         }
 
         public bool isInCart(int id) {
