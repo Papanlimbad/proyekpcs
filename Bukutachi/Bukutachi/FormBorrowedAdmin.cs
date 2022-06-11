@@ -24,14 +24,34 @@ namespace Bukutachi
         private void FormBorrowedAdmin_Load(object sender, EventArgs e)
         {
             cbFilter.Text = "Member's Name";
-            cbStatus.Text = "Standby";
-            loadDataGrid();
+            cbStatus.Text = "Requesting";
+            dtFrom.Value = DateTime.Now;
+            dtTo.Value = DateTime.Now;
+            loadDataGrid(true);
         }
 
-        private void loadDataGrid()
+        private void loadDataGrid(bool reset)
         {
-            String kueri = "SELECT hp_id AS 'ID', DATE_FORMAT(hp_borrowedat,'%d-%b-%Y') AS 'Borrowed Date', DATE_FORMAT(hp_returnat,'%d-%b-%Y') AS 'Return Date', DATE_FORMAT(DATE_ADD(hp_borrowedat,INTERVAL 7 DAY),'%d-%b-%Y') AS 'Expected Return Date', hp_status AS 'Status' FROM hpinjam, MEMBER, pegawai WHERE pe_id = hp_pe_id AND me_id = hp_me_id";
-            kueri += $" AND hp_borrowedat >= {dtFrom.Value.ToShortDateString()} AND hp_borrowedat <= {dtTo.Value.ToShortDateString()}";
+            String kueri = "SELECT hp_id AS 'ID', DATE_FORMAT(hp_borrowedat,'%d-%b-%Y') AS 'Borrowed Date', DATE_FORMAT(hp_returnat,'%d-%b-%Y') AS 'Return Date', DATE_FORMAT(DATE_ADD(hp_borrowedat,INTERVAL 7 DAY),'%d-%b-%Y') AS 'Expected Return Date', if(hp_status=0,'Requesting',if(hp_status=1,'Borrowing','Complete')) AS 'Status' FROM hpinjam, MEMBER, pegawai WHERE pe_id = hp_pe_id AND me_id = hp_me_id";
+            if (!reset)
+            {
+                String dateFrom = dtFrom.Value.ToString("yyyy-MM-dd");
+                String dateTo = dtTo.Value.ToString("yyyy-MM-dd");
+                kueri += $" AND hp_borrowedat between '{dateFrom}' AND '{dateTo}'";
+
+                if (cbStatus.Text.Equals("Requesting"))
+                {
+                    kueri += $" AND hp_status=0";
+                }
+                else if (cbStatus.Text.Equals("Borrowing"))
+                {
+                    kueri += $" AND hp_status=1";
+                }
+                else
+                {
+                    kueri += $" AND hp_status=2";
+                }
+            }
 
             if (!tbSearch.Text.Equals(""))
             {
@@ -45,18 +65,7 @@ namespace Bukutachi
                 }
             }
 
-            if (cbStatus.Text.Equals("Standby"))
-            {
-                kueri += $" AND hp_status=0";
-            }
-            else if (cbStatus.Text.Equals("Borrowing"))
-            {
-                kueri += $" AND hp_status=1";
-            }
-            else
-            {
-                kueri += $" AND hp_status=2";
-            }
+            Console.WriteLine(kueri);
 
 
             MySqlCommand cmd = new MySqlCommand(kueri, conn);
@@ -71,16 +80,29 @@ namespace Bukutachi
 
         private void btSearch_Click(object sender, EventArgs e)
         {
-            loadDataGrid();
+            loadDataGrid(false);
         }
 
         private void btReset_Click(object sender, EventArgs e)
         {
             cbFilter.Text = "Member's Name";
-            cbStatus.Text = "Standby";
+            cbStatus.Text = "Requesting";
             dtFrom.Value = DateTime.Now;
             dtTo.Value = DateTime.Now;
-            loadDataGrid();
+            loadDataGrid(true);
+        }
+
+        private void dgvBorrow_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int rowIdx = e.RowIndex;
+            String id = dgvBorrow.Rows[rowIdx].Cells[0].Value.ToString();
+
+            if (dgvBorrow.Rows[rowIdx].Cells[4].Value.ToString().Equals("Requesting"))
+            {
+                FormBorrowedClickedAdmin fb = new FormBorrowedClickedAdmin(conn, id);
+                fb.ShowDialog();
+                fb.Dispose();
+            }
         }
     }
 }
