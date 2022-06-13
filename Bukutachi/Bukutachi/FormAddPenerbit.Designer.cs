@@ -111,12 +111,11 @@ namespace Bukutachi
             this.tbAlamat.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbAlamat.Location = new System.Drawing.Point(154, 178);
             this.tbAlamat.Name = "tbAlamat";
-            this.tbAlamat.PasswordChar = '●';
+            this.tbAlamat.PasswordChar = '\0';
             this.tbAlamat.PlaceholderText = "";
             this.tbAlamat.SelectedText = "";
             this.tbAlamat.Size = new System.Drawing.Size(337, 26);
             this.tbAlamat.TabIndex = 18;
-            this.tbAlamat.UseSystemPasswordChar = true;
             // 
             // lbTelp
             // 
@@ -180,12 +179,11 @@ namespace Bukutachi
             this.tbTelp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbTelp.Location = new System.Drawing.Point(154, 236);
             this.tbTelp.Name = "tbTelp";
-            this.tbTelp.PasswordChar = '●';
+            this.tbTelp.PasswordChar = '\0';
             this.tbTelp.PlaceholderText = "";
             this.tbTelp.SelectedText = "";
             this.tbTelp.Size = new System.Drawing.Size(337, 26);
             this.tbTelp.TabIndex = 21;
-            this.tbTelp.UseSystemPasswordChar = true;
             // 
             // label1
             // 

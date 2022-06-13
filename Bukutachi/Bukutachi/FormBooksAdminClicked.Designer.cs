@@ -29,8 +29,8 @@ namespace Bukutachi
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Guna2DateTimePicker DateReturned;
-            Guna.UI2.WinForms.Guna2DateTimePicker DateBorrowed;
+            this.DateReturned = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.DateBorrowed = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.lbStock = new System.Windows.Forms.Label();
             this.lbBack = new System.Windows.Forms.Label();
             this.pnBook = new Guna.UI2.WinForms.Guna2Panel();
@@ -53,14 +53,10 @@ namespace Bukutachi
             this.tbBookName = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbAdress = new System.Windows.Forms.Label();
             this.lbPassword = new System.Windows.Forms.Label();
-            this.tbAdminUsername = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lbUsername = new System.Windows.Forms.Label();
             this.lbTelephone = new System.Windows.Forms.Label();
             this.tbBorrowerUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbFullName = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            DateReturned = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            DateBorrowed = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.pnBook.SuspendLayout();
             this.pnForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -68,38 +64,39 @@ namespace Bukutachi
             // 
             // DateReturned
             // 
-            DateReturned.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            DateReturned.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            DateReturned.BorderRadius = 7;
-            DateReturned.Checked = true;
-            DateReturned.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            DateReturned.Font = new System.Drawing.Font("Segoe UI", 9F);
-            DateReturned.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            DateReturned.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            DateReturned.Location = new System.Drawing.Point(403, 100);
-            DateReturned.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            DateReturned.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            DateReturned.Name = "DateReturned";
-            DateReturned.Size = new System.Drawing.Size(299, 31);
-            DateReturned.TabIndex = 19;
-            DateReturned.Value = new System.DateTime(2022, 5, 22, 20, 17, 1, 768);
+            this.DateReturned.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.DateReturned.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.DateReturned.BorderRadius = 7;
+            this.DateReturned.Checked = true;
+            this.DateReturned.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.DateReturned.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DateReturned.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.DateReturned.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.DateReturned.Location = new System.Drawing.Point(403, 100);
+            this.DateReturned.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DateReturned.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.DateReturned.Name = "DateReturned";
+            this.DateReturned.Size = new System.Drawing.Size(299, 31);
+            this.DateReturned.TabIndex = 19;
+            this.DateReturned.Value = new System.DateTime(2022, 5, 22, 20, 17, 1, 768);
             // 
             // DateBorrowed
             // 
-            DateBorrowed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            DateBorrowed.BorderRadius = 7;
-            DateBorrowed.Checked = true;
-            DateBorrowed.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            DateBorrowed.Font = new System.Drawing.Font("Segoe UI", 9F);
-            DateBorrowed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            DateBorrowed.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            DateBorrowed.Location = new System.Drawing.Point(403, 35);
-            DateBorrowed.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            DateBorrowed.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            DateBorrowed.Name = "DateBorrowed";
-            DateBorrowed.Size = new System.Drawing.Size(299, 31);
-            DateBorrowed.TabIndex = 18;
-            DateBorrowed.Value = new System.DateTime(2022, 5, 22, 20, 17, 1, 768);
+            this.DateBorrowed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.DateBorrowed.BorderRadius = 7;
+            this.DateBorrowed.Checked = true;
+            this.DateBorrowed.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.DateBorrowed.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DateBorrowed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.DateBorrowed.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.DateBorrowed.Location = new System.Drawing.Point(403, 35);
+            this.DateBorrowed.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DateBorrowed.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.DateBorrowed.Name = "DateBorrowed";
+            this.DateBorrowed.Size = new System.Drawing.Size(299, 31);
+            this.DateBorrowed.TabIndex = 18;
+            this.DateBorrowed.Value = new System.DateTime(2022, 5, 22, 20, 17, 1, 768);
+            this.DateBorrowed.ValueChanged += new System.EventHandler(this.DateBorrow_ValueChanged);
             // 
             // lbStock
             // 
@@ -386,14 +383,12 @@ namespace Bukutachi
             // pnForm
             // 
             this.pnForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.pnForm.Controls.Add(DateReturned);
-            this.pnForm.Controls.Add(DateBorrowed);
+            this.pnForm.Controls.Add(this.DateReturned);
+            this.pnForm.Controls.Add(this.DateBorrowed);
             this.pnForm.Controls.Add(this.btCreateForm);
             this.pnForm.Controls.Add(this.tbBookName);
             this.pnForm.Controls.Add(this.lbAdress);
             this.pnForm.Controls.Add(this.lbPassword);
-            this.pnForm.Controls.Add(this.tbAdminUsername);
-            this.pnForm.Controls.Add(this.lbUsername);
             this.pnForm.Controls.Add(this.lbTelephone);
             this.pnForm.Controls.Add(this.tbBorrowerUsername);
             this.pnForm.Controls.Add(this.lbFullName);
@@ -418,6 +413,7 @@ namespace Bukutachi
             this.btCreateForm.TabIndex = 17;
             this.btCreateForm.Tag = "0";
             this.btCreateForm.Text = "Create Form";
+            this.btCreateForm.Click += new System.EventHandler(this.btCreateForm_Click);
             // 
             // tbBookName
             // 
@@ -435,7 +431,7 @@ namespace Bukutachi
             this.tbBookName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbBookName.ForeColor = System.Drawing.Color.White;
             this.tbBookName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbBookName.Location = new System.Drawing.Point(32, 165);
+            this.tbBookName.Location = new System.Drawing.Point(32, 100);
             this.tbBookName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbBookName.Name = "tbBookName";
             this.tbBookName.PasswordChar = '\0';
@@ -449,7 +445,7 @@ namespace Bukutachi
             this.lbAdress.AutoSize = true;
             this.lbAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAdress.ForeColor = System.Drawing.Color.White;
-            this.lbAdress.Location = new System.Drawing.Point(32, 140);
+            this.lbAdress.Location = new System.Drawing.Point(32, 75);
             this.lbAdress.Name = "lbAdress";
             this.lbAdress.Size = new System.Drawing.Size(97, 18);
             this.lbAdress.TabIndex = 15;
@@ -465,42 +461,6 @@ namespace Bukutachi
             this.lbPassword.Size = new System.Drawing.Size(116, 18);
             this.lbPassword.TabIndex = 14;
             this.lbPassword.Text = "Returned Date";
-            // 
-            // tbAdminUsername
-            // 
-            this.tbAdminUsername.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.tbAdminUsername.BorderRadius = 7;
-            this.tbAdminUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbAdminUsername.DefaultText = "";
-            this.tbAdminUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.tbAdminUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.tbAdminUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbAdminUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbAdminUsername.Enabled = false;
-            this.tbAdminUsername.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.tbAdminUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbAdminUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAdminUsername.ForeColor = System.Drawing.Color.White;
-            this.tbAdminUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbAdminUsername.Location = new System.Drawing.Point(32, 100);
-            this.tbAdminUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tbAdminUsername.Name = "tbAdminUsername";
-            this.tbAdminUsername.PasswordChar = '\0';
-            this.tbAdminUsername.PlaceholderText = "";
-            this.tbAdminUsername.SelectedText = "";
-            this.tbAdminUsername.Size = new System.Drawing.Size(302, 31);
-            this.tbAdminUsername.TabIndex = 12;
-            // 
-            // lbUsername
-            // 
-            this.lbUsername.AutoSize = true;
-            this.lbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUsername.ForeColor = System.Drawing.Color.White;
-            this.lbUsername.Location = new System.Drawing.Point(32, 75);
-            this.lbUsername.Name = "lbUsername";
-            this.lbUsername.Size = new System.Drawing.Size(136, 18);
-            this.lbUsername.TabIndex = 11;
-            this.lbUsername.Text = "Admin Username";
             // 
             // lbTelephone
             // 
@@ -609,11 +569,11 @@ namespace Bukutachi
         private Guna.UI2.WinForms.Guna2TextBox tbBookName;
         private System.Windows.Forms.Label lbAdress;
         private System.Windows.Forms.Label lbPassword;
-        private Guna.UI2.WinForms.Guna2TextBox tbAdminUsername;
-        private System.Windows.Forms.Label lbUsername;
         private System.Windows.Forms.Label lbTelephone;
         private Guna.UI2.WinForms.Guna2TextBox tbBorrowerUsername;
         private System.Windows.Forms.Label lbFullName;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker DateBorrowed;
+        private Guna.UI2.WinForms.Guna2DateTimePicker DateReturned;
     }
 }

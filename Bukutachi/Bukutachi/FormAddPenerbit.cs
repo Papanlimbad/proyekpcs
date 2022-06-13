@@ -16,7 +16,7 @@ namespace Bukutachi
     {
         MySqlConnection conn;
 
-        public FormAddPenerbit()
+        public FormAddPenerbit(MySqlConnection conn)
         {
             InitializeComponent();
             this.conn = conn;
@@ -51,7 +51,7 @@ namespace Bukutachi
                 }
                 else
                 {
-                    MySqlCommand cmd = new MySqlCommand("inser into penerbit(pt_name, pt_address, pt_telephone) values(?penerbit, ?address, ?telephone)", conn);
+                    MySqlCommand cmd = new MySqlCommand("insert into penerbit(pt_name, pt_address, pt_telephone) values(?penerbit, ?address, ?telephone)", conn);
                     cmd.Parameters.Add(new MySqlParameter("penerbit", tbPenerbit.Text));
                     cmd.Parameters.Add(new MySqlParameter("address", tbAlamat.Text));
                     cmd.Parameters.Add(new MySqlParameter("telephone", tbTelp.Text));

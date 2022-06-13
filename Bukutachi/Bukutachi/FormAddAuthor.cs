@@ -19,7 +19,7 @@ namespace Bukutachi
         MySqlConnection conn;
 
 
-        public FormAddAuthor()
+        public FormAddAuthor(MySqlConnection conn)
         {
             InitializeComponent();
             this.conn = conn;
@@ -52,7 +52,7 @@ namespace Bukutachi
                 }
                 else
                 {
-                    MySqlCommand cmd = new MySqlCommand("inser into penulis(ps_name, ps_telephone) values(?name, ?telephone)", conn);
+                    MySqlCommand cmd = new MySqlCommand("insert into penulis(ps_name, ps_telephone) values(?name, ?telephone)", conn);
                     cmd.Parameters.Add(new MySqlParameter("name", tbName.Text));
                     cmd.Parameters.Add(new MySqlParameter("telephone", tbTelp.Text));
                     conn.Open();

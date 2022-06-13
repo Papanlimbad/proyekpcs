@@ -147,7 +147,7 @@ namespace Bukutachi
 
         private void dgvBorrowedBooks_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ((HomeAdmin)(this.Parent.Parent)).loadadmin(new FormBooksAdminClicked(conn, Convert.ToInt32(dgvBorrowedBook.Rows[e.RowIndex].Cells[0].Value), this));
+            ((HomeAdmin)(this.Parent.Parent)).loadadmin(new FormBooksAdminClicked(conn, Convert.ToInt32(dgvBorrowedBook.Rows[e.RowIndex].Cells[0].Value), this, user));
         }
 
         private void FormBooksAdmin_Load(object sender, EventArgs e)

@@ -129,12 +129,11 @@ namespace Bukutachi
             this.tbTelp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbTelp.Location = new System.Drawing.Point(138, 183);
             this.tbTelp.Name = "tbTelp";
-            this.tbTelp.PasswordChar = '●';
+            this.tbTelp.PasswordChar = '\0';
             this.tbTelp.PlaceholderText = "";
             this.tbTelp.SelectedText = "";
             this.tbTelp.Size = new System.Drawing.Size(294, 26);
             this.tbTelp.TabIndex = 12;
-            this.tbTelp.UseSystemPasswordChar = true;
             // 
             // lbTelp
             // 
