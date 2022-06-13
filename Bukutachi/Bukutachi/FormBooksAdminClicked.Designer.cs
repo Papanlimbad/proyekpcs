@@ -108,9 +108,9 @@ namespace Bukutachi
             this.lbStock.ForeColor = System.Drawing.Color.White;
             this.lbStock.Location = new System.Drawing.Point(641, 14);
             this.lbStock.Name = "lbStock";
-            this.lbStock.Size = new System.Drawing.Size(73, 18);
+            this.lbStock.Size = new System.Drawing.Size(77, 18);
             this.lbStock.TabIndex = 30;
-            this.lbStock.Text = "Stock : -";
+            this.lbStock.Text = "Status : -";
             // 
             // lbBack
             // 
@@ -122,6 +122,7 @@ namespace Bukutachi
             this.lbBack.Size = new System.Drawing.Size(131, 16);
             this.lbBack.TabIndex = 29;
             this.lbBack.Text = "< Back To Search";
+            this.lbBack.Click += new System.EventHandler(this.lbBack_Click);
             // 
             // pnBook
             // 
@@ -153,7 +154,6 @@ namespace Bukutachi
             this.tbLocation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbLocation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbLocation.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbLocation.Enabled = false;
             this.tbLocation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbLocation.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbLocation.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -162,12 +162,11 @@ namespace Bukutachi
             this.tbLocation.Location = new System.Drawing.Point(148, 203);
             this.tbLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbLocation.Name = "tbLocation";
-            this.tbLocation.PasswordChar = '●';
+            this.tbLocation.PasswordChar = '\0';
             this.tbLocation.PlaceholderText = "";
             this.tbLocation.SelectedText = "";
             this.tbLocation.Size = new System.Drawing.Size(363, 29);
             this.tbLocation.TabIndex = 31;
-            this.tbLocation.UseSystemPasswordChar = true;
             // 
             // tbPublishDate
             // 
@@ -179,7 +178,6 @@ namespace Bukutachi
             this.tbPublishDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbPublishDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbPublishDate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbPublishDate.Enabled = false;
             this.tbPublishDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbPublishDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbPublishDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -188,12 +186,11 @@ namespace Bukutachi
             this.tbPublishDate.Location = new System.Drawing.Point(148, 164);
             this.tbPublishDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbPublishDate.Name = "tbPublishDate";
-            this.tbPublishDate.PasswordChar = '●';
+            this.tbPublishDate.PasswordChar = '\0';
             this.tbPublishDate.PlaceholderText = "";
             this.tbPublishDate.SelectedText = "";
             this.tbPublishDate.Size = new System.Drawing.Size(363, 29);
             this.tbPublishDate.TabIndex = 30;
-            this.tbPublishDate.UseSystemPasswordChar = true;
             // 
             // tbPublisher
             // 
@@ -205,7 +202,6 @@ namespace Bukutachi
             this.tbPublisher.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbPublisher.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbPublisher.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbPublisher.Enabled = false;
             this.tbPublisher.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbPublisher.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbPublisher.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -214,12 +210,11 @@ namespace Bukutachi
             this.tbPublisher.Location = new System.Drawing.Point(148, 125);
             this.tbPublisher.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbPublisher.Name = "tbPublisher";
-            this.tbPublisher.PasswordChar = '●';
+            this.tbPublisher.PasswordChar = '\0';
             this.tbPublisher.PlaceholderText = "";
             this.tbPublisher.SelectedText = "";
             this.tbPublisher.Size = new System.Drawing.Size(363, 29);
             this.tbPublisher.TabIndex = 29;
-            this.tbPublisher.UseSystemPasswordChar = true;
             // 
             // tbGenre
             // 
@@ -231,7 +226,6 @@ namespace Bukutachi
             this.tbGenre.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbGenre.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbGenre.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbGenre.Enabled = false;
             this.tbGenre.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbGenre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbGenre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -240,12 +234,11 @@ namespace Bukutachi
             this.tbGenre.Location = new System.Drawing.Point(148, 86);
             this.tbGenre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbGenre.Name = "tbGenre";
-            this.tbGenre.PasswordChar = '●';
+            this.tbGenre.PasswordChar = '\0';
             this.tbGenre.PlaceholderText = "";
             this.tbGenre.SelectedText = "";
             this.tbGenre.Size = new System.Drawing.Size(363, 29);
             this.tbGenre.TabIndex = 28;
-            this.tbGenre.UseSystemPasswordChar = true;
             // 
             // tbAuthor
             // 
@@ -257,7 +250,6 @@ namespace Bukutachi
             this.tbAuthor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbAuthor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbAuthor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbAuthor.Enabled = false;
             this.tbAuthor.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbAuthor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbAuthor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -266,12 +258,11 @@ namespace Bukutachi
             this.tbAuthor.Location = new System.Drawing.Point(148, 47);
             this.tbAuthor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbAuthor.Name = "tbAuthor";
-            this.tbAuthor.PasswordChar = '●';
+            this.tbAuthor.PasswordChar = '\0';
             this.tbAuthor.PlaceholderText = "";
             this.tbAuthor.SelectedText = "";
             this.tbAuthor.Size = new System.Drawing.Size(363, 29);
             this.tbAuthor.TabIndex = 27;
-            this.tbAuthor.UseSystemPasswordChar = true;
             // 
             // tbBookTitle
             // 
@@ -283,7 +274,6 @@ namespace Bukutachi
             this.tbBookTitle.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbBookTitle.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbBookTitle.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbBookTitle.Enabled = false;
             this.tbBookTitle.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbBookTitle.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbBookTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -292,12 +282,11 @@ namespace Bukutachi
             this.tbBookTitle.Location = new System.Drawing.Point(148, 8);
             this.tbBookTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbBookTitle.Name = "tbBookTitle";
-            this.tbBookTitle.PasswordChar = '●';
+            this.tbBookTitle.PasswordChar = '\0';
             this.tbBookTitle.PlaceholderText = "";
             this.tbBookTitle.SelectedText = "";
             this.tbBookTitle.Size = new System.Drawing.Size(363, 29);
             this.tbBookTitle.TabIndex = 26;
-            this.tbBookTitle.UseSystemPasswordChar = true;
             // 
             // lbLocation
             // 
@@ -585,6 +574,7 @@ namespace Bukutachi
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormBooksAdminClicked";
             this.Text = "FormBooksAdminClicked";
+            this.Load += new System.EventHandler(this.FormBooksAdminClicked_Load);
             this.pnBook.ResumeLayout(false);
             this.pnBook.PerformLayout();
             this.pnForm.ResumeLayout(false);
