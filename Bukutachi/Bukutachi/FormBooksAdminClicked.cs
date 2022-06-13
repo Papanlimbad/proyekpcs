@@ -18,17 +18,21 @@ namespace Bukutachi
         MySqlConnection conn;
         Form lastPage;
         HomeAdmin progadmin;
+        string idpinjam;
+        String[] user = new String[8];
+
         public FormBooksAdminClicked(MySqlConnection conn, int id, Form lastPage)
         {
             InitializeComponent();
             bookId = id;
             this.conn = conn;
             this.lastPage = lastPage;
+            this.idpinjam = idpinjam;
         }
 
         private void btEditData_Click(object sender, EventArgs e)
         {
-           // string sql = "update buku set bu_title=?title, ";
+          // string sql = "update buku set bu_title=?title, ";
         }
 
         private void FormBooksAdminClicked_Load(object sender, EventArgs e)
@@ -64,6 +68,12 @@ namespace Bukutachi
             tbPublishDate.Text = dt.Rows[0]["Publish Date"].ToString();
             tbLocation.Text = $"Shelf {dt.Rows[0]["Location"]}";
             guna2PictureBox1.Image= WebImage.resizeImage(WebImage.fromUrl(dt.Rows[0]["Image"].ToString()), guna2PictureBox1.Width, guna2PictureBox1.Height);
+
+            //Form Borrow
+
+            tbBookName.Text= dt.Rows[0]["Title"].ToString();
+            
+
 
             if (Convert.ToInt32(dt.Rows[0]["Status"]) == 0)
             {
