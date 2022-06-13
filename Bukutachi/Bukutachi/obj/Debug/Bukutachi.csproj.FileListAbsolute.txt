@@ -187,3 +187,5 @@ C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukut
 C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormAddAuthor.resources
 D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormBorrowedClickedAdmin.resources
 D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormHistoryUserClicked.resources
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormBorrowedClickedAdmin.resources
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormHistoryUserClicked.resources

@@ -392,6 +392,7 @@ namespace Bukutachi
             this.btEditData.TabIndex = 27;
             this.btEditData.Tag = "0";
             this.btEditData.Text = "Edit Data";
+            this.btEditData.Click += new System.EventHandler(this.btEditData_Click);
             // 
             // pnForm
             // 

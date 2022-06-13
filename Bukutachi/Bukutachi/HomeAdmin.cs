@@ -73,7 +73,7 @@ namespace Bukutachi
             btCrystalReport.FillColor = Color.FromArgb(42, 33, 33);
         }
 
-        private void loadadmin(object form)
+        public void loadadmin(object form)
         {
             if (this.pnMain.Controls.Count > 0)
             {

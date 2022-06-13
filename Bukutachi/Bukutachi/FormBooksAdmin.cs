@@ -31,7 +31,7 @@ namespace Bukutachi
         private void FormBooksAdmin_DoubleClick(object sender, EventArgs e)
         {
             InitializeComponent();
-            foreach (DataGridViewColumn column in dgvBorrowedBooks.Columns)
+            foreach (DataGridViewColumn column in dgvBorrowedBook.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
@@ -115,8 +115,8 @@ namespace Bukutachi
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             DataSet dsBorrowed = new DataSet();
             da.Fill(dsBorrowed);
-            dgvBorrowedBooks.DataSource = dsBorrowed.Tables[0].DefaultView;
-            dgvBorrowedBooks.Columns[0].Visible = false;
+            dgvBorrowedBook.DataSource = dsBorrowed.Tables[0].DefaultView;
+            dgvBorrowedBook.Columns[0].Visible = false;
         }
         private void loadcombobox()
         {
@@ -147,12 +147,12 @@ namespace Bukutachi
 
         private void dgvBorrowedBooks_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ((HomeUser)(this.Parent.Parent)).loadForm(new FormBooksUserClicked(conn, Convert.ToInt32(dgvBorrowedBooks.Rows[e.RowIndex].Cells[0].Value), this));
+            ((HomeAdmin)(this.Parent.Parent)).loadadmin(new FormBooksAdminClicked(conn, Convert.ToInt32(dgvBorrowedBook.Rows[e.RowIndex].Cells[0].Value), this));
         }
 
         private void FormBooksAdmin_Load(object sender, EventArgs e)
         {
-            foreach (DataGridViewColumn column in dgvBorrowedBooks.Columns)
+            foreach (DataGridViewColumn column in dgvBorrowedBook.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
