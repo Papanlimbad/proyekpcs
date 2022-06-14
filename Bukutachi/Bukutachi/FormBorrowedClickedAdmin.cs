@@ -203,9 +203,10 @@ namespace Bukutachi
                             int denda = (selisih - 7) * 1000;
                             foreach(DataGridViewRow row in dgvBorrow.Rows)
                             {
-                                MySqlCommand cmd4 = new MySqlCommand("INSERT INTO detaildenda(dd_dp_id, dd_denda) VALUES(?dpid,?denda);", conn);
+                                MySqlCommand cmd4 = new MySqlCommand("INSERT INTO detaildenda(dd_dp_id, dd_denda, dd_status) VALUES(?dpid,?denda,?status);", conn);
                                 cmd4.Parameters.AddWithValue("dpid", row.Cells[0].Value.ToString());
                                 cmd4.Parameters.AddWithValue("denda", denda);
+                                cmd4.Parameters.AddWithValue("status", 0);
                                 cmd4.ExecuteNonQuery();
                             }
 
