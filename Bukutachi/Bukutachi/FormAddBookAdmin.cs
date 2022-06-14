@@ -73,12 +73,21 @@ namespace Bukutachi
                     string ambiltahun = "yyyy";
                     int tes = 1;
                     int ambilid=-1;
+                    string ambilnamabuku = tbBookTitle.Text;
+                    string genreambil = cbGenre.Text;
                     MySqlCommand cmd2 = new MySqlCommand("select pt_id from penerbit where pt_name=?publisher",conn);
                     cmd2.Parameters.Add(new MySqlParameter("publisher", cbPublisher.Text));
+                    MySqlCommand cmd3 = new MySqlCommand("select ps_id from penulis where ps_name=?author", conn);
+                    cmd3.Parameters.Add(new MySqlParameter("author", cbAuthor.Text));
+                
                     conn.Open();
                     int namapublisher = Convert.ToInt32(cmd2.ExecuteScalar());
+                    int idauthor = Convert.ToInt32(cmd3.ExecuteScalar());
+                    
                     conn.Close();
                     MySqlCommand cmd = new MySqlCommand("insert into buku(bu_title, bu_synopsis, bu_publishedat, bu_pt_id, bu_rb_id, bu_status, bu_image, bu_large) values(?title, ?synopsis, ?publishedate, ?penerbit , ?rakbuku, 1, ?gambar, ?gambar);", conn);
+
+
                     cmd.Parameters.Add(new MySqlParameter("title", tbBookTitle.Text));
                     cmd.Parameters.Add(new MySqlParameter("synopsis", tbSynopsis.Text));
                     cmd.Parameters.Add(new MySqlParameter("publishedate", PublishDate.Value.ToString(ambiltahun)));
@@ -88,6 +97,27 @@ namespace Bukutachi
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     conn.Close();
+
+                    MySqlCommand cmd4 = new MySqlCommand("select bu_id from buku where bu_title=?ambilbuku", conn);
+                    MySqlCommand cmd5 = new MySqlCommand("select ge_id from genre where ge_name=?ambilgenre",conn);
+                    cmd4.Parameters.Add(new MySqlParameter("ambilbuku", ambilnamabuku));
+                    cmd5.Parameters.Add(new MySqlParameter("ambilgenre",genreambil));
+                    conn.Open();
+                    int ambilidbuku = Convert.ToInt32(cmd4.ExecuteScalar());
+                    int ambilidgenre = Convert.ToInt32(cmd5.ExecuteScalar());
+                    conn.Close();
+
+                    MySqlCommand cmda = new MySqlCommand("insert into buku_penulis(bp_ps_id, bp_bu_id) values(?penulisid, ?bukuid);", conn);
+                    MySqlCommand cmdb = new MySqlCommand("insert into genre_buku(gb_bu_id, gb_ge_id) values(?genrebuku, ?genre);", conn);
+                    cmda.Parameters.Add(new MySqlParameter("penulisid", idauthor));
+                    cmda.Parameters.Add(new MySqlParameter("bukuid", ambilidbuku));
+                    cmdb.Parameters.Add(new MySqlParameter("genre", ambilidgenre));
+                    cmdb.Parameters.Add(new MySqlParameter("genrebuku", ambilidbuku));
+                    conn.Open();
+                    cmda.ExecuteNonQuery();
+                    cmdb.ExecuteNonQuery();
+                    conn.Close();
+
 
                     clearAll();
 
