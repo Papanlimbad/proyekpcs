@@ -21,7 +21,15 @@ namespace Bukutachi
         Form lastPage;
         HomeAdmin progadmin;
         string idpinjam;
+        MySqlCommand cmd;
+
         String[] user = new String[8];
+
+        string sqlpenulis;
+        string sqlgenre;
+        string sqlpublisher;
+        MySqlDataAdapter da;
+        DataTable dt;
 
         public FormBooksAdminClicked(MySqlConnection conn, int id, Form lastPage, String[] user)
         {
@@ -31,10 +39,82 @@ namespace Bukutachi
             this.lastPage = lastPage;
             this.idpinjam = idpinjam;
             this.user = user;
+
+            LoadComboPenulis(sqlpenulis, "ps_name", "ps_id");
+            LoadComboGenre(sqlgenre, "ge_name", "ge_id");
+            LoadComboPublisher(sqlpublisher, "pt_name", "pt_id");
         }
 
         private void btEditData_Click(object sender, EventArgs e)
         {
+            if (tbBookTitle.Text=="" || cbAuthor.Text=="" || cbGenre.Text==""||cbPublisher.Text==""||tbLocation.Text==""||tbPublishDate.Text=="")
+            {
+                MessageBox.Show("Field Harus Diisi Semua!");
+            }
+            else
+            {
+                Regex re = new Regex("^[0-9]+$");
+                if (!re.IsMatch(tbLocation.Text) ||!re.IsMatch(tbPublishDate.Text))
+                {
+                    MessageBox.Show("Lokasi Rak Buku atau Tahun Rilis Harus di isi Angka!");
+                }
+                else
+                {
+                    string ambiltitle = tbBookTitle.Text;
+                    string ambilpenerbit = cbPublisher.Text;
+                    int ambiltahun = Convert.ToInt32(tbPublishDate.Text);
+                    int rakbuku = Convert.ToInt32(tbLocation.Text);
+                    string ambilgenrebuku = cbGenre.Text;
+                    string ambilauthor = cbAuthor.Text;
+
+
+                    MySqlCommand cmda = new MySqlCommand("select pt_id from penerbit where pt_name=?publisher", conn);
+                    MySqlCommand cmdb = new MySqlCommand("select ge_id from genre where ge_name=?ambilgenre", conn);
+                    MySqlCommand cmcc = new MySqlCommand("select ps_id from penulis where ps_name=?ambilpenulis", conn);
+                    MySqlCommand cmdd = new MySqlCommand("select bu_id from buku where bu_title=?namabuku", conn);
+                    cmda.Parameters.Add(new MySqlParameter("publisher",ambilpenerbit));
+                    cmdb.Parameters.Add(new MySqlParameter("ambilgenre",ambilgenrebuku));
+                    cmcc.Parameters.Add(new MySqlParameter("ambilpenulis", ambilauthor));
+                    cmdd.Parameters.Add(new MySqlParameter("namabuku", ambiltitle));
+
+                    conn.Open();
+                    int idbuku = Convert.ToInt32(cmdd.ExecuteNonQuery());
+                    int namapublisher = Convert.ToInt32(cmda.ExecuteScalar());
+                    int idgenre = Convert.ToInt32(cmdb.ExecuteScalar());
+                    int idauthor = Convert.ToInt32(cmcc.ExecuteScalar());
+                    cmdd.ExecuteNonQuery();
+                    conn.Close();
+
+
+                    MySqlCommand cmd2 = new MySqlCommand("update buku set bu_pt_id=?idpenerbit, bu_publishedat=?publishdate, bu_rb_id=?rakbuku where bu_title=?cektitle",conn);
+                    MySqlCommand cmd3 = new MySqlCommand("update genre_buku set gb_ge_id=?genreid where gb_bu_id=?cekbuku",conn);
+                    MySqlCommand cmd4 = new MySqlCommand("update buku_penulis set bp_ps_id=?penulisid where bp_bu_id=?cekbuku2",conn);
+                    MySqlCommand cmd5 = new MySqlCommand("update buku set bu_title=?bukutitle where bu_title=?cekbukutitle",conn);
+
+                    cmd2.Parameters.Add(new MySqlParameter("cektitle", ambiltitle));
+                    cmd2.Parameters.Add(new MySqlParameter("idpenerbit", namapublisher));
+                    cmd2.Parameters.Add(new MySqlParameter("publishdate", ambiltahun));
+                    cmd2.Parameters.Add(new MySqlParameter("rakbuku", rakbuku));
+
+                    cmd3.Parameters.Add(new MySqlParameter("cekbuku", idbuku));
+                    cmd3.Parameters.Add(new MySqlParameter("genreid", idgenre));
+
+                    cmd4.Parameters.Add(new MySqlParameter("cekbuku2", idbuku));
+                    cmd4.Parameters.Add(new MySqlParameter("penulisid", idauthor));
+
+                    cmd5.Parameters.Add(new MySqlParameter("cekbukutitle", ambiltitle));
+                    cmd5.Parameters.Add(new MySqlParameter("bukutitle", ambiltitle));
+
+                    conn.Open();
+                    cmd2.ExecuteNonQuery();
+                    cmd3.ExecuteNonQuery();
+                    cmd4.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("Berhasil Update Buku");
+                }
+            }
+
+
           // string sql = "update buku set bu_title=?title, ";
         }
 
@@ -66,11 +146,11 @@ namespace Bukutachi
             da.Fill(dt);
 
             tbBookTitle.Text= dt.Rows[0]["Title"].ToString();
-            tbAuthor.Text = dt.Rows[0]["Author"].ToString();
-            tbGenre.Text = dt.Rows[0]["Genres"].ToString();
-            tbPublisher.Text = dt.Rows[0]["Publisher"].ToString();
+            cbAuthor.Text = dt.Rows[0]["Author"].ToString();
+            cbGenre.Text = dt.Rows[0]["Genres"].ToString();
+            cbPublisher.Text = dt.Rows[0]["Publisher"].ToString();
             tbPublishDate.Text = dt.Rows[0]["Publish Date"].ToString();
-            tbLocation.Text = $"Shelf {dt.Rows[0]["Location"]}";
+            tbLocation.Text = $"{dt.Rows[0]["Location"]}";
             guna2PictureBox1.Image= WebImage.resizeImage(WebImage.fromUrl(dt.Rows[0]["Image"].ToString()), guna2PictureBox1.Width, guna2PictureBox1.Height);
             
            
@@ -115,6 +195,105 @@ namespace Bukutachi
         private void DateBorrow_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void LoadComboPenulis(string sqlpenulis, string DisplayMember, string ValueMember)
+        {
+            sqlpenulis = "SELECT * FROM penulis ORDER BY ps_name ASC";
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = sqlpenulis;
+                da = new MySqlDataAdapter();
+                da.SelectCommand = cmd;
+                dt = new DataTable();
+                da.Fill(dt);
+
+                cbAuthor.DataSource = dt;
+                cbAuthor.DisplayMember = DisplayMember;
+                cbAuthor.ValueMember = ValueMember;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void LoadComboGenre(string sqlpengarang, string DisplayMember, string ValueMember)
+        {
+            sqlgenre = "SELECT * FROM genre ORDER BY ge_name ASC";
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = sqlgenre;
+                da = new MySqlDataAdapter();
+                da.SelectCommand = cmd;
+                dt = new DataTable();
+                da.Fill(dt);
+
+                cbGenre.DataSource = dt;
+                cbGenre.DisplayMember = DisplayMember;
+                cbGenre.ValueMember = ValueMember;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void LoadComboPublisher(string sqlpublisher, string DisplayMember, string ValueMember)
+        {
+            sqlpublisher = "SELECT * FROM penerbit ORDER BY pt_name ASC";
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = sqlpublisher;
+                da = new MySqlDataAdapter();
+                da.SelectCommand = cmd;
+                dt = new DataTable();
+                da.Fill(dt);
+
+                cbPublisher.DataSource = dt;
+                cbPublisher.DisplayMember = DisplayMember;
+                cbPublisher.ValueMember = ValueMember;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }
