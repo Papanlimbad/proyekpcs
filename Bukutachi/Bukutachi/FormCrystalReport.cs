@@ -15,14 +15,37 @@ namespace Bukutachi
         public FormCrystalReport()
         {
             InitializeComponent();
-            RptDenda rpt = new RptDenda();
+            RptPinjamAktif rpt = new RptPinjamAktif();
             rpt.SetDatabaseLogon("root", "", "localhost", "bukutachi_db");
             crystalReportViewer2.ReportSource = rpt;
+            cbSearchBy.SelectedIndex = 0;
         }
 
         private void crystalReportViewer2_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btLogin_Click(object sender, EventArgs e)
+        {
+            if (cbSearchBy.Text.Equals("Borrowed"))
+            {
+                RptPinjamAktif rpt = new RptPinjamAktif();
+                rpt.SetDatabaseLogon("root", "", "localhost", "bukutachi_db");
+                crystalReportViewer2.ReportSource = rpt;
+            }
+            else if (cbSearchBy.Text.Equals("History"))
+            {
+                RptHistory rpt = new RptHistory();
+                rpt.SetDatabaseLogon("root", "", "localhost", "bukutachi_db");
+                crystalReportViewer2.ReportSource = rpt;
+            }
+            else if (cbSearchBy.Text.Equals("Fine"))
+            {
+                RptDenda rpt = new RptDenda();
+                rpt.SetDatabaseLogon("root", "", "localhost", "bukutachi_db");
+                crystalReportViewer2.ReportSource = rpt;
+            }
         }
     }
 }
