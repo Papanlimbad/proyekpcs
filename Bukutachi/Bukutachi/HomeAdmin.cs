@@ -56,16 +56,16 @@ namespace Bukutachi
 
         private void HomeAdmin_Load(object sender, EventArgs e)
         {
-            lbHello.Text = "Hello, " + user[1];
-            lbHello.Location = new Point(this.Size.Width - lbHello.Size.Width - 20, 41);
+           lbHello.Text = "Hello, " + user[1];
+           lbHello.Location = new Point(this.Size.Width - lbHello.Size.Width - 20, 41);
 
-            btHome.FillColor = Color.FromArgb(86, 100, 194);
-            loadadmin(new FormHomeAdmin());
+            btBooks.FillColor = Color.FromArgb(86, 100, 194);
+            loadadmin(new FormBooksAdmin(conn));
         }
 
         private void clearbuttonadmin()
         {
-            btHome.FillColor= Color.FromArgb(42, 33, 33);
+            //btHome.FillColor= Color.FromArgb(42, 33, 33);
             btBooks.FillColor=Color.FromArgb(42, 33, 33);
             btBorrowed.FillColor = Color.FromArgb(42, 33, 33);
             btAddBuku.FillColor = Color.FromArgb(42, 33, 33);
@@ -91,9 +91,9 @@ namespace Bukutachi
 
         private void btHome_Click(object sender, EventArgs e)
         {
-            clearbuttonadmin();
-            btHome.FillColor = Color.FromArgb(86, 100, 194);
-            loadadmin(new FormHomeAdmin());
+            //clearbuttonadmin();
+            //btHome.FillColor = Color.FromArgb(86, 100, 194);
+            //loadadmin(new FormHomeAdmin());
         }
 
         private void btBooks_Click(object sender, EventArgs e)

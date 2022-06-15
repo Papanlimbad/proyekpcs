@@ -26,6 +26,9 @@ namespace Bukutachi
 
         }
 
-       
+        private void lbSeeMore1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

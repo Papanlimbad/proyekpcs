@@ -91,6 +91,7 @@ namespace Bukutachi
             this.lbSeeMore1.Size = new System.Drawing.Size(76, 16);
             this.lbSeeMore1.TabIndex = 31;
             this.lbSeeMore1.Text = "See More...";
+            this.lbSeeMore1.Click += new System.EventHandler(this.lbSeeMore1_Click);
             // 
             // lbSeeMore2
             // 

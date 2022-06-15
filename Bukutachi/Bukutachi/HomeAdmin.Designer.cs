@@ -33,6 +33,7 @@ namespace Bukutachi
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeAdmin));
             this.pnTitleBar = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btMinimize = new Guna.UI2.WinForms.Guna2Button();
             this.btClose = new Guna.UI2.WinForms.Guna2Button();
             this.lbHello = new System.Windows.Forms.Label();
@@ -44,8 +45,6 @@ namespace Bukutachi
             this.btAddBuku = new Guna.UI2.WinForms.Guna2Button();
             this.btBorrowed = new Guna.UI2.WinForms.Guna2Button();
             this.btBooks = new Guna.UI2.WinForms.Guna2Button();
-            this.btHome = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -74,6 +73,17 @@ namespace Bukutachi
             this.label1.Size = new System.Drawing.Size(131, 16);
             this.label1.TabIndex = 19;
             this.label1.Text = "Bukutachi - Admin";
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(5, 3);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 18;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // btMinimize
             // 
@@ -149,7 +159,7 @@ namespace Bukutachi
             this.btCrystalReport.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btCrystalReport.ImageOffset = new System.Drawing.Point(0, -1);
             this.btCrystalReport.ImageSize = new System.Drawing.Size(28, 28);
-            this.btCrystalReport.Location = new System.Drawing.Point(15, 380);
+            this.btCrystalReport.Location = new System.Drawing.Point(15, 320);
             this.btCrystalReport.Name = "btCrystalReport";
             this.btCrystalReport.Size = new System.Drawing.Size(180, 50);
             this.btCrystalReport.TabIndex = 18;
@@ -195,7 +205,7 @@ namespace Bukutachi
             this.btUsers.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btUsers.ImageOffset = new System.Drawing.Point(0, -1);
             this.btUsers.ImageSize = new System.Drawing.Size(28, 28);
-            this.btUsers.Location = new System.Drawing.Point(15, 320);
+            this.btUsers.Location = new System.Drawing.Point(15, 260);
             this.btUsers.Name = "btUsers";
             this.btUsers.Size = new System.Drawing.Size(180, 50);
             this.btUsers.TabIndex = 16;
@@ -218,7 +228,7 @@ namespace Bukutachi
             this.btAddBuku.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btAddBuku.ImageOffset = new System.Drawing.Point(0, -1);
             this.btAddBuku.ImageSize = new System.Drawing.Size(28, 28);
-            this.btAddBuku.Location = new System.Drawing.Point(15, 260);
+            this.btAddBuku.Location = new System.Drawing.Point(15, 200);
             this.btAddBuku.Name = "btAddBuku";
             this.btAddBuku.Size = new System.Drawing.Size(180, 50);
             this.btAddBuku.TabIndex = 15;
@@ -241,7 +251,7 @@ namespace Bukutachi
             this.btBorrowed.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btBorrowed.ImageOffset = new System.Drawing.Point(0, -1);
             this.btBorrowed.ImageSize = new System.Drawing.Size(28, 28);
-            this.btBorrowed.Location = new System.Drawing.Point(15, 200);
+            this.btBorrowed.Location = new System.Drawing.Point(15, 140);
             this.btBorrowed.Name = "btBorrowed";
             this.btBorrowed.Size = new System.Drawing.Size(180, 50);
             this.btBorrowed.TabIndex = 14;
@@ -264,47 +274,13 @@ namespace Bukutachi
             this.btBooks.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btBooks.ImageOffset = new System.Drawing.Point(0, -1);
             this.btBooks.ImageSize = new System.Drawing.Size(28, 28);
-            this.btBooks.Location = new System.Drawing.Point(15, 140);
+            this.btBooks.Location = new System.Drawing.Point(15, 80);
             this.btBooks.Name = "btBooks";
             this.btBooks.Size = new System.Drawing.Size(180, 50);
             this.btBooks.TabIndex = 13;
             this.btBooks.Text = "Books";
             this.btBooks.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btBooks.Click += new System.EventHandler(this.btBooks_Click);
-            // 
-            // btHome
-            // 
-            this.btHome.BorderRadius = 10;
-            this.btHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btHome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btHome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btHome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btHome.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.btHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btHome.ForeColor = System.Drawing.Color.White;
-            this.btHome.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.btHome.Image = ((System.Drawing.Image)(resources.GetObject("btHome.Image")));
-            this.btHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btHome.ImageOffset = new System.Drawing.Point(0, -1);
-            this.btHome.ImageSize = new System.Drawing.Size(28, 28);
-            this.btHome.Location = new System.Drawing.Point(15, 80);
-            this.btHome.Name = "btHome";
-            this.btHome.Size = new System.Drawing.Size(180, 50);
-            this.btHome.TabIndex = 12;
-            this.btHome.Text = "Home";
-            this.btHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btHome.Click += new System.EventHandler(this.btHome_Click);
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(5, 3);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 18;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // HomeAdmin
             // 
@@ -318,7 +294,6 @@ namespace Bukutachi
             this.Controls.Add(this.btAddBuku);
             this.Controls.Add(this.btBorrowed);
             this.Controls.Add(this.btBooks);
-            this.Controls.Add(this.btHome);
             this.Controls.Add(this.pnMain);
             this.Controls.Add(this.lbHello);
             this.Controls.Add(this.pnTitleBar);
@@ -349,7 +324,6 @@ namespace Bukutachi
         private Guna.UI2.WinForms.Guna2Button btAddBuku;
         private Guna.UI2.WinForms.Guna2Button btBorrowed;
         private Guna.UI2.WinForms.Guna2Button btBooks;
-        private Guna.UI2.WinForms.Guna2Button btHome;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Button btCrystalReport;
     }
