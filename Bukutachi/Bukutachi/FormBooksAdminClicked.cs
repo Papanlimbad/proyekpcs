@@ -26,10 +26,10 @@ namespace Bukutachi
         String[] user = new String[8];
 
         string sqlpenulis;
-        string sqlgenre;
         string sqlpublisher;
         MySqlDataAdapter da;
         DataTable dt;
+        string namabuku;
 
         public FormBooksAdminClicked(MySqlConnection conn, int id, Form lastPage, String[] user)
         {
@@ -40,14 +40,14 @@ namespace Bukutachi
             this.idpinjam = idpinjam;
             this.user = user;
 
+
             LoadComboPenulis(sqlpenulis, "ps_name", "ps_id");
-            LoadComboGenre(sqlgenre, "ge_name", "ge_id");
             LoadComboPublisher(sqlpublisher, "pt_name", "pt_id");
         }
 
         private void btEditData_Click(object sender, EventArgs e)
         {
-            if (tbBookTitle.Text=="" || cbAuthor.Text=="" || cbGenre.Text==""||cbPublisher.Text==""||tbLocation.Text==""||tbPublishDate.Text=="")
+            if (tbBookTitle.Text=="" || cbAuthor.Text=="" || tbGenre.Text==""||cbPublisher.Text==""||tbLocation.Text==""||tbPublishDate.Text=="")
             {
                 MessageBox.Show("Field Harus Diisi Semua!");
             }
@@ -64,9 +64,8 @@ namespace Bukutachi
                     string ambilpenerbit = cbPublisher.Text;
                     int ambiltahun = Convert.ToInt32(tbPublishDate.Text);
                     int rakbuku = Convert.ToInt32(tbLocation.Text);
-                    string ambilgenrebuku = cbGenre.Text;
+                    string ambilgenrebuku = tbGenre.Text;
                     string ambilauthor = cbAuthor.Text;
-
 
                     MySqlCommand cmda = new MySqlCommand("select pt_id from penerbit where pt_name=?publisher", conn);
                     MySqlCommand cmdb = new MySqlCommand("select ge_id from genre where ge_name=?ambilgenre", conn);
@@ -75,10 +74,10 @@ namespace Bukutachi
                     cmda.Parameters.Add(new MySqlParameter("publisher",ambilpenerbit));
                     cmdb.Parameters.Add(new MySqlParameter("ambilgenre",ambilgenrebuku));
                     cmcc.Parameters.Add(new MySqlParameter("ambilpenulis", ambilauthor));
-                    cmdd.Parameters.Add(new MySqlParameter("namabuku", ambiltitle));
+                    cmdd.Parameters.Add(new MySqlParameter("namabuku", namabuku));
 
                     conn.Open();
-                    int idbuku = Convert.ToInt32(cmdd.ExecuteNonQuery());
+                    int idbuku = Convert.ToInt32(cmdd.ExecuteScalar());
                     int namapublisher = Convert.ToInt32(cmda.ExecuteScalar());
                     int idgenre = Convert.ToInt32(cmdb.ExecuteScalar());
                     int idauthor = Convert.ToInt32(cmcc.ExecuteScalar());
@@ -86,12 +85,13 @@ namespace Bukutachi
                     conn.Close();
 
 
-                    MySqlCommand cmd2 = new MySqlCommand("update buku set bu_pt_id=?idpenerbit, bu_publishedat=?publishdate, bu_rb_id=?rakbuku where bu_title=?cektitle",conn);
+                    MySqlCommand cmd2 = new MySqlCommand("update buku set bu_title=?title, bu_pt_id=?idpenerbit, bu_publishedat=?publishdate, bu_rb_id=?rakbuku where bu_title=?cektitle",conn);
                     MySqlCommand cmd3 = new MySqlCommand("update genre_buku set gb_ge_id=?genreid where gb_bu_id=?cekbuku",conn);
                     MySqlCommand cmd4 = new MySqlCommand("update buku_penulis set bp_ps_id=?penulisid where bp_bu_id=?cekbuku2",conn);
                     MySqlCommand cmd5 = new MySqlCommand("update buku set bu_title=?bukutitle where bu_title=?cekbukutitle",conn);
 
-                    cmd2.Parameters.Add(new MySqlParameter("cektitle", ambiltitle));
+                    cmd2.Parameters.Add(new MySqlParameter("cektitle", namabuku));
+                    cmd2.Parameters.Add(new MySqlParameter("title", ambiltitle));
                     cmd2.Parameters.Add(new MySqlParameter("idpenerbit", namapublisher));
                     cmd2.Parameters.Add(new MySqlParameter("publishdate", ambiltahun));
                     cmd2.Parameters.Add(new MySqlParameter("rakbuku", rakbuku));
@@ -147,7 +147,7 @@ namespace Bukutachi
 
             tbBookTitle.Text= dt.Rows[0]["Title"].ToString();
             cbAuthor.Text = dt.Rows[0]["Author"].ToString();
-            cbGenre.Text = dt.Rows[0]["Genres"].ToString();
+            tbGenre.Text = dt.Rows[0]["Genres"].ToString();
             cbPublisher.Text = dt.Rows[0]["Publisher"].ToString();
             tbPublishDate.Text = dt.Rows[0]["Publish Date"].ToString();
             tbLocation.Text = $"{dt.Rows[0]["Location"]}";
@@ -171,14 +171,17 @@ namespace Bukutachi
             if (Convert.ToInt32(dt.Rows[0]["Status"]) == 0)
             {
                 lbStock.Text = "Status : Lost";
+                namabuku = tbBookTitle.Text;
             }
             else if (Convert.ToInt32(dt.Rows[0]["Status"]) == 1)
             {
                 lbStock.Text = "Status : Avaible";
+                namabuku = tbBookTitle.Text;
             }
             else if (Convert.ToInt32(dt.Rows[0]["Status"]) == 2)
             {
                 lbStock.Text = "Status : Borrowed";
+                namabuku = tbBookTitle.Text;
             }
         }
 
@@ -228,40 +231,10 @@ namespace Bukutachi
             {
                 conn.Close();
             }
+            
         }
 
-        private void LoadComboGenre(string sqlpengarang, string DisplayMember, string ValueMember)
-        {
-            sqlgenre = "SELECT * FROM genre ORDER BY ge_name ASC";
-            if (conn.State == ConnectionState.Open)
-            {
-                conn.Close();
-            }
-
-            try
-            {
-                conn.Open();
-                cmd = new MySqlCommand();
-                cmd.Connection = conn;
-                cmd.CommandText = sqlgenre;
-                da = new MySqlDataAdapter();
-                da.SelectCommand = cmd;
-                dt = new DataTable();
-                da.Fill(dt);
-
-                cbGenre.DataSource = dt;
-                cbGenre.DisplayMember = DisplayMember;
-                cbGenre.ValueMember = ValueMember;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
+       
 
         private void LoadComboPublisher(string sqlpublisher, string DisplayMember, string ValueMember)
         {

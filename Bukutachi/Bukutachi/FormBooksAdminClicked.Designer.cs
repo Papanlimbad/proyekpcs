@@ -34,7 +34,10 @@ namespace Bukutachi
             this.lbStock = new System.Windows.Forms.Label();
             this.lbBack = new System.Windows.Forms.Label();
             this.pnBook = new Guna.UI2.WinForms.Guna2Panel();
+            this.cbPublisher = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbAuthor = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tbLocation = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbPublishDate = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbBookTitle = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbLocation = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,10 +56,7 @@ namespace Bukutachi
             this.tbBorrowerUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbFullName = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.tbPublishDate = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cbAuthor = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbGenre = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbPublisher = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.tbGenre = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnBook.SuspendLayout();
             this.pnForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -124,8 +124,8 @@ namespace Bukutachi
             // pnBook
             // 
             this.pnBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.pnBook.Controls.Add(this.tbGenre);
             this.pnBook.Controls.Add(this.cbPublisher);
-            this.pnBook.Controls.Add(this.cbGenre);
             this.pnBook.Controls.Add(this.cbAuthor);
             this.pnBook.Controls.Add(this.tbLocation);
             this.pnBook.Controls.Add(this.tbPublishDate);
@@ -140,6 +140,42 @@ namespace Bukutachi
             this.pnBook.Name = "pnBook";
             this.pnBook.Size = new System.Drawing.Size(526, 250);
             this.pnBook.TabIndex = 28;
+            // 
+            // cbPublisher
+            // 
+            this.cbPublisher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.cbPublisher.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.cbPublisher.BorderRadius = 7;
+            this.cbPublisher.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbPublisher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPublisher.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.cbPublisher.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbPublisher.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbPublisher.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbPublisher.ForeColor = System.Drawing.Color.White;
+            this.cbPublisher.ItemHeight = 30;
+            this.cbPublisher.Location = new System.Drawing.Point(148, 121);
+            this.cbPublisher.Name = "cbPublisher";
+            this.cbPublisher.Size = new System.Drawing.Size(363, 36);
+            this.cbPublisher.TabIndex = 46;
+            // 
+            // cbAuthor
+            // 
+            this.cbAuthor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.cbAuthor.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.cbAuthor.BorderRadius = 7;
+            this.cbAuthor.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbAuthor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAuthor.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.cbAuthor.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbAuthor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbAuthor.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbAuthor.ForeColor = System.Drawing.Color.White;
+            this.cbAuthor.ItemHeight = 30;
+            this.cbAuthor.Location = new System.Drawing.Point(148, 44);
+            this.cbAuthor.Name = "cbAuthor";
+            this.cbAuthor.Size = new System.Drawing.Size(363, 36);
+            this.cbAuthor.TabIndex = 44;
             // 
             // tbLocation
             // 
@@ -164,6 +200,30 @@ namespace Bukutachi
             this.tbLocation.SelectedText = "";
             this.tbLocation.Size = new System.Drawing.Size(363, 29);
             this.tbLocation.TabIndex = 31;
+            // 
+            // tbPublishDate
+            // 
+            this.tbPublishDate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.tbPublishDate.BorderRadius = 7;
+            this.tbPublishDate.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbPublishDate.DefaultText = "";
+            this.tbPublishDate.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.tbPublishDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.tbPublishDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPublishDate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPublishDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.tbPublishDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbPublishDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPublishDate.ForeColor = System.Drawing.Color.White;
+            this.tbPublishDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbPublishDate.Location = new System.Drawing.Point(148, 164);
+            this.tbPublishDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbPublishDate.Name = "tbPublishDate";
+            this.tbPublishDate.PasswordChar = '\0';
+            this.tbPublishDate.PlaceholderText = "";
+            this.tbPublishDate.SelectedText = "";
+            this.tbPublishDate.Size = new System.Drawing.Size(363, 29);
+            this.tbPublishDate.TabIndex = 30;
             // 
             // tbBookTitle
             // 
@@ -422,83 +482,29 @@ namespace Bukutachi
             this.guna2PictureBox1.TabIndex = 24;
             this.guna2PictureBox1.TabStop = false;
             // 
-            // tbPublishDate
+            // tbGenre
             // 
-            this.tbPublishDate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.tbPublishDate.BorderRadius = 7;
-            this.tbPublishDate.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbPublishDate.DefaultText = "";
-            this.tbPublishDate.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.tbPublishDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.tbPublishDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbPublishDate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbPublishDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.tbPublishDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbPublishDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPublishDate.ForeColor = System.Drawing.Color.White;
-            this.tbPublishDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbPublishDate.Location = new System.Drawing.Point(148, 164);
-            this.tbPublishDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tbPublishDate.Name = "tbPublishDate";
-            this.tbPublishDate.PasswordChar = '\0';
-            this.tbPublishDate.PlaceholderText = "";
-            this.tbPublishDate.SelectedText = "";
-            this.tbPublishDate.Size = new System.Drawing.Size(363, 29);
-            this.tbPublishDate.TabIndex = 30;
-            // 
-            // cbAuthor
-            // 
-            this.cbAuthor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.cbAuthor.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.cbAuthor.BorderRadius = 7;
-            this.cbAuthor.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbAuthor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbAuthor.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.cbAuthor.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbAuthor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbAuthor.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cbAuthor.ForeColor = System.Drawing.Color.White;
-            this.cbAuthor.ItemHeight = 30;
-            this.cbAuthor.Location = new System.Drawing.Point(148, 44);
-            this.cbAuthor.Name = "cbAuthor";
-            this.cbAuthor.Size = new System.Drawing.Size(363, 36);
-            this.cbAuthor.TabIndex = 44;
-            // 
-            // cbGenre
-            // 
-            this.cbGenre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.cbGenre.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.cbGenre.BorderRadius = 7;
-            this.cbGenre.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbGenre.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.cbGenre.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbGenre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbGenre.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cbGenre.ForeColor = System.Drawing.Color.White;
-            this.cbGenre.ItemHeight = 30;
-            this.cbGenre.Location = new System.Drawing.Point(148, 82);
-            this.cbGenre.Name = "cbGenre";
-            this.cbGenre.Size = new System.Drawing.Size(363, 36);
-            this.cbGenre.TabIndex = 45;
-            // 
-            // cbPublisher
-            // 
-            this.cbPublisher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.cbPublisher.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.cbPublisher.BorderRadius = 7;
-            this.cbPublisher.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbPublisher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPublisher.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.cbPublisher.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbPublisher.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbPublisher.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cbPublisher.ForeColor = System.Drawing.Color.White;
-            this.cbPublisher.ItemHeight = 30;
-            this.cbPublisher.Location = new System.Drawing.Point(148, 121);
-            this.cbPublisher.Name = "cbPublisher";
-            this.cbPublisher.Size = new System.Drawing.Size(363, 36);
-            this.cbPublisher.TabIndex = 46;
+            this.tbGenre.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.tbGenre.BorderRadius = 7;
+            this.tbGenre.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbGenre.DefaultText = "";
+            this.tbGenre.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.tbGenre.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.tbGenre.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbGenre.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbGenre.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.tbGenre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbGenre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbGenre.ForeColor = System.Drawing.Color.White;
+            this.tbGenre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbGenre.Location = new System.Drawing.Point(148, 85);
+            this.tbGenre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbGenre.Name = "tbGenre";
+            this.tbGenre.PasswordChar = '\0';
+            this.tbGenre.PlaceholderText = "";
+            this.tbGenre.SelectedText = "";
+            this.tbGenre.Size = new System.Drawing.Size(363, 29);
+            this.tbGenre.TabIndex = 47;
             // 
             // FormBooksAdminClicked
             // 
@@ -555,7 +561,7 @@ namespace Bukutachi
         private Guna.UI2.WinForms.Guna2DateTimePicker DateReturned;
         private Guna.UI2.WinForms.Guna2TextBox tbPublishDate;
         private Guna.UI2.WinForms.Guna2ComboBox cbAuthor;
-        private Guna.UI2.WinForms.Guna2ComboBox cbGenre;
         private Guna.UI2.WinForms.Guna2ComboBox cbPublisher;
+        private Guna.UI2.WinForms.Guna2TextBox tbGenre;
     }
 }
