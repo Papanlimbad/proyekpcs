@@ -15,7 +15,7 @@ namespace Bukutachi
         public FormCrystalReport()
         {
             InitializeComponent();
-            ReportDenda rpt = new ReportDenda();
+            RptDenda rpt = new RptDenda();
             rpt.SetDatabaseLogon("root", "", "localhost", "bukutachi_db");
             crystalReportViewer2.ReportSource = rpt;
         }
