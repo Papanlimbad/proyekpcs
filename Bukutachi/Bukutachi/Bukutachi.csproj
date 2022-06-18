@@ -69,6 +69,12 @@
     <Compile Include="EditPasswordUser.Designer.cs">
       <DependentUpon>EditPasswordUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddBookAdminPenulis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddBookAdminPenulis.Designer.cs">
+      <DependentUpon>AddBookAdminPenulis.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAddPenerbit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +222,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WebImage.cs" />
+    <EmbeddedResource Include="AddBookAdminPenulis.resx">
+      <DependentUpon>AddBookAdminPenulis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditAccountAdmin.resx">
       <DependentUpon>EditAccountAdmin.cs</DependentUpon>
     </EmbeddedResource>
