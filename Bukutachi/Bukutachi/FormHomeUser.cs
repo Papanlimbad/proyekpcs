@@ -55,6 +55,8 @@ namespace Bukutachi
             
             for (int i = 0; i < 7; i++) {
                 news[i].Click += FormHomeUser_Click;
+                populars[i].Click += FormHomeUser_Click;
+                recommends[i].Click += FormHomeUser_Click;
             }
             if (!updated) {
                 getNewestBook();
@@ -103,7 +105,20 @@ namespace Bukutachi
         }
 
         private void getRecommendedBook() {
-            MySqlCommand cmd = new MySqlCommand(@"
+            MySqlCommand cmd = new MySqlCommand(@"SELECT COUNT(*) FROM hpinjam WHERE hp_me_id = ?membid", conn);
+            cmd.Parameters.Add(new MySqlParameter("membid", user[0]));
+
+            if (conn.State == ConnectionState.Open) {
+                conn.Close();
+            }
+            conn.Open();
+            int countPinjam = Convert.ToInt32(cmd.ExecuteScalar());
+            conn.Close();
+
+            cmd = new MySqlCommand(@"SELECT bu_id as 'id', bu_image as 'image' FROM buku ORDER BY RAND() LIMIT 7", conn);
+
+            if(countPinjam > 0) {
+                cmd = new MySqlCommand(@"
                 SELECT bu_id as 'id', bu_title as 'Title', bu_image as 'image' FROM buku
                 WHERE bu_id IN
                 (SELECT DISTINCT gb_bu_id as 'ID' FROM genre_buku WHERE gb_ge_id IN
@@ -115,8 +130,11 @@ namespace Bukutachi
                 (select hp_id from hpinjam where hp_me_id = ?membid))
                 ORDER BY RAND()
                 LIMIT 7; 
-            ", conn);
-            cmd.Parameters.Add(new MySqlParameter("membid", user[0]));
+                ", conn);
+                cmd.Parameters.Add(new MySqlParameter("membid", user[0]));
+            }
+
+            
 
             if(conn.State == ConnectionState.Open) {
                 conn.Close();
