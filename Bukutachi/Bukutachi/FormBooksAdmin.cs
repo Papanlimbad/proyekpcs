@@ -157,5 +157,10 @@ namespace Bukutachi
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
         }
+
+        private void dgvBorrowedBook_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -184,7 +184,7 @@ namespace Bukutachi
 
         private void loadComboLocation(string sqllocation, string DisplayMember, string ValueMember)
         {
-            sqlgenre = "SELECT * FROM rak_buku";
+            sqllocation = "SELECT * FROM rak_buku";
             if (conn.State == ConnectionState.Open)
             {
                 conn.Close();
@@ -195,7 +195,7 @@ namespace Bukutachi
                 conn.Open();
                 cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = sqlgenre;
+                cmd.CommandText = sqllocation;
                 da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;
                 dt = new DataTable();

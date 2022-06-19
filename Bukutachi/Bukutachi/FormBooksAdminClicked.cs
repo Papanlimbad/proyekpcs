@@ -30,6 +30,8 @@ namespace Bukutachi
         MySqlDataAdapter da;
         DataTable dt;
         string namabuku;
+        string sqllocation;
+
 
         public FormBooksAdminClicked(MySqlConnection conn, int id, Form lastPage, String[] user)
         {
@@ -43,18 +45,20 @@ namespace Bukutachi
 
             LoadComboPenulis(sqlpenulis, "ps_name", "ps_id");
             LoadComboPublisher(sqlpublisher, "pt_name", "pt_id");
+            loadComboLocation(sqllocation, "rb_id", "rb_id");
+
         }
 
         private void btEditData_Click(object sender, EventArgs e)
         {
-            if (tbBookTitle.Text=="" || cbAuthor.Text=="" || tbGenre.Text==""||cbPublisher.Text==""||tbLocation.Text==""||tbPublishDate.Text=="")
+            if (tbBookTitle.Text=="" || cbAuthor.Text=="" || tbGenre.Text==""||cbPublisher.Text==""||cbLocation.Text==""||numericPublishDate.Text=="")
             {
                 MessageBox.Show("Field Harus Diisi Semua!");
             }
             else
             {
                 Regex re = new Regex("^[0-9]+$");
-                if (!re.IsMatch(tbLocation.Text) ||!re.IsMatch(tbPublishDate.Text))
+                if (!re.IsMatch(cbLocation.Text) ||!re.IsMatch(numericPublishDate.Text))
                 {
                     MessageBox.Show("Lokasi Rak Buku atau Tahun Rilis Harus di isi Angka!");
                 }
@@ -62,8 +66,8 @@ namespace Bukutachi
                 {
                     string ambiltitle = tbBookTitle.Text;
                     string ambilpenerbit = cbPublisher.Text;
-                    int ambiltahun = Convert.ToInt32(tbPublishDate.Text);
-                    int rakbuku = Convert.ToInt32(tbLocation.Text);
+                    int ambiltahun = Convert.ToInt32(numericPublishDate.Text);
+                    int rakbuku = Convert.ToInt32(cbLocation.Text);
                     string ambilgenrebuku = tbGenre.Text;
                     string ambilauthor = cbAuthor.Text;
 
@@ -122,14 +126,15 @@ namespace Bukutachi
         {
             this.progadmin = ((HomeAdmin)(this.Parent.Parent));
             MySqlCommand cmd = new MySqlCommand(@"
-                SELECT bu.bu_title AS 'Title', GROUP_CONCAT(DISTINCT ps.ps_name) AS 'Author', GROUP_CONCAT(DISTINCT ge.ge_name) AS 'Genres', bu.bu_publishedat AS 'Publish Date', pt.pt_name AS 'Publisher', bu.bu_rb_id AS 'Location', bu.bu_status AS 'Status', bu.bu_synopsis AS 'Description', bu.bu_large AS 'Image', h.hp_me_id AS 'Pinjam', me.me_name AS 'Member', h.hp_borrowedat AS 'borrowdate', h.hp_returnat AS 'returndate'
+                SELECT bu.bu_title AS 'Title', GROUP_CONCAT(DISTINCT ps.ps_name) AS 'Author', GROUP_CONCAT(DISTINCT ge.ge_name) AS 'Genres', bu.bu_publishedat AS 'Publish Date', pt.pt_name AS 'Publisher', bu.bu_rb_id AS 'Location', bu.bu_status AS 'Status', bu.bu_synopsis AS 'Description', bu.bu_large AS 'Image', h.hp_me_id AS 'Pinjam', me.me_name AS 'Member', h.hp_borrowedat AS 'borrowdate', h.hp_returnat AS 'returndate', dp.dp_hp_id AS 'Pinjam'
                 FROM buku bu 
                 JOIN penerbit pt ON bu.bu_pt_id = pt.pt_id
                 JOIN buku_penulis bp ON bu.bu_id = bp.bp_bu_id
                 JOIN penulis ps ON ps.ps_id = bp.bp_ps_id
                 JOIN genre_buku gb ON gb.gb_bu_id = bu.bu_id
                 JOIN genre ge ON gb.gb_ge_id = ge.ge_id
-                LEFT JOIN hpinjam h ON hp_id=bu_id 
+                LEFT JOIN dpinjam dp ON dp.dp_bu_id = bu.bu_id
+                LEFT JOIN hpinjam h ON hp_id=dp_hp_id 
                 LEFT JOIN MEMBER me ON me_id=hp_id
                 WHERE bu.bu_id = ?ID
                 GROUP BY bu.bu_title
@@ -149,8 +154,8 @@ namespace Bukutachi
             cbAuthor.Text = dt.Rows[0]["Author"].ToString();
             tbGenre.Text = dt.Rows[0]["Genres"].ToString();
             cbPublisher.Text = dt.Rows[0]["Publisher"].ToString();
-            tbPublishDate.Text = dt.Rows[0]["Publish Date"].ToString();
-            tbLocation.Text = $"{dt.Rows[0]["Location"]}";
+            numericPublishDate.Text = dt.Rows[0]["Publish Date"].ToString();
+            cbLocation.Text = $"{dt.Rows[0]["Location"]}";
             guna2PictureBox1.Image= WebImage.resizeImage(WebImage.fromUrl(dt.Rows[0]["Image"].ToString()), guna2PictureBox1.Width, guna2PictureBox1.Height);
             
            
@@ -233,8 +238,39 @@ namespace Bukutachi
             }
             
         }
+        private void loadComboLocation(string sqllocation, string DisplayMember, string ValueMember)
+        {
+            sqllocation = "SELECT * FROM rak_buku";
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
 
-       
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = sqllocation;
+                da = new MySqlDataAdapter();
+                da.SelectCommand = cmd;
+                dt = new DataTable();
+                da.Fill(dt);
+
+                cbLocation.DataSource = dt;
+                cbLocation.DisplayMember = DisplayMember;
+                cbLocation.ValueMember = ValueMember;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
 
         private void LoadComboPublisher(string sqlpublisher, string DisplayMember, string ValueMember)
         {
