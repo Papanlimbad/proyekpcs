@@ -25,8 +25,10 @@ namespace Bukutachi
         string sqlpenulis;
         string sqlgenre;
         string sqlpublisher;
+        string sqllocation;
         string ambilpath;
-        public static string tes="";
+        public static string iniauthor="";
+        public static string inipenerbit = "";
 
 
         public FormAddBookAdmin(MySqlConnection conn)
@@ -37,7 +39,8 @@ namespace Bukutachi
             
             //LoadComboPenulis(sqlpenulis, "ps_name", "ps_id");
             LoadComboGenre(sqlgenre, "ge_name", "ge_id");
-            LoadComboPublisher(sqlpublisher, "pt_name", "pt_id");
+            //LoadComboPublisher(sqlpublisher, "pt_name", "pt_id");
+            loadComboLocation(sqllocation, "rb_id", "rb_id");
         }
 
         private void clearAll()
@@ -45,9 +48,9 @@ namespace Bukutachi
             tbBookTitle.Text = "";
             tbAuthor.Text = "";
             cbGenre.Text = "";
-            cbPublisher.Text = "";
+            tbPublisher.Text = "";
             tbSynopsis.Text = "";
-            tbLocation.Text = "";
+            cbLocation.Text = "";
         }
 
         private void FillComboBox1()
@@ -57,16 +60,15 @@ namespace Bukutachi
 
         private void btAddBook_Click(object sender, EventArgs e)
         {
-            if (tbBookTitle.Text.Equals("") || tbAuthor.Text.Equals("") || cbGenre.Text.Equals("") || cbPublisher.Text.Equals("") || tbLocation.Text.Equals(""))
+            if (tbBookTitle.Text.Equals("") || tbAuthor.Text.Equals("") || cbGenre.Text.Equals("") || tbPublisher.Text.Equals("") || cbLocation.Text.Equals(""))
             {
                 MessageBox.Show("Field Harus Diisi Semua!");
-                MessageBox.Show(tes);
             }
             else
             {
 
                 Regex re = new Regex("^[0-9]+$");
-                if (!re.IsMatch(tbLocation.Text))
+                if (!re.IsMatch(cbLocation.Text))
                 {
                     MessageBox.Show("Lokasi Rak Buku Harus di isi Angka!");
                 }
@@ -78,7 +80,7 @@ namespace Bukutachi
                     string ambilnamabuku = tbBookTitle.Text;
                     string genreambil = cbGenre.Text;
                     MySqlCommand cmd2 = new MySqlCommand("select pt_id from penerbit where pt_name=?publisher",conn);
-                    cmd2.Parameters.Add(new MySqlParameter("publisher", cbPublisher.Text));
+                    cmd2.Parameters.Add(new MySqlParameter("publisher", tbPublisher.Text));
                     MySqlCommand cmd3 = new MySqlCommand("select ps_id from penulis where ps_name=?author", conn);
                     cmd3.Parameters.Add(new MySqlParameter("author", tbAuthor.Text));
                 
@@ -94,7 +96,7 @@ namespace Bukutachi
                     cmd.Parameters.Add(new MySqlParameter("synopsis", tbSynopsis.Text));
                     cmd.Parameters.Add(new MySqlParameter("publishedate", guna2NumericUpDown1.Value));
                     cmd.Parameters.Add(new MySqlParameter("penerbit", namapublisher));
-                    cmd.Parameters.Add(new MySqlParameter("rakbuku", tbLocation.Text));
+                    cmd.Parameters.Add(new MySqlParameter("rakbuku", cbLocation.Text));
                     cmd.Parameters.Add(new MySqlParameter("gambar",ambilpath));
                     conn.Open();
                     cmd.ExecuteNonQuery();
@@ -144,7 +146,7 @@ namespace Bukutachi
 
         private void FormAddBookAdmin_Load(object sender, EventArgs e)
         {
-            tbAuthor.Text = tes;
+
         }
 
         private void LoadComboGenre(string sqlpengarang, string DisplayMember, string ValueMember)
@@ -180,9 +182,9 @@ namespace Bukutachi
             }
         }
 
-        private void LoadComboPublisher(string sqlpublisher, string DisplayMember, string ValueMember)
+        private void loadComboLocation(string sqllocation, string DisplayMember, string ValueMember)
         {
-            sqlpublisher = "SELECT * FROM penerbit ORDER BY pt_name ASC";
+            sqlgenre = "SELECT * FROM rak_buku";
             if (conn.State == ConnectionState.Open)
             {
                 conn.Close();
@@ -193,15 +195,15 @@ namespace Bukutachi
                 conn.Open();
                 cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = sqlpublisher;
+                cmd.CommandText = sqlgenre;
                 da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;
                 dt = new DataTable();
                 da.Fill(dt);
 
-                cbPublisher.DataSource = dt;
-                cbPublisher.DisplayMember = DisplayMember;
-                cbPublisher.ValueMember = ValueMember;
+                cbLocation.DataSource = dt;
+                cbLocation.DisplayMember = DisplayMember;
+                cbLocation.ValueMember = ValueMember;
             }
             catch (Exception ex)
             {
@@ -212,6 +214,8 @@ namespace Bukutachi
                 conn.Close();
             }
         }
+
+
 
         private void btAddImage_Click(object sender, EventArgs e)
         {
@@ -234,14 +238,22 @@ namespace Bukutachi
             author.ShowDialog();
             author.Dispose();
         }
-        private void tesrefresh()
+        private void refresh()
         {
-            tbAuthor.Text = tes;
+            tbAuthor.Text = iniauthor;
+            tbPublisher.Text = inipenerbit;
         }
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
-            tesrefresh();
+            refresh();
+        }
+
+        private void btPenerbit_Click(object sender, EventArgs e)
+        {
+            AddBookAdminPenerbit pt = new AddBookAdminPenerbit(conn);
+            pt.ShowDialog();
+            pt.Dispose();
         }
     }
 }

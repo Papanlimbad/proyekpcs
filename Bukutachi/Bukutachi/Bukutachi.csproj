@@ -75,6 +75,12 @@
     <Compile Include="AddBookAdminPenulis.Designer.cs">
       <DependentUpon>AddBookAdminPenulis.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddBookAdminPenerbit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddBookAdminPenerbit.Designer.cs">
+      <DependentUpon>AddBookAdminPenerbit.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAddPenerbit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WebImage.cs" />
+    <EmbeddedResource Include="AddBookAdminPenerbit.resx">
+      <DependentUpon>AddBookAdminPenerbit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddBookAdminPenulis.resx">
       <DependentUpon>AddBookAdminPenulis.cs</DependentUpon>
     </EmbeddedResource>

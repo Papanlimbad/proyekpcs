@@ -55,17 +55,15 @@ namespace Bukutachi
         }
 
         private void btCancel_Click(object sender, EventArgs e)
-        {
-            
+        {          
             this.Dispose();
         }
 
         private void dgvAuthor_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string ambilauthor= dgvAuthor.Rows[e.RowIndex].Cells[1].Value.ToString();
-            MessageBox.Show(ambilauthor);
-            FormAddBookAdmin.tes = ambilauthor;
-
+            MessageBox.Show("Berhasil pilih author "+ambilauthor);
+            FormAddBookAdmin.iniauthor = ambilauthor;
         }
     }
 }

@@ -190,3 +190,4 @@ D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutach
 C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormBorrowedClickedAdmin.resources
 C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.FormHistoryUserClicked.resources
 C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.AddBookAdminPenulis.resources
+C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.AddBookAdminPenerbit.resources
