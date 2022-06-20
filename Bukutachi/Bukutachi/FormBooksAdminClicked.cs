@@ -31,7 +31,12 @@ namespace Bukutachi
         DataTable dt;
         string namabuku;
         string sqllocation;
+        string sqlgenre;
 
+        public static string iniauthor="";
+        public static string inipenerbit = "";
+
+        
 
         public FormBooksAdminClicked(MySqlConnection conn, int id, Form lastPage, String[] user)
         {
@@ -41,17 +46,19 @@ namespace Bukutachi
             this.lastPage = lastPage;
             this.idpinjam = idpinjam;
             this.user = user;
+            tbAuthor.Text = iniauthor;
+               
 
-
-            LoadComboPenulis(sqlpenulis, "ps_name", "ps_id");
-            LoadComboPublisher(sqlpublisher, "pt_name", "pt_id");
+            //LoadComboPenulis(sqlpenulis, "ps_name", "ps_id");
+            //LoadComboPublisher(sqlpublisher, "pt_name", "pt_id");
             loadComboLocation(sqllocation, "rb_id", "rb_id");
-
+            LoadComboGenre(sqlgenre, "ge_name", "ge_id");
+            this.Refresh();
         }
 
         private void btEditData_Click(object sender, EventArgs e)
         {
-            if (tbBookTitle.Text=="" || cbAuthor.Text=="" || tbGenre.Text==""||cbPublisher.Text==""||cbLocation.Text==""||numericPublishDate.Text=="")
+            if (tbBookTitle.Text=="" || tbAuthor.Text=="" || tbGenre.Text==""||tbPublisher.Text==""||cbLocation.Text==""||numericPublishDate.Text=="")
             {
                 MessageBox.Show("Field Harus Diisi Semua!");
             }
@@ -65,11 +72,11 @@ namespace Bukutachi
                 else
                 {
                     string ambiltitle = tbBookTitle.Text;
-                    string ambilpenerbit = cbPublisher.Text;
+                    string ambilpenerbit = tbPublisher.Text;
                     int ambiltahun = Convert.ToInt32(numericPublishDate.Text);
                     int rakbuku = Convert.ToInt32(cbLocation.Text);
                     string ambilgenrebuku = tbGenre.Text;
-                    string ambilauthor = cbAuthor.Text;
+                    string ambilauthor = tbAuthor.Text;
 
                     MySqlCommand cmda = new MySqlCommand("select pt_id from penerbit where pt_name=?publisher", conn);
                     MySqlCommand cmdb = new MySqlCommand("select ge_id from genre where ge_name=?ambilgenre", conn);
@@ -123,7 +130,7 @@ namespace Bukutachi
         }
 
         private void FormBooksAdminClicked_Load(object sender, EventArgs e)
-        {
+        {         
             this.progadmin = ((HomeAdmin)(this.Parent.Parent));
             MySqlCommand cmd = new MySqlCommand(@"
                 SELECT bu.bu_title AS 'Title', GROUP_CONCAT(DISTINCT ps.ps_name) AS 'Author', GROUP_CONCAT(DISTINCT ge.ge_name) AS 'Genres', bu.bu_publishedat AS 'Publish Date', pt.pt_name AS 'Publisher', bu.bu_rb_id AS 'Location', bu.bu_status AS 'Status', bu.bu_synopsis AS 'Description', bu.bu_large AS 'Image', h.hp_me_id AS 'Pinjam', me.me_name AS 'Member', h.hp_borrowedat AS 'borrowdate', h.hp_returnat AS 'returndate', dp.dp_hp_id AS 'Pinjam'
@@ -151,9 +158,10 @@ namespace Bukutachi
             da.Fill(dt);
 
             tbBookTitle.Text= dt.Rows[0]["Title"].ToString();
-            cbAuthor.Text = dt.Rows[0]["Author"].ToString();
+            tbAuthor.Text = dt.Rows[0]["Author"].ToString();
             tbGenre.Text = dt.Rows[0]["Genres"].ToString();
-            cbPublisher.Text = dt.Rows[0]["Publisher"].ToString();
+            cbGenre.SelectedItem = dt.Rows[0]["Genres"].ToString();
+            tbPublisher.Text = dt.Rows[0]["Publisher"].ToString();
             numericPublishDate.Text = dt.Rows[0]["Publish Date"].ToString();
             cbLocation.Text = $"{dt.Rows[0]["Location"]}";
             guna2PictureBox1.Image= WebImage.resizeImage(WebImage.fromUrl(dt.Rows[0]["Image"].ToString()), guna2PictureBox1.Width, guna2PictureBox1.Height);
@@ -162,7 +170,6 @@ namespace Bukutachi
            
             //Form Borrow
 
-            tbBookName.Text= dt.Rows[0]["Title"].ToString();
             tbBorrowerUsername.Text = dt.Rows[0]["Member"].ToString();
 
             if (tbBorrowerUsername.Text != "")
@@ -205,7 +212,7 @@ namespace Bukutachi
 
         }
 
-        private void LoadComboPenulis(string sqlpenulis, string DisplayMember, string ValueMember)
+      /*  private void LoadComboPenulis(string sqlpenulis, string DisplayMember, string ValueMember)
         {
             sqlpenulis = "SELECT * FROM penulis ORDER BY ps_name ASC";
             if (conn.State == ConnectionState.Open)
@@ -224,9 +231,9 @@ namespace Bukutachi
                 dt = new DataTable();
                 da.Fill(dt);
 
-                cbAuthor.DataSource = dt;
-                cbAuthor.DisplayMember = DisplayMember;
-                cbAuthor.ValueMember = ValueMember;
+                tbAuthor.DataSource = dt;
+                tbAuthor.DisplayMember = DisplayMember;
+                tbAuthor.ValueMember = ValueMember;
             }
             catch (Exception ex)
             {
@@ -237,7 +244,7 @@ namespace Bukutachi
                 conn.Close();
             }
             
-        }
+        }*/
         private void loadComboLocation(string sqllocation, string DisplayMember, string ValueMember)
         {
             sqllocation = "SELECT * FROM rak_buku";
@@ -271,8 +278,40 @@ namespace Bukutachi
             }
         }
 
+        private void LoadComboGenre(string sqlgenre, string DisplayMember, string ValueMember)
+        {
+            sqlgenre = "SELECT * FROM genre";
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
 
-        private void LoadComboPublisher(string sqlpublisher, string DisplayMember, string ValueMember)
+            try
+            {
+                conn.Open();
+                cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = sqlgenre;
+                da = new MySqlDataAdapter();
+                da.SelectCommand = cmd;
+                dt = new DataTable();
+                da.Fill(dt);
+
+                cbGenre.DataSource = dt;
+                cbGenre.DisplayMember = DisplayMember;
+                cbGenre.ValueMember = ValueMember;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+        }
+       /* private void LoadComboPublisher(string sqlpublisher, string DisplayMember, string ValueMember)
         {
             sqlpublisher = "SELECT * FROM penerbit ORDER BY pt_name ASC";
             if (conn.State == ConnectionState.Open)
@@ -303,6 +342,80 @@ namespace Bukutachi
             {
                 conn.Close();
             }
+        }*/
+
+        private void pnForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cbGenre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = cbGenre.SelectedIndex;
+            int count = cbGenre.Items.Count;
+            string s;
+            for (int i = 0; i < count; i++)
+            {
+                if (index != i)
+                {
+                    cbGenre.SetItemChecked(i, false);
+                }
+            }
+
+        }
+
+        private void cbGenre_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (e.NewValue == CheckState.Checked)
+                for (int ix = 0; ix < cbGenre.Items.Count; ++ix)
+                    if (e.Index != ix) cbGenre.SetItemChecked(ix, false);
+        }
+
+        private void cbGenre_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void btGantiGenre_Click(object sender, EventArgs e)
+        {
+            string ambilgenre = cbGenre.GetItemText(cbGenre.SelectedItem);
+            tbGenre.Text = ambilgenre;
+        }
+
+        private void btAuthorChange_Click(object sender, EventArgs e)
+        {
+            BookAdminClickedAuthor author = new BookAdminClickedAuthor(conn);
+            author.ShowDialog();
+            author.Dispose();
+        }
+
+        private void btPenerbit_Click(object sender, EventArgs e)
+        {
+            BookAdminClickedPenerbit pt = new BookAdminClickedPenerbit(conn);
+            pt.ShowDialog();
+            pt.Dispose();
+        }
+
+        private void btUpdate_Click(object sender, EventArgs e)
+        {
+            if(inipenerbit!="" && iniauthor != "")
+            {
+                tbPublisher.Text = inipenerbit;
+                tbAuthor.Text = iniauthor;
+            }
+            else if(inipenerbit=="" && iniauthor != "")
+            {
+                tbAuthor.Text = iniauthor;
+            }
+            else if(iniauthor ==""&& inipenerbit != "")
+            {
+                tbPublisher.Text = inipenerbit;
+            }
+            else
+            {
+                MessageBox.Show("Mohon pilih penerbit atau author yang ingin diubah");
+            }
+         
         }
     }
 }

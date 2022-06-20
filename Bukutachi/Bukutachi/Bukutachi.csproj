@@ -81,6 +81,18 @@
     <Compile Include="AddBookAdminPenerbit.Designer.cs">
       <DependentUpon>AddBookAdminPenerbit.cs</DependentUpon>
     </Compile>
+    <Compile Include="BookAdminClickedAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookAdminClickedAuthor.Designer.cs">
+      <DependentUpon>BookAdminClickedAuthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookAdminClickedPenerbit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookAdminClickedPenerbit.Designer.cs">
+      <DependentUpon>BookAdminClickedPenerbit.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAddPenerbit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +245,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddBookAdminPenulis.resx">
       <DependentUpon>AddBookAdminPenulis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookAdminClickedAuthor.resx">
+      <DependentUpon>BookAdminClickedAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookAdminClickedPenerbit.resx">
+      <DependentUpon>BookAdminClickedPenerbit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditAccountAdmin.resx">
       <DependentUpon>EditAccountAdmin.cs</DependentUpon>

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
 using System.Data.SqlClient;
+using System.Security;
 
 
 
@@ -219,17 +220,21 @@ namespace Bukutachi
 
         private void btAddImage_Click(object sender, EventArgs e)
         {
+
             OpenFileDialog open = new OpenFileDialog();
             // image filters  
              open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
             if (open.ShowDialog() == DialogResult.OK)
             {
-            // ngambil gambar 
-            guna2PictureBox1.Image = new Bitmap(open.FileName);
+                // ngambil gambar 
+                //C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\res\Logo\star.png
+                guna2PictureBox1.Image = new Bitmap(open.FileName);
 
-             ambilpath = open.FileName;
-             }
- 
+                //string vPath = open.FileName.Replace(@"q:\quotewerks", "~").Replace(@"\", "/");
+                ambilpath = open.FileName;
+               
+            }
+
         }
        
         private void btAuthor_Click(object sender, EventArgs e)
@@ -243,6 +248,7 @@ namespace Bukutachi
             tbAuthor.Text = iniauthor;
             tbPublisher.Text = inipenerbit;
         }
+
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
