@@ -11,7 +11,10 @@ using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
 using System.Data.SqlClient;
 using System.Security;
-
+using System.Diagnostics;
+using System.ComponentModel;
+using Bukutachi.Properties;
+using System.IO;
 
 
 
@@ -220,23 +223,37 @@ namespace Bukutachi
 
         private void btAddImage_Click(object sender, EventArgs e)
         {
+            string path = File.ReadAllText("Cover\\star.png");
 
-            OpenFileDialog open = new OpenFileDialog();
-            // image filters  
-             open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
-            if (open.ShowDialog() == DialogResult.OK)
-            {
-                // ngambil gambar 
-                //C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\res\Logo\star.png
-                guna2PictureBox1.Image = new Bitmap(open.FileName);
 
-                //string vPath = open.FileName.Replace(@"q:\quotewerks", "~").Replace(@"\", "/");
-                ambilpath = open.FileName;
-               
-            }
+            // string regexSearch = new string(Path.GetInvalidFileNameChars()) + new string(Path.GetInvalidPathChars());
+            //Regex r = new Regex(string.Format("[{0}]", Regex.Escape(regexSearch)));
+            // path = r.Replace(path, "");
+            // MessageBox.Show(path);
+
+            guna2PictureBox1.Image = Properties.Resources.star1;
+            string tespath = guna2PictureBox1.ToString();
+            MessageBox.Show(tespath);
+
+            // ambilpath = path;
+            /* OpenFileDialog open = new OpenFileDialog();
+              // image filters  
+               open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+              if (open.ShowDialog() == DialogResult.OK)
+              {
+                  // ngambil gambar 
+                  //C:\Users\Anderson\Documents\GitHub\proyekpcs\Bukutachi\Bukutachi\res\Logo\star.png
+                 guna2PictureBox1.Image = new Bitmap(open.FileName);
+                 //Uri uri = new Uri(open.FileName, UriKind.Relative);
+                // PngBitmapDecoder decoder2 = new PngBitmapDecoder(uri, BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.Default);
+                 //string vPath = open.FileName.Replace(@"q:\quotewerks", "~").Replace(@"\", "/");
+                 ambilpath = open.FileName;
+
+              }*/
+
 
         }
-       
+
         private void btAuthor_Click(object sender, EventArgs e)
         {
             AddBookAdminPenulis author = new AddBookAdminPenulis(conn);
