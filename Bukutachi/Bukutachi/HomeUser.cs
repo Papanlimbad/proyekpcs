@@ -212,7 +212,7 @@ namespace Bukutachi
             using(MySqlTransaction tr = conn.BeginTransaction()) {
                 try {
                     MySqlCommand cmd = new MySqlCommand(@"
-                        INSERT INTO hpinjam VALUES(1, CURRENT_DATE(), CURRENT_DATE() + INTERVAL 7 DAY, 0, ?membid, 0)
+                        INSERT INTO hpinjam VALUES(default, CURRENT_DATE(), CURRENT_DATE() + INTERVAL 7 DAY, 0, ?membid, 0)
                     ", conn);
                     cmd.Parameters.Add(new MySqlParameter("membid", user[0]));
 
@@ -227,7 +227,7 @@ namespace Bukutachi
                     for (int i = 0; i < cart.Count; i++) {
                         Console.WriteLine($"Adding Book {cart[i]} to Transaction {hpid}...");
                         cmd = new MySqlCommand(@"
-                            INSERT INTO dpinjam VALUES(1, ?bookid, ?hpid)
+                            INSERT INTO dpinjam VALUES(default, ?bookid, ?hpid)
                         ", conn);
                         cmd.Parameters.Add(new MySqlParameter("bookid", cart[i]));
                         cmd.Parameters.Add(new MySqlParameter("hpid", hpid));
@@ -284,7 +284,7 @@ namespace Bukutachi
                             cmd.Parameters.Add(new MySqlParameter("hpid", hpid));
                         }
                         else if(detailUpdt[key] == 1) {
-                            cmd = new MySqlCommand(@"INSERT INTO dpinjam (dp_bu_id, dp_hp_id) VALUES (?bid, ?hpid)", conn);
+                            cmd = new MySqlCommand(@"INSERT INTO dpinjam VALUES (default, ?bid, ?hpid)", conn);
                             cmd.Parameters.Add(new MySqlParameter("bid", key));
                             cmd.Parameters.Add(new MySqlParameter("hpid", hpid));
                         }
