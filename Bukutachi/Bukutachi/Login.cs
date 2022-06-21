@@ -115,11 +115,18 @@ namespace Bukutachi
                             MySqlDataAdapter da = new MySqlDataAdapter(cmd3);
                             ds = new DataSet();
                             da.Fill(ds);
-                            HomeUser homeUser = new HomeUser(conn, ds);
-                            this.Visible = false;
-                            homeUser.ShowDialog();
-                            homeUser.Dispose();
-                            this.Visible = true;
+                            if (!ds.Tables[0].Rows[0][7].ToString().Equals("0"))
+                            {
+                                HomeUser homeUser = new HomeUser(conn, ds);
+                                this.Visible = false;
+                                homeUser.ShowDialog();
+                                homeUser.Dispose();
+                                this.Visible = true;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Akun User Tersebut Di Banned");
+                            }
                         }
                     }
                     else

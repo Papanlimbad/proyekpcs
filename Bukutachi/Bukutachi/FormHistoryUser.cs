@@ -26,7 +26,7 @@ namespace Bukutachi
 
         private void FormHistoryUser_Load(object sender, EventArgs e)
         {
-            MySqlCommand cmd = new MySqlCommand("select dp.dp_id AS 'ID', bu.bu_title AS 'Book Title', DATE_FORMAT(hp.hp_borrowedat,'%d-%b-%Y') AS 'Borrowed Date', DATE_FORMAT(hp.hp_returnat,'%d-%b-%Y') AS 'Return Date', IFNULL(ra.ra_value,'-') AS 'Rating' from member me, dpinjam dp left join hpinjam hp on hp.hp_id = dp.dp_hp_id left join buku bu on bu.bu_id = dp.dp_bu_id left join rating ra on ra.ra_me_id = hp.hp_me_id and ra.ra_bu_id = bu.bu_id where me.me_id=?id; ", conn);
+            MySqlCommand cmd = new MySqlCommand("select dp.dp_id AS 'ID', bu.bu_title AS 'Book Title', DATE_FORMAT(hp.hp_borrowedat,'%d-%b-%Y') AS 'Borrowed Date', DATE_FORMAT(hp.hp_returnat,'%d-%b-%Y') AS 'Return Date', IFNULL(ra.ra_value,'-') AS 'Rating' from member me, dpinjam dp left join hpinjam hp on hp.hp_id = dp.dp_hp_id left join buku bu on bu.bu_id = dp.dp_bu_id left join rating ra on ra.ra_me_id = hp.hp_me_id and ra.ra_bu_id = bu.bu_id where me.me_id=?id AND me_id=hp_me_id;", conn);
             cmd.Parameters.Add(new MySqlParameter("id", user[0]));
             conn.Open();
             cmd.ExecuteReader();

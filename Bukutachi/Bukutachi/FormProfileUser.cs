@@ -31,7 +31,7 @@ namespace Bukutachi
             tbAdress.Text = user[5];
             tbTelephone.Text = user[4];
 
-            MySqlCommand cmd = new MySqlCommand("SELECT bu_title AS 'Book Title', DATE_FORMAT(DATE_ADD(hp_borrowedat,INTERVAL 7 DAY),'%d-%b-%Y') AS 'Expected Return Date' FROM buku, hpinjam, dpinjam, MEMBER WHERE bu_id = dp_bu_id AND hp_id = dp_hp_id AND hp_status=0 AND me_id = ?id;", conn);
+            MySqlCommand cmd = new MySqlCommand("SELECT bu_title AS 'Book Title', DATE_FORMAT(DATE_ADD(hp_borrowedat,INTERVAL 7 DAY),'%d-%b-%Y') AS 'Expected Return Date' FROM buku, hpinjam, dpinjam, MEMBER WHERE bu_id = dp_bu_id AND hp_id = dp_hp_id AND hp_status!=2 AND me_id=hp_me_id AND me_id = ?id;", conn);
             cmd.Parameters.Add(new MySqlParameter("id", user[0]));
             conn.Open();
             cmd.ExecuteReader();
@@ -41,7 +41,7 @@ namespace Bukutachi
             da.Fill(dsBorrowed);
             dgvBorrowedBooks.DataSource = dsBorrowed.Tables[0].DefaultView;
 
-            MySqlCommand cmd2 = new MySqlCommand("SELECT bu_title AS 'Book Title', DATE_FORMAT(hp_borrowedat,'%d-%b-%Y') AS 'Borrowed Date' FROM buku, hpinjam, dpinjam, MEMBER WHERE bu_id = dp_bu_id AND hp_id = dp_hp_id AND hp_status=1 AND me_id = ?id;", conn);
+            MySqlCommand cmd2 = new MySqlCommand("SELECT bu_title AS 'Book Title', DATE_FORMAT(hp_borrowedat,'%d-%b-%Y') AS 'Borrowed Date' FROM buku, hpinjam, dpinjam, MEMBER WHERE bu_id = dp_bu_id AND hp_id = dp_hp_id AND me_id=hp_me_id AND me_id = ?id;", conn);
             cmd2.Parameters.Add(new MySqlParameter("id", user[0]));
             conn.Open();
             cmd2.ExecuteReader();
@@ -149,6 +149,25 @@ namespace Bukutachi
             EditPasswordUser editPasswordUser = new EditPasswordUser(conn, user);
             editPasswordUser.ShowDialog();
             editPasswordUser.Dispose();
+
+            MySqlCommand cmd3 = new MySqlCommand("select * from member where me_id=?id", conn);
+            cmd3.Parameters.Add(new MySqlParameter("id", user[0]));
+            conn.Open();
+            cmd3.ExecuteReader();
+            conn.Close();
+            DataSet ds;
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd3);
+            ds = new DataSet();
+            da.Fill(ds);
+
+            this.user[0] = ds.Tables[0].Rows[0][0].ToString(); // me_id
+            this.user[1] = ds.Tables[0].Rows[0][1].ToString(); // me_name
+            this.user[2] = ds.Tables[0].Rows[0][2].ToString(); // me_username
+            this.user[3] = ds.Tables[0].Rows[0][3].ToString(); // me_password
+            this.user[4] = ds.Tables[0].Rows[0][4].ToString(); // me_telephone
+            this.user[5] = ds.Tables[0].Rows[0][5].ToString(); // me_address
+            this.user[6] = ds.Tables[0].Rows[0][6].ToString(); // me_registeredat
+            this.user[7] = ds.Tables[0].Rows[0][7].ToString(); //me_status
         }
     }
 }

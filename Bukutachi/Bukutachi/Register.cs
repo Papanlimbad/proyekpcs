@@ -104,6 +104,7 @@ namespace Bukutachi
 
                                 clearAll();
                                 MessageBox.Show("Berhasil Register!");
+                                this.Dispose();
                             }
                         }
                     }
