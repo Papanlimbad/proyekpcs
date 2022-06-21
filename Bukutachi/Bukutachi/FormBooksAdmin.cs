@@ -45,7 +45,7 @@ namespace Bukutachi
             loadcombobox();
         }
 
-        private void loadDataGrid()
+        public void loadDataGrid()
         {
             String kueri = @"SELECT bu.bu_id,
             bu.bu_title AS 'Title',
@@ -148,6 +148,7 @@ namespace Bukutachi
         private void dgvBorrowedBooks_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             ((HomeAdmin)(this.Parent.Parent)).loadadmin(new FormBooksAdminClicked(conn, Convert.ToInt32(dgvBorrowedBook.Rows[e.RowIndex].Cells[0].Value), this, user));
+            loadDataGrid();
         }
 
         private void FormBooksAdmin_Load(object sender, EventArgs e)
@@ -156,6 +157,8 @@ namespace Bukutachi
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+            loadDataGrid();
+            loadcombobox();
         }
 
         private void dgvBorrowedBook_CellContentClick(object sender, DataGridViewCellEventArgs e)

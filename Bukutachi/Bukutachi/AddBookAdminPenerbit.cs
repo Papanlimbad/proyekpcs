@@ -15,11 +15,14 @@ namespace Bukutachi
     public partial class AddBookAdminPenerbit : Form
     {
         MySqlConnection conn;
+        public string ambilpenerbit;
+        String[] user = new String[8];
 
         public AddBookAdminPenerbit(MySqlConnection conn)
         {
             InitializeComponent();
             this.conn = conn;
+            this.user = user;
             loadDatagrid();
         }
         private void loadDatagrid()
@@ -56,14 +59,25 @@ namespace Bukutachi
 
         private void dgvPenerbit_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string ambilpenerbit = dgvPenerbit.Rows[e.RowIndex].Cells[1].Value.ToString();
-            MessageBox.Show("Berhasil pilih penerbit " + ambilpenerbit);
-            FormAddBookAdmin.inipenerbit = ambilpenerbit;
+           
         }
 
         private void btCancel_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void dgvPenerbit_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            ambilpenerbit = dgvPenerbit.Rows[e.RowIndex].Cells[1].Value.ToString();
+            MessageBox.Show("Berhasil pilih penerbit " + ambilpenerbit);
+            FormAddBookAdmin f = new FormAddBookAdmin(conn);
+            FormAddBookAdmin.inipenerbit = ambilpenerbit;
+            f.tbPublisher.Text = FormAddBookAdmin.inipenerbit;
+            /*FormAddBookAdmin f = new FormAddBookAdmin(conn);
+            TextBox tb = (TextBox)f.Controls["tbPenerbit"];
+            tb.Text = ambilpenerbit;*/
         }
     }
 }

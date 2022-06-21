@@ -12,11 +12,12 @@ using MySql.Data.MySqlClient;
 
 namespace Bukutachi
 {
-    public partial class AddBookAdminPenulis : Form
+    public partial class AddBookAdminPenulis2 : Form
     {
         MySqlConnection conn;
-        public AddBookAdminPenulis(MySqlConnection conn)
-        {           
+
+        public AddBookAdminPenulis2(MySqlConnection conn)
+        {
             InitializeComponent();
             this.conn = conn;
             loadDatagrid();
@@ -46,7 +47,7 @@ namespace Bukutachi
             dgvAuthor.Columns[0].Visible = false;
         }
 
-        private void AddBookAdminPenulis_Load(object sender, EventArgs e)
+        private void AddBookAdminPenulis2_Load(object sender, EventArgs e)
         {
             foreach (DataGridViewColumn column in dgvAuthor.Columns)
             {
@@ -55,22 +56,15 @@ namespace Bukutachi
         }
 
         private void btCancel_Click(object sender, EventArgs e)
-        {          
+        {
             this.Dispose();
         }
 
-        private void dgvAuthor_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-        
-        }
-
-       
-
         private void dgvAuthor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-                string ambilauthor = dgvAuthor.Rows[e.RowIndex].Cells[1].Value.ToString();
-                MessageBox.Show("Berhasil pilih author pertama " + ambilauthor);
-                FormAddBookAdmin.iniauthor = ambilauthor;                        
+            string ambilauthor2 = dgvAuthor.Rows[e.RowIndex].Cells[1].Value.ToString();
+            MessageBox.Show("Berhasil pilih author pertama " + ambilauthor2);
+            FormAddBookAdmin.iniauthor2 = ambilauthor2;
         }
     }
 }

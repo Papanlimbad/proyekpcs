@@ -200,6 +200,8 @@ namespace Bukutachi
         private void lbBack_Click(object sender, EventArgs e)
         {
             ((HomeAdmin)(this.Parent.Parent)).loadadmin(lastPage);
+            FormBooksAdmin f = new FormBooksAdmin(conn);
+            f.loadDataGrid();
         }
 
         private void btCreateForm_Click(object sender, EventArgs e)
