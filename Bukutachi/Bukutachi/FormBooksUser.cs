@@ -153,11 +153,11 @@ namespace Bukutachi
             //tipe sort
             if (cbSortBy.Text.Equals("Title"))
             {
-                kueri += " ORDER BY 1";
+                kueri += " ORDER BY Title";
             } else if (cbSortBy.Text.Equals("Author")){
-                kueri += " ORDER BY 3";
+                kueri += " ORDER BY Author";
             } else if (cbSortBy.Text.Equals("Published Date")){
-                kueri += " ORDER BY 5";
+                kueri += " ORDER BY bu.bu_publishedat";
             }
             //asc desc
             if (rbAsc.Checked==true)

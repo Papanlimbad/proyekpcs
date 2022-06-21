@@ -128,7 +128,7 @@ namespace Bukutachi
         {
             clearbuttonadmin();
             btCrystalReport.FillColor = Color.FromArgb(86, 100, 194);
-            loadadmin(new FormCrystalReport());
+            loadadmin(new FormCrystalReport(conn));
         }
 
         private void btLogout_Click(object sender, EventArgs e)
