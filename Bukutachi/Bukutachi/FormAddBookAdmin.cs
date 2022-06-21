@@ -78,6 +78,10 @@ namespace Bukutachi
                 }
                 else
                 {
+                    string filepath = $@"./../../res/covers/{String.Join("_", tbBookTitle.Text.Split(' '))}.jpeg";
+                    Image tempimg = Image.FromFile(guna2PictureBox1.Tag.ToString());
+                    tempimg.Save(filepath, System.Drawing.Imaging.ImageFormat.Jpeg);
+
                     string ambiltahun = "yyyy";
                     int tes = 1;
                     int ambilid=-1;
@@ -101,7 +105,7 @@ namespace Bukutachi
                     cmd.Parameters.Add(new MySqlParameter("publishedate", guna2NumericUpDown1.Value));
                     cmd.Parameters.Add(new MySqlParameter("penerbit", namapublisher));
                     cmd.Parameters.Add(new MySqlParameter("rakbuku", cbLocation.Text));
-                    cmd.Parameters.Add(new MySqlParameter("gambar",ambilpath));
+                    cmd.Parameters.Add(new MySqlParameter("gambar",filepath));
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     conn.Close();
@@ -223,7 +227,7 @@ namespace Bukutachi
 
         private void btAddImage_Click(object sender, EventArgs e)
         {
-            string path = File.ReadAllText("Cover\\star.png");
+            //string path = File.ReadAllText("Cover\\star.png");
 
 
             // string regexSearch = new string(Path.GetInvalidFileNameChars()) + new string(Path.GetInvalidPathChars());
@@ -231,11 +235,11 @@ namespace Bukutachi
             // path = r.Replace(path, "");
             // MessageBox.Show(path);
 
-            guna2PictureBox1.Image = Properties.Resources.star1;
-            string tespath = guna2PictureBox1.ToString();
-            MessageBox.Show(tespath);
+            //guna2PictureBox1.Image = Properties.Resources.star1;
+            //string tespath = guna2PictureBox1.ToString();
+            //MessageBox.Show(tespath);
 
-            // ambilpath = path;
+            //// ambilpath = path;
             /* OpenFileDialog open = new OpenFileDialog();
               // image filters  
                open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
@@ -251,7 +255,12 @@ namespace Bukutachi
 
               }*/
 
-
+            OpenFileDialog od = new OpenFileDialog();
+            od.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg; *.jpeg; *.gif; *.bmp *.png ";
+            if(od.ShowDialog() == DialogResult.OK) {
+                guna2PictureBox1.Image = WebImage.resizeImage(Image.FromFile(od.FileName), guna2PictureBox1.Width, guna2PictureBox1.Height);
+                guna2PictureBox1.Tag = od.FileName;
+            }
         }
 
         private void btAuthor_Click(object sender, EventArgs e)

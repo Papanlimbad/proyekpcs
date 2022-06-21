@@ -15,14 +15,19 @@ namespace Bukutachi
         public static Image fromUrl(string url)
         {
             if(url.Length > 0) {
-                HttpWebRequest wreq = (HttpWebRequest)HttpWebRequest.Create(url);
+                if (url.Contains("http")) {
+                    HttpWebRequest wreq = (HttpWebRequest)HttpWebRequest.Create(url);
 
-                using (HttpWebResponse wres = (HttpWebResponse)wreq.GetResponse())
-                {
-                    using (Stream stream = wres.GetResponseStream())
+                    using (HttpWebResponse wres = (HttpWebResponse)wreq.GetResponse())
                     {
-                        return Image.FromStream(stream);
+                        using (Stream stream = wres.GetResponseStream())
+                        {
+                            return Image.FromStream(stream);
+                        }
                     }
+                }
+                else {
+                    return Image.FromFile(url);
                 }
             }
             return null;

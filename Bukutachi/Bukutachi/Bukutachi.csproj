@@ -359,6 +359,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Res\" />
+    <Folder Include="res\covers\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\Logo\crystalreport-removebg-preview %281%29.png" />
