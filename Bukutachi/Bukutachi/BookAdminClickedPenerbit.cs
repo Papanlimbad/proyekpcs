@@ -71,5 +71,13 @@ namespace Bukutachi
             ambilpenerbit = dgvPenerbit.Rows[e.RowIndex].Cells[1].Value.ToString();
             MessageBox.Show("Berhasil pilih penulis " + ambilpenerbit);
         }
+
+        private void btAdd_Click(object sender, EventArgs e)
+        {
+            FormAddPenerbit author = new FormAddPenerbit(conn);
+            author.ShowDialog();
+            loadDatagrid();
+            author.Dispose();
+        }
     }
 }

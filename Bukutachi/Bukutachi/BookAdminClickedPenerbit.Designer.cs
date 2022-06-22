@@ -39,9 +39,10 @@ namespace Bukutachi
             this.btSearch = new Guna.UI2.WinForms.Guna2Button();
             this.tbPenerbit = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvPenerbit = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.btCancel = new Guna.UI2.WinForms.Guna2Button();
+            this.btSave = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.btAdd = new Guna.UI2.WinForms.Guna2Button();
             this.pnSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPenerbit)).BeginInit();
             this.SuspendLayout();
@@ -173,22 +174,22 @@ namespace Bukutachi
             this.dgvPenerbit.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPenerbit_CellContentDoubleClick);
             this.dgvPenerbit.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPenerbit_CellDoubleClick);
             // 
-            // btCancel
+            // btSave
             // 
-            this.btCancel.BorderRadius = 5;
-            this.btCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btCancel.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.btCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
-            this.btCancel.Location = new System.Drawing.Point(17, 460);
-            this.btCancel.Name = "btCancel";
-            this.btCancel.Size = new System.Drawing.Size(120, 35);
-            this.btCancel.TabIndex = 24;
-            this.btCancel.Text = "Back";
-            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
+            this.btSave.BorderRadius = 5;
+            this.btSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSave.ForeColor = System.Drawing.Color.White;
+            this.btSave.Location = new System.Drawing.Point(17, 460);
+            this.btSave.Name = "btSave";
+            this.btSave.Size = new System.Drawing.Size(120, 35);
+            this.btSave.TabIndex = 24;
+            this.btSave.Text = "Save";
+            this.btSave.Click += new System.EventHandler(this.btCancel_Click);
             // 
             // guna2Elipse1
             // 
@@ -200,13 +201,31 @@ namespace Bukutachi
             this.guna2Elipse2.BorderRadius = 20;
             this.guna2Elipse2.TargetControl = this.dgvPenerbit;
             // 
+            // btAdd
+            // 
+            this.btAdd.BorderRadius = 5;
+            this.btAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAdd.ForeColor = System.Drawing.Color.White;
+            this.btAdd.Location = new System.Drawing.Point(428, 460);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(156, 35);
+            this.btAdd.TabIndex = 25;
+            this.btAdd.Text = "Add Penerbit";
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+            // 
             // BookAdminClickedPenerbit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
             this.ClientSize = new System.Drawing.Size(603, 507);
-            this.Controls.Add(this.btCancel);
+            this.Controls.Add(this.btAdd);
+            this.Controls.Add(this.btSave);
             this.Controls.Add(this.dgvPenerbit);
             this.Controls.Add(this.pnSearch);
             this.Controls.Add(this.pnTitleBar);
@@ -227,8 +246,9 @@ namespace Bukutachi
         private Guna.UI2.WinForms.Guna2Button btSearch;
         private Guna.UI2.WinForms.Guna2TextBox tbPenerbit;
         private Guna.UI2.WinForms.Guna2DataGridView dgvPenerbit;
-        private Guna.UI2.WinForms.Guna2Button btCancel;
+        private Guna.UI2.WinForms.Guna2Button btSave;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
+        private Guna.UI2.WinForms.Guna2Button btAdd;
     }
 }

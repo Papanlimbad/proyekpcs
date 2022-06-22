@@ -31,19 +31,13 @@ namespace Bukutachi
         {
             this.components = new System.ComponentModel.Container();
             this.lbSynopsis = new Guna.UI2.WinForms.Guna2Panel();
-            this.btSearchAuthor2 = new Guna.UI2.WinForms.Guna2Button();
-            this.tbAuthor2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cbGenre2 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbLocation = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btPenerbit = new Guna.UI2.WinForms.Guna2Button();
             this.tbPublisher = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btRefresh = new Guna.UI2.WinForms.Guna2Button();
             this.btAuthor = new Guna.UI2.WinForms.Guna2Button();
             this.tbAuthor = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2NumericUpDown1 = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.cbGenre = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btAddPublisher = new Guna.UI2.WinForms.Guna2Button();
-            this.btAddAuthor = new Guna.UI2.WinForms.Guna2Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -64,6 +58,8 @@ namespace Bukutachi
             this.btAddImage = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.tbGenre = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btAddGenre = new Guna.UI2.WinForms.Guna2Button();
             this.lbSynopsis.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -72,19 +68,15 @@ namespace Bukutachi
             // lbSynopsis
             // 
             this.lbSynopsis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.lbSynopsis.Controls.Add(this.btSearchAuthor2);
-            this.lbSynopsis.Controls.Add(this.tbAuthor2);
-            this.lbSynopsis.Controls.Add(this.cbGenre2);
+            this.lbSynopsis.Controls.Add(this.btAddGenre);
+            this.lbSynopsis.Controls.Add(this.tbGenre);
             this.lbSynopsis.Controls.Add(this.cbLocation);
             this.lbSynopsis.Controls.Add(this.btPenerbit);
             this.lbSynopsis.Controls.Add(this.tbPublisher);
-            this.lbSynopsis.Controls.Add(this.btRefresh);
             this.lbSynopsis.Controls.Add(this.btAuthor);
             this.lbSynopsis.Controls.Add(this.tbAuthor);
             this.lbSynopsis.Controls.Add(this.guna2NumericUpDown1);
             this.lbSynopsis.Controls.Add(this.cbGenre);
-            this.lbSynopsis.Controls.Add(this.btAddPublisher);
-            this.lbSynopsis.Controls.Add(this.btAddAuthor);
             this.lbSynopsis.Controls.Add(this.label8);
             this.lbSynopsis.Controls.Add(this.label7);
             this.lbSynopsis.Controls.Add(this.label5);
@@ -109,85 +101,6 @@ namespace Bukutachi
             this.lbSynopsis.Size = new System.Drawing.Size(740, 535);
             this.lbSynopsis.TabIndex = 0;
             // 
-            // btSearchAuthor2
-            // 
-            this.btSearchAuthor2.BorderRadius = 5;
-            this.btSearchAuthor2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btSearchAuthor2.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
-            this.btSearchAuthor2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
-            this.btSearchAuthor2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btSearchAuthor2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
-            this.btSearchAuthor2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSearchAuthor2.ForeColor = System.Drawing.Color.White;
-            this.btSearchAuthor2.Location = new System.Drawing.Point(404, 131);
-            this.btSearchAuthor2.Name = "btSearchAuthor2";
-            this.btSearchAuthor2.Size = new System.Drawing.Size(123, 31);
-            this.btSearchAuthor2.TabIndex = 56;
-            this.btSearchAuthor2.Tag = "0";
-            this.btSearchAuthor2.Text = "Search";
-            this.btSearchAuthor2.Click += new System.EventHandler(this.btSearchAuthor2_Click);
-            // 
-            // tbAuthor2
-            // 
-            this.tbAuthor2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.tbAuthor2.BorderRadius = 7;
-            this.tbAuthor2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbAuthor2.DefaultText = "";
-            this.tbAuthor2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.tbAuthor2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.tbAuthor2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbAuthor2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbAuthor2.Enabled = false;
-            this.tbAuthor2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.tbAuthor2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbAuthor2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAuthor2.ForeColor = System.Drawing.Color.White;
-            this.tbAuthor2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbAuthor2.Location = new System.Drawing.Point(153, 130);
-            this.tbAuthor2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tbAuthor2.Name = "tbAuthor2";
-            this.tbAuthor2.PasswordChar = '\0';
-            this.tbAuthor2.PlaceholderText = "";
-            this.tbAuthor2.SelectedText = "";
-            this.tbAuthor2.Size = new System.Drawing.Size(244, 31);
-            this.tbAuthor2.TabIndex = 55;
-            // 
-            // cbGenre2
-            // 
-            this.cbGenre2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.cbGenre2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.cbGenre2.BorderRadius = 7;
-            this.cbGenre2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbGenre2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbGenre2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.cbGenre2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbGenre2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbGenre2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cbGenre2.ForeColor = System.Drawing.Color.White;
-            this.cbGenre2.ItemHeight = 30;
-            this.cbGenre2.Items.AddRange(new object[] {
-            "None",
-            "Biology",
-            "Chemistry",
-            "Cooking",
-            "Fantasy",
-            "Fiction",
-            "Finance",
-            "Humor",
-            "Mathematics",
-            "Mystery",
-            "Photography",
-            "Physics",
-            "Programming",
-            "Psychology",
-            "Romance",
-            "Science",
-            "Science Fiction"});
-            this.cbGenre2.Location = new System.Drawing.Point(153, 207);
-            this.cbGenre2.Name = "cbGenre2";
-            this.cbGenre2.Size = new System.Drawing.Size(374, 36);
-            this.cbGenre2.TabIndex = 54;
-            // 
             // cbLocation
             // 
             this.cbLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
@@ -201,7 +114,7 @@ namespace Bukutachi
             this.cbLocation.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cbLocation.ForeColor = System.Drawing.Color.White;
             this.cbLocation.ItemHeight = 30;
-            this.cbLocation.Location = new System.Drawing.Point(153, 325);
+            this.cbLocation.Location = new System.Drawing.Point(153, 296);
             this.cbLocation.Name = "cbLocation";
             this.cbLocation.Size = new System.Drawing.Size(374, 36);
             this.cbLocation.TabIndex = 53;
@@ -217,7 +130,7 @@ namespace Bukutachi
             this.btPenerbit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
             this.btPenerbit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btPenerbit.ForeColor = System.Drawing.Color.White;
-            this.btPenerbit.Location = new System.Drawing.Point(404, 250);
+            this.btPenerbit.Location = new System.Drawing.Point(404, 221);
             this.btPenerbit.Name = "btPenerbit";
             this.btPenerbit.Size = new System.Drawing.Size(123, 31);
             this.btPenerbit.TabIndex = 52;
@@ -241,7 +154,7 @@ namespace Bukutachi
             this.tbPublisher.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPublisher.ForeColor = System.Drawing.Color.White;
             this.tbPublisher.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbPublisher.Location = new System.Drawing.Point(152, 250);
+            this.tbPublisher.Location = new System.Drawing.Point(152, 221);
             this.tbPublisher.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbPublisher.Name = "tbPublisher";
             this.tbPublisher.PasswordChar = '\0';
@@ -249,24 +162,6 @@ namespace Bukutachi
             this.tbPublisher.SelectedText = "";
             this.tbPublisher.Size = new System.Drawing.Size(244, 31);
             this.tbPublisher.TabIndex = 51;
-            // 
-            // btRefresh
-            // 
-            this.btRefresh.BorderRadius = 5;
-            this.btRefresh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btRefresh.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
-            this.btRefresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
-            this.btRefresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btRefresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
-            this.btRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btRefresh.ForeColor = System.Drawing.Color.White;
-            this.btRefresh.Location = new System.Drawing.Point(574, 21);
-            this.btRefresh.Name = "btRefresh";
-            this.btRefresh.Size = new System.Drawing.Size(124, 31);
-            this.btRefresh.TabIndex = 50;
-            this.btRefresh.Tag = "0";
-            this.btRefresh.Text = "Refresh";
-            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
             // 
             // btAuthor
             // 
@@ -320,7 +215,7 @@ namespace Bukutachi
             this.guna2NumericUpDown1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.guna2NumericUpDown1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2NumericUpDown1.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.guna2NumericUpDown1.Location = new System.Drawing.Point(153, 288);
+            this.guna2NumericUpDown1.Location = new System.Drawing.Point(153, 259);
             this.guna2NumericUpDown1.Maximum = new decimal(new int[] {
             2025,
             0,
@@ -354,53 +249,17 @@ namespace Bukutachi
             this.cbGenre.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cbGenre.ForeColor = System.Drawing.Color.White;
             this.cbGenre.ItemHeight = 30;
-            this.cbGenre.Location = new System.Drawing.Point(153, 168);
+            this.cbGenre.Location = new System.Drawing.Point(153, 178);
             this.cbGenre.Name = "cbGenre";
-            this.cbGenre.Size = new System.Drawing.Size(374, 36);
+            this.cbGenre.Size = new System.Drawing.Size(245, 36);
             this.cbGenre.TabIndex = 44;
-            // 
-            // btAddPublisher
-            // 
-            this.btAddPublisher.BorderRadius = 5;
-            this.btAddPublisher.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btAddPublisher.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
-            this.btAddPublisher.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
-            this.btAddPublisher.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btAddPublisher.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
-            this.btAddPublisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAddPublisher.ForeColor = System.Drawing.Color.White;
-            this.btAddPublisher.Location = new System.Drawing.Point(153, 497);
-            this.btAddPublisher.Name = "btAddPublisher";
-            this.btAddPublisher.Size = new System.Drawing.Size(153, 31);
-            this.btAddPublisher.TabIndex = 42;
-            this.btAddPublisher.Tag = "0";
-            this.btAddPublisher.Text = "Add Publisher";
-            this.btAddPublisher.Click += new System.EventHandler(this.btAddPublisher_Click);
-            // 
-            // btAddAuthor
-            // 
-            this.btAddAuthor.BorderRadius = 5;
-            this.btAddAuthor.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btAddAuthor.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
-            this.btAddAuthor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
-            this.btAddAuthor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btAddAuthor.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
-            this.btAddAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAddAuthor.ForeColor = System.Drawing.Color.White;
-            this.btAddAuthor.Location = new System.Drawing.Point(23, 497);
-            this.btAddAuthor.Name = "btAddAuthor";
-            this.btAddAuthor.Size = new System.Drawing.Size(124, 31);
-            this.btAddAuthor.TabIndex = 41;
-            this.btAddAuthor.Tag = "0";
-            this.btAddAuthor.Text = "Add Author";
-            this.btAddAuthor.Click += new System.EventHandler(this.btAddAuthor_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(131, 331);
+            this.label8.Location = new System.Drawing.Point(131, 302);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(13, 18);
             this.label8.TabIndex = 40;
@@ -411,7 +270,7 @@ namespace Bukutachi
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(131, 296);
+            this.label7.Location = new System.Drawing.Point(131, 267);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(13, 18);
             this.label7.TabIndex = 39;
@@ -422,7 +281,7 @@ namespace Bukutachi
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(133, 254);
+            this.label5.Location = new System.Drawing.Point(133, 225);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(13, 18);
             this.label5.TabIndex = 38;
@@ -433,7 +292,7 @@ namespace Bukutachi
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(131, 177);
+            this.label3.Location = new System.Drawing.Point(131, 146);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(13, 18);
             this.label3.TabIndex = 37;
@@ -487,7 +346,7 @@ namespace Bukutachi
             this.tbSynopsis.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSynopsis.ForeColor = System.Drawing.Color.White;
             this.tbSynopsis.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSynopsis.Location = new System.Drawing.Point(152, 368);
+            this.tbSynopsis.Location = new System.Drawing.Point(152, 339);
             this.tbSynopsis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbSynopsis.Name = "tbSynopsis";
             this.tbSynopsis.PasswordChar = '\0';
@@ -543,7 +402,7 @@ namespace Bukutachi
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(17, 368);
+            this.label6.Location = new System.Drawing.Point(17, 339);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(127, 18);
             this.label6.TabIndex = 25;
@@ -554,7 +413,7 @@ namespace Bukutachi
             this.lbLocation.AutoSize = true;
             this.lbLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLocation.ForeColor = System.Drawing.Color.White;
-            this.lbLocation.Location = new System.Drawing.Point(17, 331);
+            this.lbLocation.Location = new System.Drawing.Point(17, 302);
             this.lbLocation.Name = "lbLocation";
             this.lbLocation.Size = new System.Drawing.Size(73, 18);
             this.lbLocation.TabIndex = 24;
@@ -565,7 +424,7 @@ namespace Bukutachi
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(17, 296);
+            this.label4.Location = new System.Drawing.Point(17, 267);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 18);
             this.label4.TabIndex = 23;
@@ -576,7 +435,7 @@ namespace Bukutachi
             this.lbPublisher.AutoSize = true;
             this.lbPublisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPublisher.ForeColor = System.Drawing.Color.White;
-            this.lbPublisher.Location = new System.Drawing.Point(17, 254);
+            this.lbPublisher.Location = new System.Drawing.Point(17, 225);
             this.lbPublisher.Name = "lbPublisher";
             this.lbPublisher.Size = new System.Drawing.Size(78, 18);
             this.lbPublisher.TabIndex = 22;
@@ -587,7 +446,7 @@ namespace Bukutachi
             this.lbGenre.AutoSize = true;
             this.lbGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGenre.ForeColor = System.Drawing.Color.White;
-            this.lbGenre.Location = new System.Drawing.Point(17, 177);
+            this.lbGenre.Location = new System.Drawing.Point(17, 146);
             this.lbGenre.Name = "lbGenre";
             this.lbGenre.Size = new System.Drawing.Size(54, 18);
             this.lbGenre.TabIndex = 21;
@@ -625,7 +484,7 @@ namespace Bukutachi
             this.btAddImage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
             this.btAddImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAddImage.ForeColor = System.Drawing.Color.White;
-            this.btAddImage.Location = new System.Drawing.Point(574, 254);
+            this.btAddImage.Location = new System.Drawing.Point(574, 225);
             this.btAddImage.Name = "btAddImage";
             this.btAddImage.Size = new System.Drawing.Size(124, 31);
             this.btAddImage.TabIndex = 18;
@@ -636,7 +495,7 @@ namespace Bukutachi
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(574, 58);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(574, 29);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(124, 187);
             this.guna2PictureBox1.TabIndex = 0;
@@ -646,6 +505,48 @@ namespace Bukutachi
             // 
             this.guna2Elipse1.BorderRadius = 20;
             this.guna2Elipse1.TargetControl = this.lbSynopsis;
+            // 
+            // tbGenre
+            // 
+            this.tbGenre.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.tbGenre.BorderRadius = 7;
+            this.tbGenre.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbGenre.DefaultText = "";
+            this.tbGenre.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.tbGenre.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.tbGenre.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbGenre.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbGenre.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.tbGenre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbGenre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbGenre.ForeColor = System.Drawing.Color.White;
+            this.tbGenre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbGenre.Location = new System.Drawing.Point(152, 140);
+            this.tbGenre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbGenre.Name = "tbGenre";
+            this.tbGenre.PasswordChar = '\0';
+            this.tbGenre.PlaceholderText = "";
+            this.tbGenre.SelectedText = "";
+            this.tbGenre.Size = new System.Drawing.Size(374, 31);
+            this.tbGenre.TabIndex = 54;
+            // 
+            // btAddGenre
+            // 
+            this.btAddGenre.BorderRadius = 5;
+            this.btAddGenre.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btAddGenre.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btAddGenre.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btAddGenre.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btAddGenre.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btAddGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAddGenre.ForeColor = System.Drawing.Color.White;
+            this.btAddGenre.Location = new System.Drawing.Point(403, 183);
+            this.btAddGenre.Name = "btAddGenre";
+            this.btAddGenre.Size = new System.Drawing.Size(123, 31);
+            this.btAddGenre.TabIndex = 55;
+            this.btAddGenre.Tag = "0";
+            this.btAddGenre.Text = "Add";
+            this.btAddGenre.Click += new System.EventHandler(this.btAddGenre_Click);
             // 
             // FormAddBookAdmin
             // 
@@ -689,18 +590,14 @@ namespace Bukutachi
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Button btAddPublisher;
-        private Guna.UI2.WinForms.Guna2Button btAddAuthor;
         private Guna.UI2.WinForms.Guna2NumericUpDown guna2NumericUpDown1;
         private Guna.UI2.WinForms.Guna2Button btAuthor;
         public Guna.UI2.WinForms.Guna2TextBox tbAuthor;
-        private Guna.UI2.WinForms.Guna2Button btRefresh;
         private Guna.UI2.WinForms.Guna2Button btPenerbit;
         public Guna.UI2.WinForms.Guna2TextBox tbPublisher;
-        public Guna.UI2.WinForms.Guna2TextBox tbAuthor2;
-        private Guna.UI2.WinForms.Guna2Button btSearchAuthor2;
         public Guna.UI2.WinForms.Guna2ComboBox cbGenre;
         public Guna.UI2.WinForms.Guna2ComboBox cbLocation;
-        public Guna.UI2.WinForms.Guna2ComboBox cbGenre2;
+        private Guna.UI2.WinForms.Guna2Button btAddGenre;
+        private Guna.UI2.WinForms.Guna2TextBox tbGenre;
     }
 }

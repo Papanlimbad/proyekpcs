@@ -15,6 +15,10 @@ namespace Bukutachi
     public partial class AddBookAdminPenulis : Form
     {
         MySqlConnection conn;
+        public string namaauthor;
+        string selectedItem;
+        public static string hasil;
+
         public AddBookAdminPenulis(MySqlConnection conn)
         {           
             InitializeComponent();
@@ -61,16 +65,42 @@ namespace Bukutachi
 
         private void dgvAuthor_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-        
+
         }
 
        
 
         private void dgvAuthor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-                string ambilauthor = dgvAuthor.Rows[e.RowIndex].Cells[1].Value.ToString();
-                MessageBox.Show("Berhasil pilih author pertama " + ambilauthor);
-                FormAddBookAdmin.iniauthor = ambilauthor;                        
+            
+            string ambilauthor = dgvAuthor.Rows[e.RowIndex].Cells[1].Value.ToString();
+            lbAuthor.Items.Add(ambilauthor);
+            
+           for (int i = 0; i < lbAuthor.Items.Count; i++)
+            {              
+                        //selectedItem = lbAuthor.Items[i].ToString();
+                //hasil = string.Join(",", lbAuthor.Items[i]);
+            }
+            hasil = string.Join(",", lbAuthor.Items.Cast<String>());
+            // MessageBox.Show(selectedItem);
+            MessageBox.Show(hasil);
+            FormAddBookAdmin.iniauthor = hasil;
+        }
+
+        private void btAddAuthor_Click(object sender, EventArgs e)
+        {
+            FormAddAuthor author = new FormAddAuthor(conn);
+            author.ShowDialog();
+            loadDatagrid();
+            author.Dispose();
+        }
+
+        private void lbAuthor_DoubleClick(object sender, EventArgs e)
+        {
+            string text = lbAuthor.GetItemText(lbAuthor.SelectedItem);
+            MessageBox.Show(text);
+            lbAuthor.Items.Remove(text);
+
         }
     }
 }
