@@ -135,7 +135,7 @@ namespace Bukutachi
             this.btAddRating.Name = "btAddRating";
             this.btAddRating.Size = new System.Drawing.Size(135, 35);
             this.btAddRating.TabIndex = 36;
-            this.btAddRating.Text = "Add Rating";
+            this.btAddRating.Text = "Rate";
             this.btAddRating.Click += new System.EventHandler(this.btAddRating_Click);
             // 
             // FormHistoryUser
