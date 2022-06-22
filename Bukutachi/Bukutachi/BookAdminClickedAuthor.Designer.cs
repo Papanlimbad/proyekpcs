@@ -30,18 +30,18 @@ namespace Bukutachi
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookAdminClickedAuthor));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookAdminClickedAuthor));
             this.pnTitleBar = new System.Windows.Forms.Panel();
             this.pnSearch = new System.Windows.Forms.Panel();
+            this.btSearch = new Guna.UI2.WinForms.Guna2Button();
             this.tbAuthor = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvAuthor = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btCancel = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.btSearch = new Guna.UI2.WinForms.Guna2Button();
             this.pnSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAuthor)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +63,24 @@ namespace Bukutachi
             this.pnSearch.Name = "pnSearch";
             this.pnSearch.Size = new System.Drawing.Size(571, 70);
             this.pnSearch.TabIndex = 21;
+            // 
+            // btSearch
+            // 
+            this.btSearch.BorderRadius = 10;
+            this.btSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.btSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btSearch.ForeColor = System.Drawing.Color.White;
+            this.btSearch.Image = ((System.Drawing.Image)(resources.GetObject("btSearch.Image")));
+            this.btSearch.ImageSize = new System.Drawing.Size(40, 40);
+            this.btSearch.Location = new System.Drawing.Point(484, 5);
+            this.btSearch.Name = "btSearch";
+            this.btSearch.Size = new System.Drawing.Size(63, 62);
+            this.btSearch.TabIndex = 11;
+            this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 
             // tbAuthor
             // 
@@ -153,6 +171,7 @@ namespace Bukutachi
             this.dgvAuthor.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
             this.dgvAuthor.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvAuthor.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPenerbit_CellContentDoubleClick);
+            this.dgvAuthor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAuthor_CellDoubleClick);
             // 
             // btCancel
             // 
@@ -180,24 +199,6 @@ namespace Bukutachi
             // 
             this.guna2Elipse2.BorderRadius = 20;
             this.guna2Elipse2.TargetControl = this.dgvAuthor;
-            // 
-            // btSearch
-            // 
-            this.btSearch.BorderRadius = 10;
-            this.btSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.btSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btSearch.ForeColor = System.Drawing.Color.White;
-            this.btSearch.Image = ((System.Drawing.Image)(resources.GetObject("btSearch.Image")));
-            this.btSearch.ImageSize = new System.Drawing.Size(40, 40);
-            this.btSearch.Location = new System.Drawing.Point(484, 5);
-            this.btSearch.Name = "btSearch";
-            this.btSearch.Size = new System.Drawing.Size(63, 62);
-            this.btSearch.TabIndex = 11;
-            this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 
             // BookAdminClickedAuthor
             // 

@@ -36,12 +36,15 @@ namespace Bukutachi
         int ambilidgenre2;
         int idauthor2;
         public static string iniauthor2 = "";
+        String[] user = new String[8];
+
 
 
         public FormAddBookAdmin(MySqlConnection conn)
         {
             InitializeComponent();
             this.conn = conn;
+            this.user = user;
 
             
             //LoadComboPenulis(sqlpenulis, "ps_name", "ps_id");
@@ -197,7 +200,10 @@ namespace Bukutachi
 
         private void FormAddBookAdmin_Load(object sender, EventArgs e)
         {
-
+            if (inipenerbit != "")
+            {
+                tbPublisher.Text = inipenerbit;
+            }
         }
 
         private void LoadComboGenre(string sqlpengarang, string DisplayMember, string ValueMember)
@@ -331,7 +337,7 @@ namespace Bukutachi
 
         private void btPenerbit_Click(object sender, EventArgs e)
         {
-            AddBookAdminPenerbit pt = new AddBookAdminPenerbit(conn);
+            AddBookAdminPenerbit pt = new AddBookAdminPenerbit(conn,this,user);
             pt.ShowDialog();
             pt.Dispose();
         }

@@ -32,6 +32,7 @@ namespace Bukutachi
         string namabuku;
         string sqllocation;
         string sqlgenre;
+        string tesauthor;
 
         public static string iniauthor="";
         public static string inipenerbit = "";
@@ -118,8 +119,12 @@ namespace Bukutachi
 
                     conn.Open();
                     cmd2.ExecuteNonQuery();
-                    cmd3.ExecuteNonQuery();
-                    cmd4.ExecuteNonQuery();
+                    if (tbGenre.Text!=ambilgenrebuku) {
+                        cmd3.ExecuteNonQuery();
+                    }
+                    if (tbAuthor.Text!=ambilauthor) {
+                        cmd4.ExecuteNonQuery();
+                    }
                     conn.Close();
                     MessageBox.Show("Berhasil Update Buku");
                 }

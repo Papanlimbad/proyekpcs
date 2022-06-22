@@ -171,6 +171,7 @@ namespace Bukutachi
             this.dgvPenerbit.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
             this.dgvPenerbit.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvPenerbit.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPenerbit_CellContentDoubleClick);
+            this.dgvPenerbit.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPenerbit_CellDoubleClick);
             // 
             // btCancel
             // 

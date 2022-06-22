@@ -57,14 +57,19 @@ namespace Bukutachi
 
         private void dgvPenerbit_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ambilpenerbit = dgvPenerbit.Rows[e.RowIndex].Cells[1].Value.ToString();
-            MessageBox.Show("Berhasil pilih penulis " + ambilpenerbit);
+            
         }
 
         private void btCancel_Click(object sender, EventArgs e)
         {
             FormBooksAdminClicked.inipenerbit = ambilpenerbit;
             this.Dispose();
+        }
+
+        private void dgvPenerbit_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ambilpenerbit = dgvPenerbit.Rows[e.RowIndex].Cells[1].Value.ToString();
+            MessageBox.Show("Berhasil pilih penulis " + ambilpenerbit);
         }
     }
 }

@@ -17,12 +17,14 @@ namespace Bukutachi
         MySqlConnection conn;
         public string ambilpenerbit;
         String[] user = new String[8];
+        Form lastPage;
 
-        public AddBookAdminPenerbit(MySqlConnection conn)
+        public AddBookAdminPenerbit(MySqlConnection conn, Form lastPage, String[] User)
         {
             InitializeComponent();
             this.conn = conn;
             this.user = user;
+            this.lastPage = lastPage ;
             loadDatagrid();
         }
         private void loadDatagrid()
@@ -64,6 +66,8 @@ namespace Bukutachi
 
         private void btCancel_Click(object sender, EventArgs e)
         {
+            ((HomeAdmin)(lastPage.Parent.Parent)).loadadmin(lastPage);
+            
             this.Dispose();
         }
 

@@ -31,6 +31,9 @@ namespace Bukutachi
         {
             this.components = new System.ComponentModel.Container();
             this.lbSynopsis = new Guna.UI2.WinForms.Guna2Panel();
+            this.btSearchAuthor2 = new Guna.UI2.WinForms.Guna2Button();
+            this.tbAuthor2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cbGenre2 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbLocation = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btPenerbit = new Guna.UI2.WinForms.Guna2Button();
             this.tbPublisher = new Guna.UI2.WinForms.Guna2TextBox();
@@ -59,11 +62,8 @@ namespace Bukutachi
             this.lbAuthor = new System.Windows.Forms.Label();
             this.lbBookTItle = new System.Windows.Forms.Label();
             this.btAddImage = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.cbGenre2 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.tbAuthor2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btSearchAuthor2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.lbSynopsis.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -108,6 +108,85 @@ namespace Bukutachi
             this.lbSynopsis.Name = "lbSynopsis";
             this.lbSynopsis.Size = new System.Drawing.Size(740, 535);
             this.lbSynopsis.TabIndex = 0;
+            // 
+            // btSearchAuthor2
+            // 
+            this.btSearchAuthor2.BorderRadius = 5;
+            this.btSearchAuthor2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btSearchAuthor2.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btSearchAuthor2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btSearchAuthor2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btSearchAuthor2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btSearchAuthor2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSearchAuthor2.ForeColor = System.Drawing.Color.White;
+            this.btSearchAuthor2.Location = new System.Drawing.Point(404, 131);
+            this.btSearchAuthor2.Name = "btSearchAuthor2";
+            this.btSearchAuthor2.Size = new System.Drawing.Size(123, 31);
+            this.btSearchAuthor2.TabIndex = 56;
+            this.btSearchAuthor2.Tag = "0";
+            this.btSearchAuthor2.Text = "Search";
+            this.btSearchAuthor2.Click += new System.EventHandler(this.btSearchAuthor2_Click);
+            // 
+            // tbAuthor2
+            // 
+            this.tbAuthor2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.tbAuthor2.BorderRadius = 7;
+            this.tbAuthor2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbAuthor2.DefaultText = "";
+            this.tbAuthor2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.tbAuthor2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.tbAuthor2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbAuthor2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbAuthor2.Enabled = false;
+            this.tbAuthor2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.tbAuthor2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbAuthor2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAuthor2.ForeColor = System.Drawing.Color.White;
+            this.tbAuthor2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbAuthor2.Location = new System.Drawing.Point(153, 130);
+            this.tbAuthor2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbAuthor2.Name = "tbAuthor2";
+            this.tbAuthor2.PasswordChar = '\0';
+            this.tbAuthor2.PlaceholderText = "";
+            this.tbAuthor2.SelectedText = "";
+            this.tbAuthor2.Size = new System.Drawing.Size(244, 31);
+            this.tbAuthor2.TabIndex = 55;
+            // 
+            // cbGenre2
+            // 
+            this.cbGenre2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.cbGenre2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.cbGenre2.BorderRadius = 7;
+            this.cbGenre2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbGenre2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGenre2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.cbGenre2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbGenre2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbGenre2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbGenre2.ForeColor = System.Drawing.Color.White;
+            this.cbGenre2.ItemHeight = 30;
+            this.cbGenre2.Items.AddRange(new object[] {
+            "None",
+            "Biology",
+            "Chemistry",
+            "Cooking",
+            "Fantasy",
+            "Fiction",
+            "Finance",
+            "Humor",
+            "Mathematics",
+            "Mystery",
+            "Photography",
+            "Physics",
+            "Programming",
+            "Psychology",
+            "Romance",
+            "Science",
+            "Science Fiction"});
+            this.cbGenre2.Location = new System.Drawing.Point(153, 207);
+            this.cbGenre2.Name = "cbGenre2";
+            this.cbGenre2.Size = new System.Drawing.Size(374, 36);
+            this.cbGenre2.TabIndex = 54;
             // 
             // cbLocation
             // 
@@ -497,7 +576,7 @@ namespace Bukutachi
             this.lbPublisher.AutoSize = true;
             this.lbPublisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPublisher.ForeColor = System.Drawing.Color.White;
-            this.lbPublisher.Location = new System.Drawing.Point(26, 254);
+            this.lbPublisher.Location = new System.Drawing.Point(17, 254);
             this.lbPublisher.Name = "lbPublisher";
             this.lbPublisher.Size = new System.Drawing.Size(78, 18);
             this.lbPublisher.TabIndex = 22;
@@ -554,72 +633,6 @@ namespace Bukutachi
             this.btAddImage.Text = "Add Image";
             this.btAddImage.Click += new System.EventHandler(this.btAddImage_Click);
             // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 20;
-            this.guna2Elipse1.TargetControl = this.lbSynopsis;
-            // 
-            // cbGenre2
-            // 
-            this.cbGenre2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.cbGenre2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.cbGenre2.BorderRadius = 7;
-            this.cbGenre2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbGenre2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbGenre2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.cbGenre2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbGenre2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbGenre2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cbGenre2.ForeColor = System.Drawing.Color.White;
-            this.cbGenre2.ItemHeight = 30;
-            this.cbGenre2.Items.AddRange(new object[] {
-            "None",
-            "Biology",
-            "Chemistry",
-            "Cooking",
-            "Fantasy",
-            "Fiction",
-            "Finance",
-            "Humor",
-            "Mathematics",
-            "Mystery",
-            "Photography",
-            "Physics",
-            "Programming",
-            "Psychology",
-            "Romance",
-            "Science",
-            "Science Fiction"});
-            this.cbGenre2.Location = new System.Drawing.Point(153, 207);
-            this.cbGenre2.Name = "cbGenre2";
-            this.cbGenre2.Size = new System.Drawing.Size(374, 36);
-            this.cbGenre2.TabIndex = 54;
-            // 
-            // tbAuthor2
-            // 
-            this.tbAuthor2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.tbAuthor2.BorderRadius = 7;
-            this.tbAuthor2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbAuthor2.DefaultText = "";
-            this.tbAuthor2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.tbAuthor2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.tbAuthor2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbAuthor2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbAuthor2.Enabled = false;
-            this.tbAuthor2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.tbAuthor2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbAuthor2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAuthor2.ForeColor = System.Drawing.Color.White;
-            this.tbAuthor2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbAuthor2.Location = new System.Drawing.Point(153, 130);
-            this.tbAuthor2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tbAuthor2.Name = "tbAuthor2";
-            this.tbAuthor2.PasswordChar = '\0';
-            this.tbAuthor2.PlaceholderText = "";
-            this.tbAuthor2.SelectedText = "";
-            this.tbAuthor2.Size = new System.Drawing.Size(244, 31);
-            this.tbAuthor2.TabIndex = 55;
-            // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.ImageRotate = 0F;
@@ -629,23 +642,10 @@ namespace Bukutachi
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
             // 
-            // btSearchAuthor2
+            // guna2Elipse1
             // 
-            this.btSearchAuthor2.BorderRadius = 5;
-            this.btSearchAuthor2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btSearchAuthor2.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
-            this.btSearchAuthor2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
-            this.btSearchAuthor2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btSearchAuthor2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
-            this.btSearchAuthor2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSearchAuthor2.ForeColor = System.Drawing.Color.White;
-            this.btSearchAuthor2.Location = new System.Drawing.Point(404, 131);
-            this.btSearchAuthor2.Name = "btSearchAuthor2";
-            this.btSearchAuthor2.Size = new System.Drawing.Size(123, 31);
-            this.btSearchAuthor2.TabIndex = 56;
-            this.btSearchAuthor2.Tag = "0";
-            this.btSearchAuthor2.Text = "Search";
-            this.btSearchAuthor2.Click += new System.EventHandler(this.btSearchAuthor2_Click);
+            this.guna2Elipse1.BorderRadius = 20;
+            this.guna2Elipse1.TargetControl = this.lbSynopsis;
             // 
             // FormAddBookAdmin
             // 
