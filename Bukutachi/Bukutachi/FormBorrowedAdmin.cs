@@ -97,7 +97,7 @@ namespace Bukutachi
             int rowIdx = e.RowIndex;
             String id = dgvBorrow.Rows[rowIdx].Cells[0].Value.ToString();
 
-            FormBorrowedClickedAdmin fb = new FormBorrowedClickedAdmin(conn, id, dgvBorrow.Rows[rowIdx].Cells[4].Value.ToString());
+            FormBorrowedClickedAdmin fb = new FormBorrowedClickedAdmin(conn, id, dgvBorrow.Rows[rowIdx].Cells[5].Value.ToString());
             fb.ShowDialog();
             fb.Dispose();
 

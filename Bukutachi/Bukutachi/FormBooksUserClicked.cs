@@ -61,7 +61,7 @@ namespace Bukutachi
             lbRating.Text = dt.Rows[0]["Rating"].ToString();
             lbCounter.Text = $"({dt.Rows[0]["ReviewCount"]} reviews)";
 
-            if(Convert.ToInt32(dt.Rows[0]["Status"]) == 0) {
+            if(Convert.ToInt32(dt.Rows[0]["Status"]) == 2) {
                 //Dipinjam
                 lbAvailable.Text = "Borrowed";
                 lbAvailable.ForeColor = Color.Red;
@@ -73,7 +73,7 @@ namespace Bukutachi
                 lbAvailable.Text = "Available";
                 updateButtons();
             }
-            else if (Convert.ToInt32(dt.Rows[0]["Status"]) == 2) {
+            else if (Convert.ToInt32(dt.Rows[0]["Status"]) == 0) {
                 //Hilang / Rusak
                 lbAvailable.Text = "Unavailable";
                 lbAvailable.ForeColor = Color.Red;

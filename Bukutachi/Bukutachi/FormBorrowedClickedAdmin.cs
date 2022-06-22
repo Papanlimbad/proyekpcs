@@ -25,6 +25,7 @@ namespace Bukutachi
             this.conn = conn;
             this.id = id;
             this.status = status;
+            Console.WriteLine(this.status);
         }
 
         private void btClose_Click(object sender, EventArgs e)
@@ -183,7 +184,7 @@ namespace Bukutachi
                 {
                     try
                     {
-                        MySqlCommand cmd1 = new MySqlCommand("UPDATE hpinjam SET hp_status=2 WHERE hp_id=?id", conn);
+                        MySqlCommand cmd1 = new MySqlCommand("UPDATE hpinjam SET hp_status=2, hp_returnat=NOW() WHERE hp_id=?id", conn);
                         cmd1.Parameters.AddWithValue("id", id);
                         cmd1.ExecuteNonQuery();
 
