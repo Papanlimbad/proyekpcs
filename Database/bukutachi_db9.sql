@@ -754,7 +754,7 @@ DROP TABLE IF EXISTS `hpinjam`;
 CREATE TABLE `hpinjam` (
   `hp_id` int(11) NOT NULL AUTO_INCREMENT,
   `hp_borrowedat` date NOT NULL DEFAULT current_timestamp(),
-  `hp_returnat` date NOT NULL,
+  `hp_returnat` date DEFAULT NULL,
   `hp_status` int(11) NOT NULL,
   `hp_me_id` int(11) NOT NULL,
   `hp_pe_id` int(11) DEFAULT NULL,

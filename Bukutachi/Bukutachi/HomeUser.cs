@@ -212,7 +212,7 @@ namespace Bukutachi
             using(MySqlTransaction tr = conn.BeginTransaction()) {
                 try {
                     MySqlCommand cmd = new MySqlCommand(@"
-                        INSERT INTO hpinjam VALUES(default, CURRENT_DATE(), CURRENT_DATE() + INTERVAL 7 DAY, 0, ?membid, 0)
+                        INSERT INTO hpinjam(hp_borrowedat, hp_status, hp_me_id, hp_pe_id) VALUES(CURRENT_DATE(), 0, ?membid, 0)
                     ", conn);
                     cmd.Parameters.Add(new MySqlParameter("membid", user[0]));
 
