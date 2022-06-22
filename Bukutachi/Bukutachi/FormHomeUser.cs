@@ -119,17 +119,22 @@ namespace Bukutachi
 
             if(countPinjam > 0) {
                 cmd = new MySqlCommand(@"
-                SELECT bu_id as 'id', bu_title as 'Title', bu_image as 'image' FROM buku
+                ((SELECT bu_id AS 'id', bu_title AS 'Title', bu_image AS 'image' FROM buku
                 WHERE bu_id IN
-                (SELECT DISTINCT gb_bu_id as 'ID' FROM genre_buku WHERE gb_ge_id IN
-                (select DISTINCT gb_ge_id FROM genre_buku WHERE gb_bu_id IN
-                (select dp_bu_id from dpinjam WHERE dp_hp_id IN 
-                (select hp_id from hpinjam where hp_me_id = ?membid)))
+                (SELECT DISTINCT gb_bu_id AS 'ID' FROM genre_buku WHERE gb_ge_id IN
+                (SELECT DISTINCT gb_ge_id FROM genre_buku WHERE gb_bu_id IN
+                (SELECT dp_bu_id FROM dpinjam WHERE dp_hp_id IN 
+                (SELECT hp_id FROM hpinjam WHERE hp_me_id = ?membid)))
                 EXCEPT
-                select dp_bu_id as 'ID' from dpinjam WHERE dp_hp_id IN 
-                (select hp_id from hpinjam where hp_me_id = ?membid))
+                SELECT dp_bu_id AS 'ID' FROM dpinjam WHERE dp_hp_id IN 
+                (SELECT hp_id FROM hpinjam WHERE hp_me_id = ?membid)))
                 ORDER BY RAND()
-                LIMIT 7; 
+                LIMIT 7)
+                UNION
+                (SELECT bu_id AS 'id', bu_title AS 'Title', bu_image AS 'image' FROM buku
+                ORDER BY RAND()
+                LIMIT 7)
+                LIMIT 7;
                 ", conn);
                 cmd.Parameters.Add(new MySqlParameter("membid", user[0]));
             }
