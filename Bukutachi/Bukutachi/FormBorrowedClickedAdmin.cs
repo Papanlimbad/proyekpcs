@@ -227,6 +227,7 @@ namespace Bukutachi
                 status = "Complete";
                 FormBorrowedClickedAdmin_Load(sender, e);
             }
+            btDelete.Enabled = false;
         }
     }
 }

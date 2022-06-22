@@ -32,7 +32,7 @@ namespace Bukutachi
 
         private void loadDataGrid(bool reset)
         {
-            String kueri = "SELECT hp_id AS 'ID', DATE_FORMAT(hp_borrowedat,'%d-%b-%Y') AS 'Borrowed Date', DATE_FORMAT(hp_returnat,'%d-%b-%Y') AS 'Return Date', DATE_FORMAT(DATE_ADD(hp_borrowedat,INTERVAL 7 DAY),'%d-%b-%Y') AS 'Expected Return Date', if(hp_status=0,'Requesting',if(hp_status=1,'Borrowing','Complete')) AS 'Status' FROM hpinjam, MEMBER, pegawai WHERE pe_id = hp_pe_id AND me_id = hp_me_id";
+            String kueri = "SELECT hp_id AS 'ID',me_name as 'Nama Peminjam', DATE_FORMAT(hp_borrowedat,'%d-%b-%Y') AS 'Borrowed Date', DATE_FORMAT(hp_returnat,'%d-%b-%Y') AS 'Return Date', DATE_FORMAT(DATE_ADD(hp_borrowedat,INTERVAL 7 DAY),'%d-%b-%Y') AS 'Expected Return Date', if(hp_status=0,'Requesting',if(hp_status=1,'Borrowing','Complete')) AS 'Status' FROM hpinjam, MEMBER, pegawai WHERE pe_id = hp_pe_id AND me_id = hp_me_id";
             if (!reset)
             {
                 String dateFrom = dtFrom.Value.ToString("yyyy-MM-dd");
@@ -100,6 +100,8 @@ namespace Bukutachi
             FormBorrowedClickedAdmin fb = new FormBorrowedClickedAdmin(conn, id, dgvBorrow.Rows[rowIdx].Cells[4].Value.ToString());
             fb.ShowDialog();
             fb.Dispose();
+
+            loadDataGrid(true);
         }
     }
 }

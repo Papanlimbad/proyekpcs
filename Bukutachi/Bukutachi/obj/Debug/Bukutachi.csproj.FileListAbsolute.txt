@@ -268,3 +268,4 @@ E:\EXTERNAL HDD 1 TB\Ivan Scripe 1\kuliah\SMT 4\PCS\proyekpcsbenar\proyekpcs\Buk
 E:\EXTERNAL HDD 1 TB\Ivan Scripe 1\kuliah\SMT 4\PCS\proyekpcsbenar\proyekpcs\Bukutachi\Bukutachi\bin\Debug\System.Numerics.Vectors.dll
 E:\EXTERNAL HDD 1 TB\Ivan Scripe 1\kuliah\SMT 4\PCS\proyekpcsbenar\proyekpcs\Bukutachi\Bukutachi\bin\Debug\MySql.Data.xml
 E:\EXTERNAL HDD 1 TB\Ivan Scripe 1\kuliah\SMT 4\PCS\proyekpcsbenar\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.csproj.CopyComplete
+D:\KULIAH\SEMESTER 4\PCS\Proyek\proyekpcs\Bukutachi\Bukutachi\obj\Debug\Bukutachi.AddBookAdminPenulis2.resources
