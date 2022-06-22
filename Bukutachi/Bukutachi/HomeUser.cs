@@ -172,17 +172,19 @@ namespace Bukutachi
         }
 
         private void btLogout_Click(object sender, EventArgs e) {
-            if (newTransaction()){
-                Console.WriteLine("Making new Transaction");
-                makeNewTransaction();
-            }
-            else {
-                Console.WriteLine("Updating Transaction");
-                if (cart.Count == 0) {
-                    cancelTransaction();
+            if(cart.Count > 0) {
+                if (newTransaction()) {
+                    Console.WriteLine("Making new Transaction");
+                    makeNewTransaction();
                 }
                 else {
-                    updateBorrowed();
+                    Console.WriteLine("Updating Transaction");
+                    if (cart.Count == 0) {
+                        cancelTransaction();
+                    }
+                    else {
+                        updateBorrowed();
+                    }
                 }
             }
             this.Dispose();
