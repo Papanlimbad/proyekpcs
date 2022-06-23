@@ -61,6 +61,8 @@ namespace Bukutachi
         private void btCancel_Click(object sender, EventArgs e)
         {          
             this.Dispose();
+            hasil = "";
+            FormAddBookAdmin.iniauthor = hasil;
         }
 
         private void dgvAuthor_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -100,6 +102,11 @@ namespace Bukutachi
             string text = lbAuthor.GetItemText(lbAuthor.SelectedItem);
             MessageBox.Show(text);
             lbAuthor.Items.Remove(text);
+
+        }
+
+        private void lbAuthor_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -31,9 +31,9 @@ namespace Bukutachi
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddBookAdminPenulis));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnSearch = new System.Windows.Forms.Panel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.tbUsername = new Guna.UI2.WinForms.Guna2TextBox();
@@ -55,10 +55,9 @@ namespace Bukutachi
             this.pnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
             this.pnSearch.Controls.Add(this.guna2Button1);
             this.pnSearch.Controls.Add(this.tbUsername);
-            this.pnSearch.Location = new System.Drawing.Point(17, 53);
-            this.pnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnSearch.Location = new System.Drawing.Point(13, 43);
             this.pnSearch.Name = "pnSearch";
-            this.pnSearch.Size = new System.Drawing.Size(761, 86);
+            this.pnSearch.Size = new System.Drawing.Size(571, 70);
             this.pnSearch.TabIndex = 4;
             // 
             // guna2Button1
@@ -73,10 +72,9 @@ namespace Bukutachi
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
             this.guna2Button1.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2Button1.Location = new System.Drawing.Point(645, 6);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Button1.Location = new System.Drawing.Point(484, 5);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(84, 76);
+            this.guna2Button1.Size = new System.Drawing.Size(63, 62);
             this.guna2Button1.TabIndex = 11;
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
@@ -95,13 +93,13 @@ namespace Bukutachi
             this.tbUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUsername.ForeColor = System.Drawing.Color.White;
             this.tbUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbUsername.Location = new System.Drawing.Point(5, 18);
-            this.tbUsername.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbUsername.Location = new System.Drawing.Point(4, 15);
+            this.tbUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.PasswordChar = '\0';
             this.tbUsername.PlaceholderText = "Search Author Name";
             this.tbUsername.SelectedText = "";
-            this.tbUsername.Size = new System.Drawing.Size(631, 38);
+            this.tbUsername.Size = new System.Drawing.Size(473, 31);
             this.tbUsername.TabIndex = 5;
             // 
             // dgvAuthor
@@ -110,43 +108,42 @@ namespace Bukutachi
             this.dgvAuthor.AllowUserToDeleteRows = false;
             this.dgvAuthor.AllowUserToResizeColumns = false;
             this.dgvAuthor.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvAuthor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvAuthor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAuthor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAuthor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
             this.dgvAuthor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAuthor.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvAuthor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAuthor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAuthor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvAuthor.ColumnHeadersHeight = 21;
             this.dgvAuthor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAuthor.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(139)))), ((int)(((byte)(205)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAuthor.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvAuthor.EnableHeadersVisualStyles = false;
             this.dgvAuthor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(201)))), ((int)(((byte)(231)))));
-            this.dgvAuthor.Location = new System.Drawing.Point(17, 185);
-            this.dgvAuthor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvAuthor.Location = new System.Drawing.Point(13, 150);
             this.dgvAuthor.Name = "dgvAuthor";
             this.dgvAuthor.ReadOnly = true;
             this.dgvAuthor.RowHeadersVisible = false;
             this.dgvAuthor.RowHeadersWidth = 51;
             this.dgvAuthor.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvAuthor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAuthor.Size = new System.Drawing.Size(531, 362);
+            this.dgvAuthor.Size = new System.Drawing.Size(398, 294);
             this.dgvAuthor.TabIndex = 17;
             this.dgvAuthor.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Indigo;
             this.dgvAuthor.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
@@ -177,9 +174,8 @@ namespace Bukutachi
             // 
             this.pnTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.pnTitleBar.Location = new System.Drawing.Point(0, 0);
-            this.pnTitleBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnTitleBar.Name = "pnTitleBar";
-            this.pnTitleBar.Size = new System.Drawing.Size(805, 43);
+            this.pnTitleBar.Size = new System.Drawing.Size(604, 35);
             this.pnTitleBar.TabIndex = 18;
             // 
             // btSave
@@ -192,10 +188,9 @@ namespace Bukutachi
             this.btSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
             this.btSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSave.ForeColor = System.Drawing.Color.White;
-            this.btSave.Location = new System.Drawing.Point(23, 566);
-            this.btSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btSave.Location = new System.Drawing.Point(17, 460);
             this.btSave.Name = "btSave";
-            this.btSave.Size = new System.Drawing.Size(160, 43);
+            this.btSave.Size = new System.Drawing.Size(120, 35);
             this.btSave.TabIndex = 19;
             this.btSave.Text = "Save";
             this.btSave.Click += new System.EventHandler(this.btCancel_Click);
@@ -220,10 +215,9 @@ namespace Bukutachi
             this.btAddAuthor.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
             this.btAddAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAddAuthor.ForeColor = System.Drawing.Color.White;
-            this.btAddAuthor.Location = new System.Drawing.Point(619, 566);
-            this.btAddAuthor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btAddAuthor.Location = new System.Drawing.Point(464, 460);
             this.btAddAuthor.Name = "btAddAuthor";
-            this.btAddAuthor.Size = new System.Drawing.Size(160, 43);
+            this.btAddAuthor.Size = new System.Drawing.Size(120, 35);
             this.btAddAuthor.TabIndex = 20;
             this.btAddAuthor.Text = "Add Author";
             this.btAddAuthor.Click += new System.EventHandler(this.btAddAuthor_Click);
@@ -234,12 +228,12 @@ namespace Bukutachi
             this.lbAuthor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lbAuthor.ForeColor = System.Drawing.Color.White;
             this.lbAuthor.FormattingEnabled = true;
-            this.lbAuthor.ItemHeight = 16;
-            this.lbAuthor.Location = new System.Drawing.Point(568, 185);
-            this.lbAuthor.Margin = new System.Windows.Forms.Padding(10);
+            this.lbAuthor.Location = new System.Drawing.Point(426, 150);
+            this.lbAuthor.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.lbAuthor.Name = "lbAuthor";
-            this.lbAuthor.Size = new System.Drawing.Size(211, 352);
+            this.lbAuthor.Size = new System.Drawing.Size(158, 286);
             this.lbAuthor.TabIndex = 21;
+            this.lbAuthor.SelectedIndexChanged += new System.EventHandler(this.lbAuthor_SelectedIndexChanged);
             this.lbAuthor.DoubleClick += new System.EventHandler(this.lbAuthor_DoubleClick);
             // 
             // guna2Elipse3
@@ -257,20 +251,19 @@ namespace Bukutachi
             this.btcancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
             this.btcancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btcancel.ForeColor = System.Drawing.Color.White;
-            this.btcancel.Location = new System.Drawing.Point(201, 566);
-            this.btcancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btcancel.Location = new System.Drawing.Point(151, 460);
             this.btcancel.Name = "btcancel";
-            this.btcancel.Size = new System.Drawing.Size(160, 43);
+            this.btcancel.Size = new System.Drawing.Size(120, 35);
             this.btcancel.TabIndex = 19;
             this.btcancel.Text = "Cancel";
             this.btcancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
             // AddBookAdminPenulis
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
-            this.ClientSize = new System.Drawing.Size(804, 624);
+            this.ClientSize = new System.Drawing.Size(603, 507);
             this.Controls.Add(this.lbAuthor);
             this.Controls.Add(this.btAddAuthor);
             this.Controls.Add(this.btcancel);
@@ -279,7 +272,6 @@ namespace Bukutachi
             this.Controls.Add(this.dgvAuthor);
             this.Controls.Add(this.pnSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddBookAdminPenulis";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.AddBookAdminPenulis_Load);

@@ -89,5 +89,12 @@ namespace Bukutachi
             penerbit.ShowDialog();
             penerbit.Dispose();
         }
+
+        private void btBatal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            ambilpenerbit = "";
+            FormAddBookAdmin.inipenerbit = ambilpenerbit;
+        }
     }
 }

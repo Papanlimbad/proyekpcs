@@ -33,6 +33,7 @@ namespace Bukutachi
         string sqllocation;
         string sqlgenre;
         string tesauthor;
+        string hasil;
 
         public static string iniauthor="";
         public static string inipenerbit = "";
@@ -54,6 +55,7 @@ namespace Bukutachi
             //LoadComboPublisher(sqlpublisher, "pt_name", "pt_id");
             loadComboLocation(sqllocation, "rb_id", "rb_id");
             LoadComboGenre(sqlgenre, "ge_name", "ge_id");
+            LoadComboPenulis(sqlpenulis, "ps_name", "ps_id");
             this.Refresh();
         }
 
@@ -175,13 +177,6 @@ namespace Bukutachi
            
             //Form Borrow
 
-            tbBorrowerUsername.Text = dt.Rows[0]["Member"].ToString();
-
-            if (tbBorrowerUsername.Text != "")
-            {
-                DateBorrowed.Value = Convert.ToDateTime(dt.Rows[0]["borrowdate"]);
-                DateReturned.Value = Convert.ToDateTime(dt.Rows[0]["returndate"]);
-            }
 
 
 
@@ -219,7 +214,7 @@ namespace Bukutachi
 
         }
 
-      /*  private void LoadComboPenulis(string sqlpenulis, string DisplayMember, string ValueMember)
+       private void LoadComboPenulis(string sqlpenulis, string DisplayMember, string ValueMember)
         {
             sqlpenulis = "SELECT * FROM penulis ORDER BY ps_name ASC";
             if (conn.State == ConnectionState.Open)
@@ -238,9 +233,9 @@ namespace Bukutachi
                 dt = new DataTable();
                 da.Fill(dt);
 
-                tbAuthor.DataSource = dt;
-                tbAuthor.DisplayMember = DisplayMember;
-                tbAuthor.ValueMember = ValueMember;
+                cbAuthor.DataSource = dt;
+                cbAuthor.DisplayMember = DisplayMember;
+                cbAuthor.ValueMember = ValueMember;
             }
             catch (Exception ex)
             {
@@ -251,7 +246,7 @@ namespace Bukutachi
                 conn.Close();
             }
             
-        }*/
+        }
         private void loadComboLocation(string sqllocation, string DisplayMember, string ValueMember)
         {
             sqllocation = "SELECT * FROM rak_buku";
@@ -389,40 +384,45 @@ namespace Bukutachi
             tbGenre.Text = ambilgenre;
         }
 
-        private void btAuthorChange_Click(object sender, EventArgs e)
-        {
-            BookAdminClickedAuthor author = new BookAdminClickedAuthor(conn);
-            author.ShowDialog();
-            author.Dispose();
-        }
 
         private void btPenerbit_Click(object sender, EventArgs e)
         {
             BookAdminClickedPenerbit pt = new BookAdminClickedPenerbit(conn);
             pt.ShowDialog();
+            tbPublisher.Text = inipenerbit;
             pt.Dispose();
         }
 
-        private void btUpdate_Click(object sender, EventArgs e)
+      
+
+        private void listBox2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if(inipenerbit!="" && iniauthor != "")
+
+        }
+
+        private void listBox2_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void cbAuthor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = cbAuthor.SelectedIndex;
+            int count = cbAuthor.Items.Count;
+            string s;
+            for (int i = 0; i < count; i++)
             {
-                tbPublisher.Text = inipenerbit;
-                tbAuthor.Text = iniauthor;
+                if (index != i)
+                {
+                    cbAuthor.SetItemChecked(i, false);
+                }
             }
-            else if(inipenerbit=="" && iniauthor != "")
-            {
-                tbAuthor.Text = iniauthor;
-            }
-            else if(iniauthor ==""&& inipenerbit != "")
-            {
-                tbPublisher.Text = inipenerbit;
-            }
-            else
-            {
-                MessageBox.Show("Mohon pilih penerbit atau author yang ingin diubah");
-            }
-         
+        }
+
+        private void btGantiAuthor_Click(object sender, EventArgs e)
+        {
+            string ambilauthor= cbAuthor.GetItemText(cbAuthor.SelectedItem);
+            tbAuthor.Text = ambilauthor;
         }
     }
 }
