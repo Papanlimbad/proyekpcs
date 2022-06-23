@@ -131,7 +131,8 @@ namespace Bukutachi
 
                     conn.Open();
                     for (int i = 0; i < genreToInsert.Count; i++)
-                    {
+                    {                     
+
                         MySqlCommand cmdz = new MySqlCommand("insert into genre_buku(gb_bu_id, gb_ge_id) values(?genrebuku, (SELECT ge_id from genre where ge_name=?genre));", conn);
                         cmdz.Parameters.Add(new MySqlParameter("genrebuku", idbuku));
                         cmdz.Parameters.Add(new MySqlParameter("genre", genreToInsert[i]));
@@ -226,8 +227,8 @@ namespace Bukutachi
         private void lbBack_Click(object sender, EventArgs e)
         {
             ((HomeAdmin)(this.Parent.Parent)).loadadmin(lastPage);
-            FormBooksAdmin f = new FormBooksAdmin(conn);
-            f.loadDataGrid();
+           // FormBooksAdmin f = new FormBooksAdmin(conn);
+          //  f.loadDataGrid();
         }
 
         private void btCreateForm_Click(object sender, EventArgs e)
@@ -467,6 +468,58 @@ namespace Bukutachi
         private void btReset2_Click(object sender, EventArgs e)
         {
             tbGenre.Text = "";
+        }
+
+        private void btReset_Click_1(object sender, EventArgs e)
+        {
+            MySqlCommand cmdd = new MySqlCommand("select bu_id from buku where bu_title=?namabuku", conn);
+            cmdd.Parameters.Add(new MySqlParameter("namabuku", namabuku));
+
+            conn.Open();
+            int idbuku = Convert.ToInt32(cmdd.ExecuteScalar());
+            cmdd.ExecuteScalar();
+            conn.Close();
+
+
+            conn.Open();
+            List<string> genreToInsert = new List<string>(tbGenre.Text.Split(','));
+            for (int i = 0; i < genreToInsert.Count; i++)
+            {
+
+                MySqlCommand cmdz = new MySqlCommand("DELETE FROM genre_buku WHERE gb_bu_id=?genrebuku;", conn);
+                cmdz.Parameters.Add(new MySqlParameter("genrebuku", idbuku));
+             //   cmdz.Parameters.Add(new MySqlParameter("genre", genreToInsert[i]));
+
+                cmdz.ExecuteNonQuery();
+            }
+            conn.Close();
+            tbGenre.Text = "";
+        }
+
+        private void btReset2_Click_1(object sender, EventArgs e)
+        {
+            MySqlCommand cmdd = new MySqlCommand("select bu_id from buku where bu_title=?namabuku", conn);
+            cmdd.Parameters.Add(new MySqlParameter("namabuku", namabuku));
+
+            conn.Open();
+            int idbuku = Convert.ToInt32(cmdd.ExecuteScalar());
+            cmdd.ExecuteScalar();
+            conn.Close();
+
+
+            conn.Open();
+            List<string> genreToInsert = new List<string>(tbGenre.Text.Split(','));
+            for (int i = 0; i < genreToInsert.Count; i++)
+            {
+
+                MySqlCommand cmdz = new MySqlCommand("DELETE FROM buku_penulis WHERE bp_bu_id=?bukuauthor", conn);
+                cmdz.Parameters.Add(new MySqlParameter("bukuauthor", idbuku));
+                //   cmdz.Parameters.Add(new MySqlParameter("genre", genreToInsert[i]));
+
+                cmdz.ExecuteNonQuery();
+            }
+            conn.Close();
+            tbAuthor.Text = "";
         }
     }
 }

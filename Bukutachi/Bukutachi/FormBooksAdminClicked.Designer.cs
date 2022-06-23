@@ -51,6 +51,8 @@ namespace Bukutachi
             this.btGantiAuthor = new Guna.UI2.WinForms.Guna2Button();
             this.listAuthor = new System.Windows.Forms.ListBox();
             this.listGenre = new System.Windows.Forms.ListBox();
+            this.btReset = new Guna.UI2.WinForms.Guna2Button();
+            this.btReset2 = new Guna.UI2.WinForms.Guna2Button();
             this.pnBook.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericPublishDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -82,6 +84,8 @@ namespace Bukutachi
             // pnBook
             // 
             this.pnBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.pnBook.Controls.Add(this.btReset2);
+            this.pnBook.Controls.Add(this.btReset);
             this.pnBook.Controls.Add(this.btPenerbit);
             this.pnBook.Controls.Add(this.tbPublisher);
             this.pnBook.Controls.Add(this.tbAuthor);
@@ -165,7 +169,7 @@ namespace Bukutachi
             this.tbAuthor.PasswordChar = '\0';
             this.tbAuthor.PlaceholderText = "";
             this.tbAuthor.SelectedText = "";
-            this.tbAuthor.Size = new System.Drawing.Size(363, 29);
+            this.tbAuthor.Size = new System.Drawing.Size(257, 29);
             this.tbAuthor.TabIndex = 55;
             // 
             // cbLocation
@@ -238,7 +242,7 @@ namespace Bukutachi
             this.tbGenre.PasswordChar = '\0';
             this.tbGenre.PlaceholderText = "";
             this.tbGenre.SelectedText = "";
-            this.tbGenre.Size = new System.Drawing.Size(363, 29);
+            this.tbGenre.Size = new System.Drawing.Size(257, 29);
             this.tbGenre.TabIndex = 47;
             // 
             // tbBookTitle
@@ -416,6 +420,42 @@ namespace Bukutachi
             this.listGenre.TabIndex = 39;
             this.listGenre.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listGenre_MouseClick);
             // 
+            // btReset
+            // 
+            this.btReset.BorderRadius = 5;
+            this.btReset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btReset.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btReset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btReset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btReset.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btReset.ForeColor = System.Drawing.Color.White;
+            this.btReset.Location = new System.Drawing.Point(412, 83);
+            this.btReset.Name = "btReset";
+            this.btReset.Size = new System.Drawing.Size(99, 31);
+            this.btReset.TabIndex = 58;
+            this.btReset.Tag = "0";
+            this.btReset.Text = "Reset";
+            this.btReset.Click += new System.EventHandler(this.btReset_Click_1);
+            // 
+            // btReset2
+            // 
+            this.btReset2.BorderRadius = 5;
+            this.btReset2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btReset2.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btReset2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btReset2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btReset2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btReset2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btReset2.ForeColor = System.Drawing.Color.White;
+            this.btReset2.Location = new System.Drawing.Point(412, 46);
+            this.btReset2.Name = "btReset2";
+            this.btReset2.Size = new System.Drawing.Size(99, 31);
+            this.btReset2.TabIndex = 59;
+            this.btReset2.Tag = "0";
+            this.btReset2.Text = "Reset";
+            this.btReset2.Click += new System.EventHandler(this.btReset2_Click_1);
+            // 
             // FormBooksAdminClicked
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -468,5 +508,7 @@ namespace Bukutachi
         private Guna.UI2.WinForms.Guna2Button btGantiAuthor;
         private System.Windows.Forms.ListBox listAuthor;
         private System.Windows.Forms.ListBox listGenre;
+        private Guna.UI2.WinForms.Guna2Button btReset;
+        private Guna.UI2.WinForms.Guna2Button btReset2;
     }
 }
