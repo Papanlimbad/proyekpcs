@@ -25,6 +25,7 @@ namespace Bukutachi
 
         String[] user = new String[8];
 
+        string inigenre;
         string sqlpenulis;
         string sqlpublisher;
         MySqlDataAdapter da;
@@ -37,8 +38,10 @@ namespace Bukutachi
 
         public static string iniauthor="";
         public static string inipenerbit = "";
+        string termids;
+        string text;
 
-        
+
 
         public FormBooksAdminClicked(MySqlConnection conn, int id, Form lastPage, String[] user)
         {
@@ -100,7 +103,6 @@ namespace Bukutachi
 
 
                     MySqlCommand cmd2 = new MySqlCommand("update buku set bu_title=?title, bu_pt_id=?idpenerbit, bu_publishedat=?publishdate, bu_rb_id=?rakbuku where bu_title=?cektitle",conn);
-                    MySqlCommand cmd3 = new MySqlCommand("update genre_buku set gb_ge_id=?genreid where gb_bu_id=?cekbuku",conn);
                     MySqlCommand cmd4 = new MySqlCommand("update buku_penulis set bp_ps_id=?penulisid where bp_bu_id=?cekbuku2",conn);
                     MySqlCommand cmd5 = new MySqlCommand("update buku set bu_title=?bukutitle where bu_title=?cekbukutitle",conn);
 
@@ -110,9 +112,6 @@ namespace Bukutachi
                     cmd2.Parameters.Add(new MySqlParameter("publishdate", ambiltahun));
                     cmd2.Parameters.Add(new MySqlParameter("rakbuku", rakbuku));
 
-                    cmd3.Parameters.Add(new MySqlParameter("cekbuku", idbuku));
-                    cmd3.Parameters.Add(new MySqlParameter("genreid", idgenre));
-
                     cmd4.Parameters.Add(new MySqlParameter("cekbuku2", idbuku));
                     cmd4.Parameters.Add(new MySqlParameter("penulisid", idauthor));
 
@@ -121,13 +120,41 @@ namespace Bukutachi
 
                     conn.Open();
                     cmd2.ExecuteNonQuery();
-                    if (tbGenre.Text!=ambilgenrebuku) {
-                        cmd3.ExecuteNonQuery();
-                    }
+
                     if (tbAuthor.Text!=ambilauthor) {
                         cmd4.ExecuteNonQuery();
                     }
                     conn.Close();
+
+                    //ambil genre
+                    List<string> genreToInsert = new List<string>(tbGenre.Text.Split(','));
+
+                    conn.Open();
+                    for (int i = 0; i < genreToInsert.Count; i++)
+                    {
+                        MySqlCommand cmdz = new MySqlCommand("insert into genre_buku(gb_bu_id, gb_ge_id) values(?genrebuku, (SELECT ge_id from genre where ge_name=?genre));", conn);
+                        cmdz.Parameters.Add(new MySqlParameter("genrebuku", idbuku));
+                        cmdz.Parameters.Add(new MySqlParameter("genre", genreToInsert[i]));
+
+                        cmdz.ExecuteNonQuery();
+                    }
+                    conn.Close();
+
+                    //ambil author
+
+                    conn.Open();
+                    List<string> authorToInsert = new List<string>(tbAuthor.Text.Split(','));
+
+                    for (int i = 0; i < authorToInsert.Count; i++)
+                    {
+                        MySqlCommand cmdy = new MySqlCommand("insert into buku_penulis(bp_ps_id, bp_bu_id) values((SELECT ps_id from penulis WHERE ps_name = ?penulisid), ?bukuid);", conn);
+                        cmdy.Parameters.Add(new MySqlParameter("penulisid", authorToInsert[i]));
+                        cmdy.Parameters.Add(new MySqlParameter("bukuid", idbuku));
+
+                        cmdy.ExecuteNonQuery();
+                    }
+                    conn.Close();
+
                     MessageBox.Show("Berhasil Update Buku");
                 }
             }
@@ -167,7 +194,6 @@ namespace Bukutachi
             tbBookTitle.Text= dt.Rows[0]["Title"].ToString();
             tbAuthor.Text = dt.Rows[0]["Author"].ToString();
             tbGenre.Text = dt.Rows[0]["Genres"].ToString();
-            cbGenre.SelectedItem = dt.Rows[0]["Genres"].ToString();
             tbPublisher.Text = dt.Rows[0]["Publisher"].ToString();
             numericPublishDate.Text = dt.Rows[0]["Publish Date"].ToString();
             cbLocation.Text = $"{dt.Rows[0]["Location"]}";
@@ -233,9 +259,9 @@ namespace Bukutachi
                 dt = new DataTable();
                 da.Fill(dt);
 
-                cbAuthor.DataSource = dt;
-                cbAuthor.DisplayMember = DisplayMember;
-                cbAuthor.ValueMember = ValueMember;
+                listAuthor.DataSource = dt;
+                listAuthor.DisplayMember = DisplayMember;
+                listAuthor.ValueMember = ValueMember;
             }
             catch (Exception ex)
             {
@@ -299,9 +325,9 @@ namespace Bukutachi
                 dt = new DataTable();
                 da.Fill(dt);
 
-                cbGenre.DataSource = dt;
-                cbGenre.DisplayMember = DisplayMember;
-                cbGenre.ValueMember = ValueMember;
+                listGenre.DataSource = dt;
+                listGenre.DisplayMember = DisplayMember;
+                listGenre.ValueMember = ValueMember;
             }
             catch (Exception ex)
             {
@@ -351,27 +377,9 @@ namespace Bukutachi
 
         }
 
-        private void cbGenre_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int index = cbGenre.SelectedIndex;
-            int count = cbGenre.Items.Count;
-            string s;
-            for (int i = 0; i < count; i++)
-            {
-                if (index != i)
-                {
-                    cbGenre.SetItemChecked(i, false);
-                }
-            }
 
-        }
 
-        private void cbGenre_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-            if (e.NewValue == CheckState.Checked)
-                for (int ix = 0; ix < cbGenre.Items.Count; ++ix)
-                    if (e.Index != ix) cbGenre.SetItemChecked(ix, false);
-        }
+
 
         private void cbGenre_MouseClick(object sender, MouseEventArgs e)
         {
@@ -380,8 +388,11 @@ namespace Bukutachi
 
         private void btGantiGenre_Click(object sender, EventArgs e)
         {
-            string ambilgenre = cbGenre.GetItemText(cbGenre.SelectedItem);
-            tbGenre.Text = ambilgenre;
+            if (tbGenre.Text.Length > 0)
+            {
+                tbGenre.Text += ",";
+            }
+            tbGenre.Text += inigenre;
         }
 
 
@@ -405,24 +416,57 @@ namespace Bukutachi
 
         }
 
-        private void cbAuthor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int index = cbAuthor.SelectedIndex;
-            int count = cbAuthor.Items.Count;
-            string s;
-            for (int i = 0; i < count; i++)
-            {
-                if (index != i)
-                {
-                    cbAuthor.SetItemChecked(i, false);
-                }
-            }
-        }
+
 
         private void btGantiAuthor_Click(object sender, EventArgs e)
         {
-            string ambilauthor= cbAuthor.GetItemText(cbAuthor.SelectedItem);
-            tbAuthor.Text = ambilauthor;
+    
+                if (tbAuthor.Text.Length > 0)
+                {
+                    tbAuthor.Text += ",";
+                }
+                tbAuthor.Text += text;
+            
+        }
+
+        private void listAuthor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listAuthor_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+           // text = listAuthor.GetItemText(listAuthor.SelectedItem);
+            //MessageBox.Show(text);
+         /*   if (!tbAuthor.Text.Contains(tbAuthor.Text))
+            {
+                if (tbAuthor.Text.Length > 0)
+                {
+                    tbAuthor.Text += ",";
+                }
+                tbAuthor.Text +=text;
+            }*/
+        }
+
+        private void btReset_Click(object sender, EventArgs e)
+        {
+            tbAuthor.Text = "";
+        }
+
+        private void listAuthor_MouseClick(object sender, MouseEventArgs e)
+        {
+            text = listAuthor.GetItemText(listAuthor.SelectedItem);
+        }
+
+        private void listGenre_MouseClick(object sender, MouseEventArgs e)
+        {
+            inigenre = listGenre.GetItemText(listGenre.SelectedItem);
+
+        }
+
+        private void btReset2_Click(object sender, EventArgs e)
+        {
+            tbGenre.Text = "";
         }
     }
 }

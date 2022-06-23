@@ -46,11 +46,11 @@ namespace Bukutachi
             this.lbAuthor = new System.Windows.Forms.Label();
             this.lbBookTItle = new System.Windows.Forms.Label();
             this.btEditData = new Guna.UI2.WinForms.Guna2Button();
-            this.cbGenre = new System.Windows.Forms.CheckedListBox();
             this.btGantiGenre = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btGantiAuthor = new Guna.UI2.WinForms.Guna2Button();
-            this.cbAuthor = new System.Windows.Forms.CheckedListBox();
+            this.listAuthor = new System.Windows.Forms.ListBox();
+            this.listGenre = new System.Windows.Forms.ListBox();
             this.pnBook.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericPublishDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -349,17 +349,6 @@ namespace Bukutachi
             this.btEditData.Text = "Edit Data";
             this.btEditData.Click += new System.EventHandler(this.btEditData_Click);
             // 
-            // cbGenre
-            // 
-            this.cbGenre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.cbGenre.FormattingEnabled = true;
-            this.cbGenre.Location = new System.Drawing.Point(31, 340);
-            this.cbGenre.Name = "cbGenre";
-            this.cbGenre.Size = new System.Drawing.Size(324, 154);
-            this.cbGenre.TabIndex = 31;
-            this.cbGenre.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbGenre_MouseClick);
-            this.cbGenre.SelectedIndexChanged += new System.EventHandler(this.cbGenre_SelectedIndexChanged);
-            // 
             // btGantiGenre
             // 
             this.btGantiGenre.BorderRadius = 5;
@@ -375,7 +364,7 @@ namespace Bukutachi
             this.btGantiGenre.Size = new System.Drawing.Size(150, 31);
             this.btGantiGenre.TabIndex = 32;
             this.btGantiGenre.Tag = "0";
-            this.btGantiGenre.Text = "Ganti Genre";
+            this.btGantiGenre.Text = "Add Genre";
             this.btGantiGenre.Click += new System.EventHandler(this.btGantiGenre_Click);
             // 
             // guna2PictureBox1
@@ -402,18 +391,30 @@ namespace Bukutachi
             this.btGantiAuthor.Size = new System.Drawing.Size(150, 31);
             this.btGantiAuthor.TabIndex = 34;
             this.btGantiAuthor.Tag = "0";
-            this.btGantiAuthor.Text = "Ganti Author";
+            this.btGantiAuthor.Text = "Add Author";
             this.btGantiAuthor.Click += new System.EventHandler(this.btGantiAuthor_Click);
             // 
-            // cbAuthor
+            // listAuthor
             // 
-            this.cbAuthor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
-            this.cbAuthor.FormattingEnabled = true;
-            this.cbAuthor.Location = new System.Drawing.Point(428, 340);
-            this.cbAuthor.Name = "cbAuthor";
-            this.cbAuthor.Size = new System.Drawing.Size(324, 154);
-            this.cbAuthor.TabIndex = 37;
-            this.cbAuthor.SelectedIndexChanged += new System.EventHandler(this.cbAuthor_SelectedIndexChanged);
+            this.listAuthor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.listAuthor.FormattingEnabled = true;
+            this.listAuthor.Location = new System.Drawing.Point(428, 339);
+            this.listAuthor.Name = "listAuthor";
+            this.listAuthor.Size = new System.Drawing.Size(324, 160);
+            this.listAuthor.TabIndex = 38;
+            this.listAuthor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listAuthor_MouseClick);
+            this.listAuthor.SelectedIndexChanged += new System.EventHandler(this.listAuthor_SelectedIndexChanged);
+            this.listAuthor.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listAuthor_MouseDoubleClick);
+            // 
+            // listGenre
+            // 
+            this.listGenre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
+            this.listGenre.FormattingEnabled = true;
+            this.listGenre.Location = new System.Drawing.Point(31, 339);
+            this.listGenre.Name = "listGenre";
+            this.listGenre.Size = new System.Drawing.Size(324, 160);
+            this.listGenre.TabIndex = 39;
+            this.listGenre.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listGenre_MouseClick);
             // 
             // FormBooksAdminClicked
             // 
@@ -421,10 +422,10 @@ namespace Bukutachi
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
             this.ClientSize = new System.Drawing.Size(765, 560);
-            this.Controls.Add(this.cbAuthor);
+            this.Controls.Add(this.listGenre);
+            this.Controls.Add(this.listAuthor);
             this.Controls.Add(this.btGantiAuthor);
             this.Controls.Add(this.btGantiGenre);
-            this.Controls.Add(this.cbGenre);
             this.Controls.Add(this.lbStock);
             this.Controls.Add(this.lbBack);
             this.Controls.Add(this.pnBook);
@@ -460,12 +461,12 @@ namespace Bukutachi
         private Guna.UI2.WinForms.Guna2TextBox tbGenre;
         private Guna.UI2.WinForms.Guna2NumericUpDown numericPublishDate;
         private Guna.UI2.WinForms.Guna2ComboBox cbLocation;
-        private System.Windows.Forms.CheckedListBox cbGenre;
         private Guna.UI2.WinForms.Guna2Button btGantiGenre;
         private Guna.UI2.WinForms.Guna2Button btPenerbit;
         private Guna.UI2.WinForms.Guna2TextBox tbPublisher;
         public Guna.UI2.WinForms.Guna2TextBox tbAuthor;
         private Guna.UI2.WinForms.Guna2Button btGantiAuthor;
-        private System.Windows.Forms.CheckedListBox cbAuthor;
+        private System.Windows.Forms.ListBox listAuthor;
+        private System.Windows.Forms.ListBox listGenre;
     }
 }
