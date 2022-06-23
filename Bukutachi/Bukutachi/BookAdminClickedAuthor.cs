@@ -16,11 +16,13 @@ namespace Bukutachi
     {
         MySqlConnection conn;
         string ambilpenulis;
+        Point posDrag;
         public BookAdminClickedAuthor(MySqlConnection conn)
         {
             InitializeComponent();
             this.conn = conn;
             loadDatagrid();
+            Point posDrag;
         }
 
         private void btSearch_Click(object sender, EventArgs e)
@@ -70,6 +72,30 @@ namespace Bukutachi
         {
             ambilpenulis = dgvAuthor.Rows[e.RowIndex].Cells[1].Value.ToString();
             MessageBox.Show("Berhasil pilih penulis " + ambilpenulis);
+        }
+
+        private void btClose_Click(object sender, EventArgs e)
+        {
+            FormBooksAdminClicked.iniauthor = ambilpenulis;
+            this.Dispose();
+        }
+
+        private void btMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void pnTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            posDrag = new Point(e.X, e.Y);
+        }
+
+        private void pnTitleBar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Location = new Point(MousePosition.X - posDrag.X, MousePosition.Y - posDrag.Y);
+            }
         }
     }
 }

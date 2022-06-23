@@ -128,7 +128,7 @@ namespace Bukutachi
             this.cbFind.ItemHeight = 25;
             this.cbFind.Location = new System.Drawing.Point(82, 23);
             this.cbFind.Name = "cbFind";
-            this.cbFind.Size = new System.Drawing.Size(174, 31);
+            this.cbFind.Size = new System.Drawing.Size(265, 31);
             this.cbFind.TabIndex = 12;
             // 
             // dtFrom

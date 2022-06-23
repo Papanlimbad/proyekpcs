@@ -18,6 +18,7 @@ namespace Bukutachi
         public string ambilpenerbit;
         String[] user = new String[8];
         Form lastPage;
+        Point posDrag;
 
         public AddBookAdminPenerbit(MySqlConnection conn, Form lastPage, String[] User)
         {
@@ -95,6 +96,31 @@ namespace Bukutachi
             this.Dispose();
             ambilpenerbit = "";
             FormAddBookAdmin.inipenerbit = ambilpenerbit;
+        }
+
+        private void btMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btClose_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            ambilpenerbit = "";
+            FormAddBookAdmin.inipenerbit = ambilpenerbit;
+        }
+
+        private void pnTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            posDrag = new Point(e.X, e.Y);
+        }
+
+        private void pnTitleBar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Location = new Point(MousePosition.X - posDrag.X, MousePosition.Y - posDrag.Y);
+            }
         }
     }
 }

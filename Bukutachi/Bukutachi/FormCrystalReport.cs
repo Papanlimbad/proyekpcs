@@ -99,9 +99,24 @@ namespace Bukutachi
             //rowbaru = dtGenre.NewRow();
             //rowbaru["Jenis"] = "All";
             //dtGenre.Rows.InsertAt(rowbaru, 0);
+
             cbFind.DisplayMember = "Jenis";
             cbFind.DataSource = dtGenre.DefaultView;
             cbFind.SelectedIndex = 0;
+
+            int maxWidth = 0;
+            int temp = 0;
+            Label label1 = new Label();
+            foreach (var obj in cbFind.Items)
+            {
+                label1.Text = obj.ToString();
+                temp = label1.PreferredWidth;
+                if (temp > maxWidth)
+                {
+                    maxWidth = temp;
+                }
+            }
+            cbFind.DropDownWidth = maxWidth;
         }
 
         private void cbSearchBy_SelectedIndexChanged(object sender, EventArgs e)

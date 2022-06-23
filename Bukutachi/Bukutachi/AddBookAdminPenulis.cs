@@ -18,6 +18,7 @@ namespace Bukutachi
         public string namaauthor;
         string selectedItem;
         public static string hasil;
+        Point posDrag;
 
         public AddBookAdminPenulis(MySqlConnection conn)
         {           
@@ -108,6 +109,31 @@ namespace Bukutachi
         private void lbAuthor_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btClose_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            hasil = "";
+            FormAddBookAdmin.iniauthor = hasil;
+        }
+
+        private void pnTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            posDrag = new Point(e.X, e.Y);
+        }
+
+        private void pnTitleBar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Location = new Point(MousePosition.X - posDrag.X, MousePosition.Y - posDrag.Y);
+            }
         }
     }
 }
