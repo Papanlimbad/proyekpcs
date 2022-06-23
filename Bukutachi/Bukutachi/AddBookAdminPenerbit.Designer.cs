@@ -42,6 +42,7 @@ namespace Bukutachi
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btCancel = new Guna.UI2.WinForms.Guna2Button();
+            this.btAddPublisher = new Guna.UI2.WinForms.Guna2Button();
             this.pnSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPenerbit)).BeginInit();
             this.SuspendLayout();
@@ -50,8 +51,9 @@ namespace Bukutachi
             // 
             this.pnTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.pnTitleBar.Location = new System.Drawing.Point(0, 0);
+            this.pnTitleBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnTitleBar.Name = "pnTitleBar";
-            this.pnTitleBar.Size = new System.Drawing.Size(604, 35);
+            this.pnTitleBar.Size = new System.Drawing.Size(805, 43);
             this.pnTitleBar.TabIndex = 19;
             // 
             // pnSearch
@@ -59,9 +61,10 @@ namespace Bukutachi
             this.pnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(134)))));
             this.pnSearch.Controls.Add(this.btSearch);
             this.pnSearch.Controls.Add(this.tbPenerbit);
-            this.pnSearch.Location = new System.Drawing.Point(13, 43);
+            this.pnSearch.Location = new System.Drawing.Point(17, 53);
+            this.pnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnSearch.Name = "pnSearch";
-            this.pnSearch.Size = new System.Drawing.Size(571, 70);
+            this.pnSearch.Size = new System.Drawing.Size(761, 86);
             this.pnSearch.TabIndex = 20;
             // 
             // btSearch
@@ -76,9 +79,10 @@ namespace Bukutachi
             this.btSearch.ForeColor = System.Drawing.Color.White;
             this.btSearch.Image = ((System.Drawing.Image)(resources.GetObject("btSearch.Image")));
             this.btSearch.ImageSize = new System.Drawing.Size(40, 40);
-            this.btSearch.Location = new System.Drawing.Point(484, 5);
+            this.btSearch.Location = new System.Drawing.Point(645, 6);
+            this.btSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btSearch.Name = "btSearch";
-            this.btSearch.Size = new System.Drawing.Size(63, 62);
+            this.btSearch.Size = new System.Drawing.Size(84, 76);
             this.btSearch.TabIndex = 11;
             this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 
@@ -97,13 +101,13 @@ namespace Bukutachi
             this.tbPenerbit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPenerbit.ForeColor = System.Drawing.Color.White;
             this.tbPenerbit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbPenerbit.Location = new System.Drawing.Point(4, 15);
-            this.tbPenerbit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbPenerbit.Location = new System.Drawing.Point(5, 18);
+            this.tbPenerbit.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.tbPenerbit.Name = "tbPenerbit";
             this.tbPenerbit.PasswordChar = '\0';
             this.tbPenerbit.PlaceholderText = "Search Penerbit";
             this.tbPenerbit.SelectedText = "";
-            this.tbPenerbit.Size = new System.Drawing.Size(473, 31);
+            this.tbPenerbit.Size = new System.Drawing.Size(631, 38);
             this.tbPenerbit.TabIndex = 5;
             // 
             // dgvPenerbit
@@ -140,13 +144,15 @@ namespace Bukutachi
             this.dgvPenerbit.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPenerbit.EnableHeadersVisualStyles = false;
             this.dgvPenerbit.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(201)))), ((int)(((byte)(231)))));
-            this.dgvPenerbit.Location = new System.Drawing.Point(13, 150);
+            this.dgvPenerbit.Location = new System.Drawing.Point(17, 185);
+            this.dgvPenerbit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvPenerbit.Name = "dgvPenerbit";
             this.dgvPenerbit.ReadOnly = true;
             this.dgvPenerbit.RowHeadersVisible = false;
+            this.dgvPenerbit.RowHeadersWidth = 51;
             this.dgvPenerbit.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPenerbit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPenerbit.Size = new System.Drawing.Size(571, 294);
+            this.dgvPenerbit.Size = new System.Drawing.Size(761, 362);
             this.dgvPenerbit.TabIndex = 21;
             this.dgvPenerbit.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Indigo;
             this.dgvPenerbit.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
@@ -193,24 +199,46 @@ namespace Bukutachi
             this.btCancel.FillColor = System.Drawing.Color.WhiteSmoke;
             this.btCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
-            this.btCancel.Location = new System.Drawing.Point(17, 460);
+            this.btCancel.Location = new System.Drawing.Point(23, 566);
+            this.btCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btCancel.Name = "btCancel";
-            this.btCancel.Size = new System.Drawing.Size(120, 35);
+            this.btCancel.Size = new System.Drawing.Size(160, 43);
             this.btCancel.TabIndex = 22;
             this.btCancel.Text = "Back";
             this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
+            // btAddPublisher
+            // 
+            this.btAddPublisher.BorderRadius = 5;
+            this.btAddPublisher.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btAddPublisher.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btAddPublisher.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btAddPublisher.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btAddPublisher.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(194)))));
+            this.btAddPublisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAddPublisher.ForeColor = System.Drawing.Color.White;
+            this.btAddPublisher.Location = new System.Drawing.Point(614, 566);
+            this.btAddPublisher.Margin = new System.Windows.Forms.Padding(4);
+            this.btAddPublisher.Name = "btAddPublisher";
+            this.btAddPublisher.Size = new System.Drawing.Size(164, 38);
+            this.btAddPublisher.TabIndex = 50;
+            this.btAddPublisher.Tag = "0";
+            this.btAddPublisher.Text = "Add Publisher";
+            this.btAddPublisher.Click += new System.EventHandler(this.btAddPublisher_Click);
+            // 
             // AddBookAdminPenerbit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
-            this.ClientSize = new System.Drawing.Size(603, 507);
+            this.ClientSize = new System.Drawing.Size(804, 624);
+            this.Controls.Add(this.btAddPublisher);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.dgvPenerbit);
             this.Controls.Add(this.pnSearch);
             this.Controls.Add(this.pnTitleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddBookAdminPenerbit";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.AddBookAdminPenerbit_Load);
@@ -230,5 +258,6 @@ namespace Bukutachi
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private Guna.UI2.WinForms.Guna2Button btCancel;
+        private Guna.UI2.WinForms.Guna2Button btAddPublisher;
     }
 }

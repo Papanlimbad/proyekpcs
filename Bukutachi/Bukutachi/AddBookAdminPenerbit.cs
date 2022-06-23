@@ -83,5 +83,11 @@ namespace Bukutachi
             TextBox tb = (TextBox)f.Controls["tbPenerbit"];
             tb.Text = ambilpenerbit;*/
         }
+
+        private void btAddPublisher_Click(object sender, EventArgs e) {
+            FormAddPenerbit penerbit = new FormAddPenerbit(conn);
+            penerbit.ShowDialog();
+            penerbit.Dispose();
+        }
     }
 }
