@@ -62,7 +62,6 @@ namespace Bukutachi
         private void btCancel_Click(object sender, EventArgs e)
         {          
             this.Dispose();
-            hasil = "";
             FormAddBookAdmin.iniauthor = hasil;
         }
 
@@ -70,8 +69,6 @@ namespace Bukutachi
         {
 
         }
-
-       
 
         private void dgvAuthor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -119,7 +116,6 @@ namespace Bukutachi
         private void btClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
-            hasil = "";
             FormAddBookAdmin.iniauthor = hasil;
         }
 
@@ -134,6 +130,11 @@ namespace Bukutachi
             {
                 this.Location = new Point(MousePosition.X - posDrag.X, MousePosition.Y - posDrag.Y);
             }
+        }
+
+        private void cancel(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
